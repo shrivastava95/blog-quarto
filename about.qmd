@@ -1,0 +1,70 @@
+---
+title: "About Me"
+date: "11/9/2025"
+date-modified: "11/9/2025"
+image: profile.jpg
+about:
+  template: solana
+  image-alt: "Ishaan Shrivastava and Abu Shahid"
+  image-width: 10em
+  image-shape: round
+  links:
+    - icon: twitter
+      text: X/Twitter(@avatsavirhs)
+      href: https://x.com/avatsavirhs
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/ishaanshri95
+    - icon: github
+      text: Github(shrivastava95)
+      href: https://github.com/shrivastava95
+
+---
+
+If you are looking for a tenacious individual who
+
+- Dives deep into complexity & never cuts corners
+- Navigates difficult/untrodden paths with surgical precision
+- Does all of the above with as little ego as possible
+
+
+You do not want to miss out on working with **Ishaan Shrivastava**.
+
+---
+
+## My Work
+
+I'm part of the **computer vision research** team at [Metafusion](https://www.metafusion.ai/).
+
+---
+
+## My Interests
+
+I am [rated 1705 on codeforces](https://codeforces.com/profile/ishaanshri95), which puts me in the top 7% of codeforces competitive programmers, as well as being [ranked #1 on TensorTonic](https://x.com/avatsavirhs/status/1985193725359014267), a website where you earn points by implementing machine learning algorithms.
+
+Outside of work, I mess around with vision-language models to make them reason faster and better. I also read blogs on lesswrong dot com, meditate, go to the gym, and fold origami.
+
+---
+
+## Publications
+
+> **Learning the Power of “No”: Foundation Models with Negations \[WACV 2025 | Citations: 31\]** \
+Jaisidh Singh\*, **Ishaan Shrivastava**\*, Richa Singh, Mayank Vatsa, Aparna Bharati \
+[\[**arXiv**\]](https://arxiv.org/abs/2403.20312) 
+[\[**GitHub**\]](https://github.com/jaisidhsingh/CoN-CLIP) 
+[\[**Google Scholar**\]](https://scholar.google.com/citations?view_op=view_citation&hl=en&citation_for_view=Z6fahScAAAAJ:zYLM7Y9cAGgC) \
+\
+Improved compositional reasoning in VLMs via **CoN-CLIP**, a proposed modification to CLIP's contrastive learning objective. Also open-sourced **CC-Neg**, a novel unbiased dataset to benchmark whether models understand the absence of concepts implied by negation semantics such as *no*, *not*, and *without* in CLIP-like VLMs. I worked on this during my **undergraduate in Artificial Intelligence and Data Science @Indian Institute of Technology, Jodhpur**
+
+---
+
+## Pet Projects
+	
+**Recurrent Transformer Architectures** - check out [my implementation of Hierarchical Reasoning Models (HRM) on GitHub](https://github.com/shrivastava95/HRM-minimal).
+
+**Speculative Decoding** - [shrivastava95/specdec-minimal](https://github.com/shrivastava95/specdec-minimal), an open-source package to do speculative decoding with any two models from HuggingFace. Full implementation with KV-caching! [Blog]() out soon.
+
+**Heavy-Tailed Self-Regularisation theory** - discovered a data-free method that prunes entire layers from VLMs, with minimal loss in performance. Works by finding the best power-law coefficient that fits the eigenspectrum of the weight matrices in a layer. Work in progress with [Jaisidh Singh](https://x.com/jaisidhsingh).
+
+
+
