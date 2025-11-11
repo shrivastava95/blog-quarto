@@ -4,7 +4,7 @@
     "href": "about.html",
     "title": "About Me",
     "section": "",
-    "text": "If you are looking for a tenacious individual who\nYou do not want to miss out on working with Ishaan Shrivastava."
+    "text": "If you are looking for a tenacious individual who\nYou do not want to miss out on working with Ishaan Shrivastava.\nRead my blog posts here - My Posts"
   },
   {
     "objectID": "about.html#my-work",
@@ -31,15 +31,15 @@
     "objectID": "about.html#pet-projects",
     "href": "about.html#pet-projects",
     "title": "About Me",
-    "section": "Pet Projects",
-    "text": "Pet Projects\nRecurrent Transformer Architectures - check out my implementation of Hierarchical Reasoning Models (HRM) on GitHub.\nSpeculative Decoding - shrivastava95/specdec-minimal, an open-source package to do speculative decoding with any two models from HuggingFace. Full implementation with KV-caching! Blog out soon.\nHeavy-Tailed Self-Regularisation theory - discovered a data-free method that prunes entire layers from VLMs, with minimal loss in performance. Works by finding the best power-law coefficient that fits the eigenspectrum of the weight matrices in a layer. Work in progress with Jaisidh Singh."
+    "section": "Pet-Projects",
+    "text": "Pet-Projects\nRecurrent Transformer Architectures - check out my implementation of Hierarchical Reasoning Models (HRM) on GitHub.\nSpeculative Decoding - shrivastava95/specdec-minimal, an open-source package to do speculative decoding with any two models from HuggingFace. Full implementation with KV-caching! Blog out soon.\nHeavy-Tailed Self-Regularisation theory - discovered a data-free method that prunes entire layers from VLMs, with minimal loss in performance. Works by finding the best power-law coefficient that fits the eigenspectrum of the weight matrices in a layer. Work in progress with Jaisidh Singh."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Posts",
+    "title": "My Posts",
     "section": "",
-    "text": "speculative-decoding\n\n\n\n\n\n\n\n\nNov 11, 2025\n\n\nIshaan Shrivastava\n\n\n\n\n\nNo matching items"
+    "text": "speculative-decoding\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nNov 11, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/speculative-decoding/index.html#sample-tokens-until-rejection-criteria-is-met",
@@ -54,5 +54,19 @@
     "title": "speculative-decoding",
     "section": "note that this implementation is not batched.",
     "text": "note that this implementation is not batched.\nremove_last_t_from_kvcache(past_key_values_draft, k-n)"
+  },
+  {
+    "objectID": "about.html#work",
+    "href": "about.html#work",
+    "title": "About Me",
+    "section": "Work",
+    "text": "Work\nI’m part of the computer vision research team at Metafusion."
+  },
+  {
+    "objectID": "about.html#interests",
+    "href": "about.html#interests",
+    "title": "About Me",
+    "section": "Interests",
+    "text": "Interests\nI am rated 1705 on codeforces, which puts me in the top 7% of codeforces competitive programmers, as well as being ranked #1 on TensorTonic, a website where you earn points by implementing machine learning algorithms.\nOutside of work, I mess around with vision-language models to make them reason faster and better. I also read blogs on lesswrong dot com, meditate, go to the gym, and fold origami."
   }
 ]

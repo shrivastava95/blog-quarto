@@ -30,15 +30,17 @@ If you are looking for a tenacious individual who
 
 You do not want to miss out on working with **Ishaan Shrivastava**.
 
+Read my blog posts here - [My Posts](index.qmd)
+
 ---
 
-## My Work
+## Work
 
 I'm part of the **computer vision research** team at [Metafusion](https://www.metafusion.ai/).
 
 ---
 
-## My Interests
+## Interests
 
 I am [rated 1705 on codeforces](https://codeforces.com/profile/ishaanshri95), which puts me in the top 7% of codeforces competitive programmers, as well as being [ranked #1 on TensorTonic](https://x.com/avatsavirhs/status/1985193725359014267), a website where you earn points by implementing machine learning algorithms.
 
@@ -58,7 +60,7 @@ Improved compositional reasoning in VLMs via **CoN-CLIP**, a proposed modificati
 
 ---
 
-## Pet Projects
+## Pet-Projects
 	
 **Recurrent Transformer Architectures** - check out [my implementation of Hierarchical Reasoning Models (HRM) on GitHub](https://github.com/shrivastava95/HRM-minimal).
 

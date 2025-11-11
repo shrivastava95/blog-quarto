@@ -1,11 +1,11 @@
 ---
-title: "Posts"
+title: "My Posts"
 listing:
   contents: posts
   feed: true
   sort: "date desc"
-  type: default
-  categories: true
+  type: grid
+  categories: false
   sort-ui: false
   filter-ui: false
 page-layout: full
