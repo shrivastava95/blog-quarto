@@ -5,8 +5,8 @@ project:
 website:
   favicon: favicon.png
   description: "A blog built with Quarto"
-  site-url: https://your-website-url.example.com # you must change this appropriately for RSS feeds to work properly
-  title: "Ishaan Shrivastava's Blog"
+  site-url: https://shrivastava95.github.io/blog-quarto/about.html # you must change this appropriately for RSS feeds to work properly
+  title: "Ishaan's Blog"
   navbar:
     right:
       - about.qmd
