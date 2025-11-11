@@ -7,18 +7,18 @@
     "text": "If you are looking for a tenacious individual who\nYou do not want to miss out on working with Ishaan Shrivastava.\nRead my blog posts here - My Posts"
   },
   {
-    "objectID": "about.html#my-work",
-    "href": "about.html#my-work",
+    "objectID": "about.html#work",
+    "href": "about.html#work",
     "title": "About Me",
-    "section": "My Work",
-    "text": "My Work\nI’m part of the computer vision research team at Metafusion."
+    "section": "Work",
+    "text": "Work\nI’m part of the computer vision research team at Metafusion."
   },
   {
-    "objectID": "about.html#my-interests",
-    "href": "about.html#my-interests",
+    "objectID": "about.html#interests",
+    "href": "about.html#interests",
     "title": "About Me",
-    "section": "My Interests",
-    "text": "My Interests\nI am rated 1705 on codeforces, which puts me in the top 7% of codeforces competitive programmers, as well as being ranked #1 on TensorTonic, a website where you earn points by implementing machine learning algorithms.\nOutside of work, I mess around with vision-language models to make them reason faster and better. I also read blogs on lesswrong dot com, meditate, go to the gym, and fold origami."
+    "section": "Interests",
+    "text": "Interests\nI am rated 1705 on codeforces, which puts me in the top 7% of codeforces competitive programmers, as well as being ranked #1 on TensorTonic, a website where you earn points by implementing machine learning algorithms.\nOutside of work, I mess around with vision-language models to make them reason faster and better. I also read blogs on lesswrong dot com, meditate, go to the gym, and fold origami."
   },
   {
     "objectID": "about.html#publications",
@@ -54,19 +54,5 @@
     "title": "speculative-decoding",
     "section": "note that this implementation is not batched.",
     "text": "note that this implementation is not batched.\nremove_last_t_from_kvcache(past_key_values_draft, k-n)"
-  },
-  {
-    "objectID": "about.html#work",
-    "href": "about.html#work",
-    "title": "About Me",
-    "section": "Work",
-    "text": "Work\nI’m part of the computer vision research team at Metafusion."
-  },
-  {
-    "objectID": "about.html#interests",
-    "href": "about.html#interests",
-    "title": "About Me",
-    "section": "Interests",
-    "text": "Interests\nI am rated 1705 on codeforces, which puts me in the top 7% of codeforces competitive programmers, as well as being ranked #1 on TensorTonic, a website where you earn points by implementing machine learning algorithms.\nOutside of work, I mess around with vision-language models to make them reason faster and better. I also read blogs on lesswrong dot com, meditate, go to the gym, and fold origami."
   }
 ]
