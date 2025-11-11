@@ -50,7 +50,7 @@ Outside of work, I mess around with vision-language models to make them reason f
 
 ## Publications
 
-> **Learning the Power of “No”: Foundation Models with Negations \[WACV 2025 | Citations: 31\]** \
+> **Learning the Power of “No”: Foundation Models with Negations \[WACV 2025 | Citations: <u>31</u>]** \
 Jaisidh Singh\*, **Ishaan Shrivastava**\*, Richa Singh, Mayank Vatsa, Aparna Bharati \
 [\[**arXiv**\]](https://arxiv.org/abs/2403.20312) 
 [\[**GitHub**\]](https://github.com/jaisidhsingh/CoN-CLIP) 
@@ -68,5 +68,8 @@ Improved compositional reasoning in VLMs via **CoN-CLIP**, a proposed modificati
 
 **Heavy-Tailed Self-Regularisation theory** - discovered a data-free method that prunes entire layers from VLMs, with minimal loss in performance. Works by finding the best power-law coefficient that fits the eigenspectrum of the weight matrices in a layer. Work in progress with [Jaisidh Singh](https://x.com/jaisidhsingh).
 
+---
 
+### Got Something to Share?
 
+I'd love to hear from you. Available for conversations, feel free to reach out via <u>[**X**](https://x.com/avatsavirhs)</u> or <u>[**LinkedIn**](https://www.linkedin.com/in/ishaanshri95)</u>.

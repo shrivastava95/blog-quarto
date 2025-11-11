@@ -32,7 +32,7 @@
     "href": "about.html#pet-projects",
     "title": "About Me",
     "section": "Pet-Projects",
-    "text": "Pet-Projects\nRecurrent Transformer Architectures - check out my implementation of Hierarchical Reasoning Models (HRM) on GitHub.\nSpeculative Decoding - shrivastava95/specdec-minimal, an open-source package to do speculative decoding with any two models from HuggingFace. Full implementation with KV-caching! Blog out soon.\nHeavy-Tailed Self-Regularisation theory - discovered a data-free method that prunes entire layers from VLMs, with minimal loss in performance. Works by finding the best power-law coefficient that fits the eigenspectrum of the weight matrices in a layer. Work in progress with Jaisidh Singh."
+    "text": "Pet-Projects\nRecurrent Transformer Architectures - check out my implementation of Hierarchical Reasoning Models (HRM) on GitHub.\nSpeculative Decoding - shrivastava95/specdec-minimal, an open-source package to do speculative decoding with any two models from HuggingFace. Full implementation with KV-caching! Blog out soon.\nHeavy-Tailed Self-Regularisation theory - discovered a data-free method that prunes entire layers from VLMs, with minimal loss in performance. Works by finding the best power-law coefficient that fits the eigenspectrum of the weight matrices in a layer. Work in progress with Jaisidh Singh.\n\n\nGot Something to Share?\nI’d love to hear from you. Available for conversations, feel free to reach out via X or LinkedIn."
   },
   {
     "objectID": "index.html",
