@@ -12,47 +12,129 @@
 <generator>quarto-1.8.25</generator>
 <lastBuildDate>Mon, 10 Nov 2025 18:30:00 GMT</lastBuildDate>
 <item>
-  <title>Post With Code</title>
-  <dc:creator>Harlow Malloc</dc:creator>
-  <link>https://your-website-url.example.com/posts/post-with-code/</link>
+  <title>speculative-decoding</title>
+  <dc:creator>Ishaan Shrivastava</dc:creator>
+  <link>https://your-website-url.example.com/posts/speculative-decoding/</link>
   <description><![CDATA[ 
 
 
 
 
 
-<p>This is a post with executable code.</p>
+<section id="algorithm-for-greedy-sampling" class="level1">
+<h1>Algorithm for greedy sampling</h1>
+</section>
+<section id="todo-make-the-sampling-safe-for-zero-division-errors" class="level1">
+<h1>TODO: make the sampling safe for zero division errors</h1>
+</section>
+<section id="todo-add-stopping-condition-max_new_tokens-eos-token-for-verifier-and-draft-model-as-pointed-out-in-both-the-model-forward-pass-line-comments" class="level1">
+<h1>TODO: add stopping condition (max_new_tokens, EOS token) for verifier and draft model as pointed out in both the model forward pass line comments</h1>
+</section>
+<section id="todo-implement-get_probs_from_logits" class="level1">
+<h1>TODO: implement get_probs_from_logits</h1>
+</section>
+<section id="todo-convert-logits-to-probs-add-temperature" class="level1">
+<h1>TODO: convert logits to probs, add temperature</h1>
+</section>
+<section id="todo-add-analysis-of-temperature-to-acceptance-rate" class="level1">
+<h1>TODO: add analysis of temperature to acceptance rate</h1>
+</section>
+<section id="todo-add-sft-simple-for-both" class="level1">
+<h1>TODO: add SFT simple for both</h1>
+</section>
+<section id="todo-add-rl-with-acceptance-rate" class="level1">
+<h1>TODO: add RL with acceptance rate</h1>
+<p>def remove_last_t_from_kvcache(kvcache, t): for i, (k_layer, v_layer) in enumerate(kvcache): if k_layer is not None: kvcache[i] = ( k_layer[:, :, :-t, :], # remove last num_to_remove keys v_layer[:, :, :-t, :] # remove last num_to_remove values ) ““” 1. Inference loop: - inputs object with keys “input_ids” and “attention_mask” # TODO: code currently works for mask of shape [1, L] but won’t for a 3d [1, L, L] square mask. - past_key_values_draft : (DynamicCache(config=draft_model.config)) - past_key_values_verifier: (DynamicCache(config=draft_model.config)) - k = 10 - max_new_tokens = 100 ““”</p>
+</section>
+<section id="initialize-generated_ids-for-the-recursion" class="level1">
+<h1>initialize generated_ids for the recursion</h1>
+<p>generated_ids = inputs[“input_ids”]</p>
+</section>
+<section id="infer-draft-model-k-times" class="level1">
+<h1>infer draft model k times</h1>
+<p>start_position = 0 if past_key_values_draft[0][0] is None else past_key_values_draft[0].shape[-2] draft_cache_position = torch.arange(start_position, inputs.input_ids.shape[1], dtype=torch.int64, device=draft_model.device) draft_logits = torch.empty_like(inputs.input_ids[:, 0:0]) # tensor of shape [N, 0]</p>
+<p>for draft_iter in range(k): outputs = draft_model(**inputs, cache_position=draft_cache_position, past_key_values=past_key_values_draft, use_cache=True) # TODO: add stopping condition here.</p>
+<pre><code># sampling - greedy
+next_token_ids = outputs.logits[:, -1].argmax(-1)
+draft_logits = torch.concat([draft_logits, outputs.logits[:, -1:, :]], dim=-2)
+
+generated_ids = torch.cat([generated_ids, next_token_ids], dim=-1)
+attention_mask = inputs["attention_mask"]
+attention_mask = torch.cat([attention_mask, attention_mask.new_ones((attention_mask.shape[0], 1))], dim=-1)
+inputs = {"input_ids": next_token_ids, "attention_mask": attention_mask}
+draft_cache_position = draft_cache_position[-1:] + 1 # add one more position for the next token to be decoded.</code></pre>
+</section>
+<section id="run-verifier-in-parallel" class="level1">
+<h1>run verifier in parallel</h1>
+<p>inputs = {“input_ids”: generated_ids, “attention_mask”: inputs[“attention_mask”]} start_position = 0 if past_key_values_verifier[0][0] is None else past_key_values_verifier[0].shape[-2] verifier_cache_position = torch.arange(start_position, inputs.input_ids.shape[1], dtype=torch.int64, device=verifier_model.device) outputs = verifier_model(**inputs, cache_position=verifier_cache_position, past_key_values=past_key_values_verifier, use_cache=True) # TODO: add stopping condition here.</p>
+</section>
+<section id="determine-the-number-of-accepted-guesses-n" class="level1">
+<h1>determine the number of accepted guesses n</h1>
+<p>verifier_logits = outputs.logits[:, -(draft_logits.shape[-2]+1):-1, :] verifier_probs = verifier_logits.softmax(-1) draft_probs = draft_logits.softmax(-1) prob_ratios = verifier_probs / draft_probs # TODO: make the sampling safe for zero division errors? prob_ratios_per_token = torch.gather(prob_ratios, dim=-2, index=generated_ids.unsqueeze(dim=-2))</p>
+<section id="sample-tokens-until-rejection-criteria-is-met" class="level2">
+<h2 class="anchored" data-anchor-id="sample-tokens-until-rejection-criteria-is-met">sample tokens until rejection criteria is met</h2>
+<section id="r1-u0-1-.-.-.-rγ-u0-1" class="level3">
+<h3 class="anchored" data-anchor-id="r1-u0-1-.-.-.-rγ-u0-1">r1 ∼ U(0, 1), . . . , rγ ∼ U(0, 1)</h3>
+<p>uniform_mask = torch.randn_like(prob_ratios_per_token) &gt; prob_ratios_per_token uniform_mask = torch.concat([uniform_mask, torch.ones(uniform_mask.shape[0], 1, dtype=torch.bool)]) # verifier token index, if all accept. ### n ← min({i − 1 | 1 ≤ i ≤ γ, ri &gt; pi(x) / qi(x)} ∪ {γ}) n = argmax(uniform_mask, dim=-1)</p>
+</section>
+</section>
+</section>
+<section id="destroy-the-last-k-n-key-values-from-draft-kvcache" class="level1">
+<h1>destroy the last (k-n) key-values from draft kvcache</h1>
+<section id="note-that-this-implementation-is-not-batched." class="level2">
+<h2 class="anchored" data-anchor-id="note-that-this-implementation-is-not-batched.">note that this implementation is not batched.</h2>
+<p>remove_last_t_from_kvcache(past_key_values_draft, k-n)</p>
+</section>
+</section>
+<section id="destroy-the-last-k-n-key-values-from-verifier-kvcache" class="level1">
+<h1>destroy the last (k-n) key-values from verifier kvcache</h1>
+<p>remove_last_t_from_kvcache(past_key_values_verifier, k-n)</p>
+</section>
+<section id="adjust-the-final-token-from-verifier-if-needed" class="level1">
+<h1>adjust the final token from verifier if needed</h1>
+<p>if n &lt; k: extra_token_logits = norm * (max(0, draft_logits[:, -1-(k-n), :] - verifier_logits[:, -1-(k-n), :])) else: extra_token_logits = verifier_logits[:, -1:, :] extra_token_logits = extra_token_logits.unsqueeze(1)</p>
+</section>
+<section id="sample-one-extra-token-from-adjusted-distribution" class="level1">
+<h1>sample one extra token from adjusted distribution</h1>
+</section>
+<section id="sampling---greedy" class="level1">
+<h1>sampling - greedy</h1>
+<p>extra_token = extra_token_logits.argmax(-1)</p>
+</section>
+<section id="add-the-generated-ids-to-inputs-object-to-close-the-recursion-and-adjust-attention-mask.-rebuild-attention-mask-entirely" class="level1">
+<h1>add the generated ids to inputs object to close the recursion, and adjust attention mask. rebuild attention mask entirely?</h1>
+<p>generated_ids = torch.concat([generated_ids, extra_token], dim=-1) attention_mask = attention_mask.new_ones((attention_mask.shape[0], generated_ids.shape[-1])) inputs = {“inputs”: generated_ids, “attention_mask”: attention_mask}</p>
+<hr>
+<p>if q(x) &lt;= p(x): q(x) if q(x) &gt; p(x): - sample (p(x) / q(x)) * ( q(x) ) + (1 - p(x) / q(x)) * ( norm(max(0, p(x) - q(x))) )</p>
+<p>desired probability of selecting x: p(x) actual selection: q(x)</p>
+<p>distribution that is being sampled from is:</p>
+<p>note: alpha is the normalization constant multiplied with the random variable: alpha * (max(0, p(x) - q(x))) to get a probability distribution.</p>
+<ol type="1">
+<li>q(x) + alpha</li>
+</ol>
+<p>let us suppose there are two groups of events for the decoding of an N-vocabulary.</p>
+<p>A = {xk : p(xi) &gt;= q(xi) for i in range(N)} R = {xk : p(xi) &lt; q(xi) for i in range(N)}</p>
+<p>now, say that the probability that x ~ q(x) is in A is pA = sum( q(xi) * (1 if p(xi) &gt;= q(xi) else 0) ) and, say that the probability that x ~ p(x) is in R is pR = sum( q(xi) * (1 if p(xi) &lt; q(xi) else 0) )</p>
+<p>now, we need to show that the final sampling results in the final token sampling probability being equal to p(x).</p>
+<p>probability of a token xt (from set A) being sampled = pA * ( q(xt) / pA ) + pR * rejection probability * probabilty that xt is resampled from adjusted dist. = pA * (q(xt) / pA) + pR * rejection probability * norm * max(0, p(xt) - q(xt)) = q(xt) + pR * rejection probability * norm * (p(xt) - q(xt))</p>
+<p>now, we need to compute norm and rejection prob. note: rejection probability in the above is conditioned on sample being from B. so lets compute it.</p>
+<p>note: P is not p.&nbsp;P is probability of any event function while p is the verifier distribution on tokens. rejection prob. = P(sampled token is rejected | sampled token is from R) = [P(rejected and from R)] / [P(from R)] = [ sum( q(xi) * (1 - p(xi) / q(xi)) if p(xi) &lt; q(xi) else 0) ] / pR = [ sum(q(xi) - p(xi) if p(xi) &lt; q(xi) else 0) ] / pR</p>
+<p>-&gt; probability of a token xt from set A being sampled = q(xt) + [ sum(q(xi) - p(xi) if p(xi) &lt; q(xi) else 0) ] * norm * (p(xt) - q(xt))</p>
+<p>so, the normalizing constant <code>norm</code> comes out to be: norm = 1 / [ sum(q(xi) - p(xi) if p(xi) &lt; q(xi) else 0) ]</p>
+<p>and, we have:</p>
+<p>-&gt; probability of a token xt from set A being sampled = q(xt) + (p(xt) - q(xt)) = p(xt)</p>
+<hr>
+<p>similarly, let us compute: probability of a token xt (from set R) being sampled = pR * ( q(xt) / pR) * acceptance probability = q(xt) * ( p(xt) / q(xt) ) = p(xt)</p>
+<hr>
+<p>hence, we have proven the correctness of the sampling scheme and also found the normalizing constant.</p>
 
 
+</section>
 
  ]]></description>
-  <category>news</category>
-  <category>code</category>
-  <category>analysis</category>
-  <guid>https://your-website-url.example.com/posts/post-with-code/</guid>
+  <guid>https://your-website-url.example.com/posts/speculative-decoding/</guid>
   <pubDate>Mon, 10 Nov 2025 18:30:00 GMT</pubDate>
-  <media:content url="https://your-website-url.example.com/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Welcome To My Blog</title>
-  <dc:creator>Tristan O&#39;Malley</dc:creator>
-  <link>https://your-website-url.example.com/posts/welcome/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="https://your-website-url.example.com/posts/welcome/thumbnail.jpg" class="img-fluid"></p>
-<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
-
-
-
- ]]></description>
-  <category>news</category>
-  <guid>https://your-website-url.example.com/posts/welcome/</guid>
-  <pubDate>Fri, 07 Nov 2025 18:30:00 GMT</pubDate>
+  <media:content url="https://your-website-url.example.com/posts/speculative-decoding/assets/card-speculative-decoding.png" medium="image" type="image/png" height="117" width="144"/>
 </item>
 </channel>
 </rss>

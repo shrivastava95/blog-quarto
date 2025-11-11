@@ -25,7 +25,7 @@
     "href": "index.html",
     "title": "Posts",
     "section": "",
-    "text": "Post With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nNov 11, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nNov 8, 2025\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items"
+    "text": "speculative-decoding\n\n\n\n\n\n\n\n\nNov 11, 2025\n\n\nIshaan Shrivastava\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -61,5 +61,19 @@
     "title": "About Me",
     "section": "Pet Projects",
     "text": "Pet Projects\nRecurrent Transformer Architectures - check out my implementation of Hierarchical Reasoning Models (HRM) on GitHub.\nSpeculative Decoding - shrivastava95/specdec-minimal, an open-source package to do speculative decoding with any two models from HuggingFace. Full implementation with KV-caching! Blog out soon.\nHeavy-Tailed Self-Regularisation theory - discovered a data-free method that prunes entire layers from VLMs, with minimal loss in performance. Works by finding the best power-law coefficient that fits the eigenspectrum of the weight matrices in a layer. Work in progress with Jaisidh Singh."
+  },
+  {
+    "objectID": "posts/speculative-decoding/index.html#sample-tokens-until-rejection-criteria-is-met",
+    "href": "posts/speculative-decoding/index.html#sample-tokens-until-rejection-criteria-is-met",
+    "title": "speculative-decoding",
+    "section": "sample tokens until rejection criteria is met",
+    "text": "sample tokens until rejection criteria is met\n\nr1 ∼ U(0, 1), . . . , rγ ∼ U(0, 1)\nuniform_mask = torch.randn_like(prob_ratios_per_token) &gt; prob_ratios_per_token uniform_mask = torch.concat([uniform_mask, torch.ones(uniform_mask.shape[0], 1, dtype=torch.bool)]) # verifier token index, if all accept. ### n ← min({i − 1 | 1 ≤ i ≤ γ, ri &gt; pi(x) / qi(x)} ∪ {γ}) n = argmax(uniform_mask, dim=-1)"
+  },
+  {
+    "objectID": "posts/speculative-decoding/index.html#note-that-this-implementation-is-not-batched.",
+    "href": "posts/speculative-decoding/index.html#note-that-this-implementation-is-not-batched.",
+    "title": "speculative-decoding",
+    "section": "note that this implementation is not batched.",
+    "text": "note that this implementation is not batched.\nremove_last_t_from_kvcache(past_key_values_draft, k-n)"
   }
 ]
