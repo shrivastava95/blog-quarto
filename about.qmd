@@ -1,7 +1,7 @@
 ---
 title: "About Me"
-date: "11/9/2025"
-date-modified: "11/9/2025"
+date: "11/11/2025"
+date-modified: "11/11/2025"
 image: profile.jpg
 about:
   template: solana
