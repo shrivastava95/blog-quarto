@@ -1,3 +1,10 @@
+**/posts-with-code/
+**/welcome/
+
+
+####################################
+# python template below vvvvv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
