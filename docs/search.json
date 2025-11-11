@@ -7,34 +7,6 @@
     "text": "If you are looking for a tenacious individual who\nYou do not want to miss out on working with Ishaan Shrivastava."
   },
   {
-    "objectID": "about.html#about-this-blog",
-    "href": "about.html#about-this-blog",
-    "title": "About",
-    "section": "",
-    "text": "If you are looking for a tenacious individual who\n\nDives deep into complexity & never cuts corners\nNavigates difficult/untrodden paths with surgical precision\nDoes all of the above with as little ego as possible\n\nYou do not want to miss out on working with Ishaan Shrivastava.\nMy current interests:\n\nRecurrent Transformer Architectures - check out my implementation of Hierarchical Reasoning Models (HRM) on GitHub.\nSpeculative Decoding - shrivastava95/specdec-minimal, an open-source package to do speculative decoding with any two models from HuggingFace. Full implementation with KV-caching! Blog out soon.\nHeavy-Tailed Self-Regularisation theory - discovered a data-free method that prunes entire layers from VLMs, with minimal loss in performance. Works by finding the best power-law coefficient that fits the eigenspectrum of the weight matrices in a layer. Work in progress with Jaisidh Singh.\n\nAt WACV 2025, I published Learn “No” to Say “Yes” better: Improving Vision-Language Models Via Negations during my undergraduate in Artificial Intelligence and Data Science @Indian Institute of Technology, Jodhpur - cited 31 times. I’m part of the computer vision research team at Metafusion. Outside of work, I turn double espressos into work that makes vision-language model reason faster and better, for cheaper. I am rated 1705 on codeforces, which puts me in the top 7% of codeforces competitive programmers. I am currently ranked #1 on TensorTonic, a website where you earn points by implementing machine learning algorithms."
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Posts",
-    "section": "",
-    "text": "speculative-decoding\n\n\n\n\n\n\n\n\nNov 11, 2025\n\n\nIshaan Shrivastava\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code."
-  },
-  {
     "objectID": "about.html#my-work",
     "href": "about.html#my-work",
     "title": "About Me",
@@ -61,6 +33,13 @@
     "title": "About Me",
     "section": "Pet Projects",
     "text": "Pet Projects\nRecurrent Transformer Architectures - check out my implementation of Hierarchical Reasoning Models (HRM) on GitHub.\nSpeculative Decoding - shrivastava95/specdec-minimal, an open-source package to do speculative decoding with any two models from HuggingFace. Full implementation with KV-caching! Blog out soon.\nHeavy-Tailed Self-Regularisation theory - discovered a data-free method that prunes entire layers from VLMs, with minimal loss in performance. Works by finding the best power-law coefficient that fits the eigenspectrum of the weight matrices in a layer. Work in progress with Jaisidh Singh."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Posts",
+    "section": "",
+    "text": "speculative-decoding\n\n\n\n\n\n\n\n\nNov 11, 2025\n\n\nIshaan Shrivastava\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/speculative-decoding/index.html#sample-tokens-until-rejection-criteria-is-met",
