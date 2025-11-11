@@ -1,0 +1,4 @@
+website:
+  drafts:
+    - posts/post-with-code/index.qmd
+    - posts/welcome/index.qmd
