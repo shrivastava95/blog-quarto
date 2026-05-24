@@ -1,0 +1,17 @@
+---
+title: "CV"
+date: "2026-05-24"
+date-modified: "2026-05-24"
+page-layout: full
+---
+
+# Curriculum Vitae
+
+## Downloads
+
+- [PDF version](Ishaan_Shrivastava_CV.pdf)
+- [LaTeX source](main.tex)
+
+## Notes
+
+This page provides the current CV as a public, indexable page on the blog.

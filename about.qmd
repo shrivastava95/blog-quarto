@@ -1,7 +1,7 @@
 ---
 title: "About Me"
 date: "11/11/2025"
-date-modified: "11/11/2025"
+date-modified: "24/05/2025"
 image: profile.jpg
 about:
   template: solana
@@ -30,9 +30,12 @@ If you are looking for a tenacious individual who
 
 You do not want to miss out on working with **Ishaan Shrivastava**.
 
-Read my blog posts here - [My Posts](index.qmd)
 
 Read my credentials page here - [Credentials](credentials/)
+
+Read my CV here - [CV](cv.qmd)
+
+Read my blog posts here - [My Posts](index.qmd)
 
 ---
 
@@ -52,7 +55,7 @@ Outside of work, I mess around with vision-language models to make them reason f
 
 ## Publications
 
-> **Learning the Power of “No”: Foundation Models with Negations \[WACV 2025 | Citations: <u>31</u>]** \
+> **Learning the Power of “No”: Foundation Models with Negations \[WACV 2025 | Citations: <u>51</u>]** \
 Jaisidh Singh\*, **Ishaan Shrivastava**\*, Richa Singh, Mayank Vatsa, Aparna Bharati \
 [\[**arXiv**\]](https://arxiv.org/abs/2403.20312) 
 [\[**GitHub**\]](https://github.com/jaisidhsingh/CoN-CLIP) 

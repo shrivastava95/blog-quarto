@@ -1,5 +1,82 @@
 [
   {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "CV",
+    "section": "",
+    "text": "PDF version\nLaTeX source\n\n\n\n\nThis page provides the current CV as a public, indexable page on the blog."
+  },
+  {
+    "objectID": "cv.html#downloads",
+    "href": "cv.html#downloads",
+    "title": "CV",
+    "section": "",
+    "text": "PDF version\nLaTeX source"
+  },
+  {
+    "objectID": "cv.html#notes",
+    "href": "cv.html#notes",
+    "title": "CV",
+    "section": "",
+    "text": "This page provides the current CV as a public, indexable page on the blog."
+  },
+  {
+    "objectID": "credentials/badges/nvidia-ai-infra-ops.html",
+    "href": "credentials/badges/nvidia-ai-infra-ops.html",
+    "title": "Credential: AI Infrastructure & Operations Fundamentals",
+    "section": "",
+    "text": "Issuer: NVIDIA / Credly\nHolder: Ishaan Shrivastava\nIssue date: 2025-05-24\nVerification: https://www.credly.com/badges/48cd3a80-fe99-438c-8924-2877e5fc6b8c/public_url\n\n\nThis credential verifies foundational knowledge of AI infrastructure and operations, including GPU compute, scale-up vs scale-out design, networking, containerized ML workloads, inference serving, monitoring, and operational tooling.\n\n\n\n\nAI infrastructure\nGPU clusters\nNVIDIA NGC\nDocker\nNVIDIA Container Toolkit\nTriton Inference Server\nPrometheus\nGrafana\nIn-band and out-of-band management networks\nCompute, storage, and data networks"
+  },
+  {
+    "objectID": "credentials/badges/nvidia-ai-infra-ops.html#summary",
+    "href": "credentials/badges/nvidia-ai-infra-ops.html#summary",
+    "title": "Credential: AI Infrastructure & Operations Fundamentals",
+    "section": "",
+    "text": "This credential verifies foundational knowledge of AI infrastructure and operations, including GPU compute, scale-up vs scale-out design, networking, containerized ML workloads, inference serving, monitoring, and operational tooling."
+  },
+  {
+    "objectID": "credentials/badges/nvidia-ai-infra-ops.html#relevant-skills",
+    "href": "credentials/badges/nvidia-ai-infra-ops.html#relevant-skills",
+    "title": "Credential: AI Infrastructure & Operations Fundamentals",
+    "section": "",
+    "text": "AI infrastructure\nGPU clusters\nNVIDIA NGC\nDocker\nNVIDIA Container Toolkit\nTriton Inference Server\nPrometheus\nGrafana\nIn-band and out-of-band management networks\nCompute, storage, and data networks"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "If you are looking for a tenacious individual who\nYou do not want to miss out on working with Ishaan Shrivastava.\nRead my credentials page here - Credentials\nRead my CV here - CV\nRead my blog posts here - My Posts"
+  },
+  {
+    "objectID": "about.html#work",
+    "href": "about.html#work",
+    "title": "About Me",
+    "section": "Work",
+    "text": "Work\nI’m part of the computer vision research team at Metafusion."
+  },
+  {
+    "objectID": "about.html#interests",
+    "href": "about.html#interests",
+    "title": "About Me",
+    "section": "Interests",
+    "text": "Interests\nI am rated 1705 on codeforces, which puts me in the top 7% of codeforces competitive programmers, as well as being ranked #1 on TensorTonic, a website where you earn points by implementing machine learning algorithms.\nOutside of work, I mess around with vision-language models to make them reason faster and better. I also read blogs on lesswrong dot com, meditate, go to the gym, and fold origami."
+  },
+  {
+    "objectID": "about.html#publications",
+    "href": "about.html#publications",
+    "title": "About Me",
+    "section": "Publications",
+    "text": "Publications\n\nLearning the Power of “No”: Foundation Models with Negations [WACV 2025 | Citations: 51]\nJaisidh Singh*, Ishaan Shrivastava*, Richa Singh, Mayank Vatsa, Aparna Bharati\n[arXiv] [GitHub] [Google Scholar]\n\nImproved compositional reasoning in VLMs via CoN-CLIP, a proposed modification to CLIP’s contrastive learning objective. Also open-sourced CC-Neg, a novel unbiased dataset to benchmark whether models understand the absence of concepts implied by negation semantics such as no, not, and without in CLIP-like VLMs. I worked on this during my undergraduate in Artificial Intelligence and Data Science @Indian Institute of Technology, Jodhpur"
+  },
+  {
+    "objectID": "about.html#pet-projects",
+    "href": "about.html#pet-projects",
+    "title": "About Me",
+    "section": "Pet-Projects",
+    "text": "Pet-Projects\nRecurrent Transformer Architectures - check out my implementation of Hierarchical Reasoning Models (HRM) on GitHub.\nSpeculative Decoding - shrivastava95/specdec-minimal, an open-source package to do speculative decoding with any two models from HuggingFace. Full implementation with KV-caching! Blog out soon.\nHeavy-Tailed Self-Regularisation theory - discovered a data-free method that prunes entire layers from VLMs, with minimal loss in performance. Works by finding the best power-law coefficient that fits the eigenspectrum of the weight matrices in a layer. Work in progress with Jaisidh Singh.\n\n\nGot Something to Share?\nI’d love to hear from you. Available for conversations, feel free to reach out via X or LinkedIn."
+  },
+  {
     "objectID": "credentials/index.html",
     "href": "credentials/index.html",
     "title": "Credentials",
@@ -28,67 +105,11 @@
     "text": "JSON credential record\nMarkdown credential record for LLMs\nCredential PDF"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
-    "section": "",
-    "text": "If you are looking for a tenacious individual who\nYou do not want to miss out on working with Ishaan Shrivastava.\nRead my blog posts here - My Posts\nRead my credentials page here - Credentials"
-  },
-  {
-    "objectID": "about.html#work",
-    "href": "about.html#work",
-    "title": "About Me",
-    "section": "Work",
-    "text": "Work\nI’m part of the computer vision research team at Metafusion."
-  },
-  {
-    "objectID": "about.html#interests",
-    "href": "about.html#interests",
-    "title": "About Me",
-    "section": "Interests",
-    "text": "Interests\nI am rated 1705 on codeforces, which puts me in the top 7% of codeforces competitive programmers, as well as being ranked #1 on TensorTonic, a website where you earn points by implementing machine learning algorithms.\nOutside of work, I mess around with vision-language models to make them reason faster and better. I also read blogs on lesswrong dot com, meditate, go to the gym, and fold origami."
-  },
-  {
-    "objectID": "about.html#publications",
-    "href": "about.html#publications",
-    "title": "About Me",
-    "section": "Publications",
-    "text": "Publications\n\nLearning the Power of “No”: Foundation Models with Negations [WACV 2025 | Citations: 31]\nJaisidh Singh*, Ishaan Shrivastava*, Richa Singh, Mayank Vatsa, Aparna Bharati\n[arXiv] [GitHub] [Google Scholar]\n\nImproved compositional reasoning in VLMs via CoN-CLIP, a proposed modification to CLIP’s contrastive learning objective. Also open-sourced CC-Neg, a novel unbiased dataset to benchmark whether models understand the absence of concepts implied by negation semantics such as no, not, and without in CLIP-like VLMs. I worked on this during my undergraduate in Artificial Intelligence and Data Science @Indian Institute of Technology, Jodhpur"
-  },
-  {
-    "objectID": "about.html#pet-projects",
-    "href": "about.html#pet-projects",
-    "title": "About Me",
-    "section": "Pet-Projects",
-    "text": "Pet-Projects\nRecurrent Transformer Architectures - check out my implementation of Hierarchical Reasoning Models (HRM) on GitHub.\nSpeculative Decoding - shrivastava95/specdec-minimal, an open-source package to do speculative decoding with any two models from HuggingFace. Full implementation with KV-caching! Blog out soon.\nHeavy-Tailed Self-Regularisation theory - discovered a data-free method that prunes entire layers from VLMs, with minimal loss in performance. Works by finding the best power-law coefficient that fits the eigenspectrum of the weight matrices in a layer. Work in progress with Jaisidh Singh.\n\n\nGot Something to Share?\nI’d love to hear from you. Available for conversations, feel free to reach out via X or LinkedIn."
-  },
-  {
-    "objectID": "credentials/badges/nvidia-ai-infra-ops.html",
-    "href": "credentials/badges/nvidia-ai-infra-ops.html",
-    "title": "Credential: AI Infrastructure & Operations Fundamentals",
-    "section": "",
-    "text": "Issuer: NVIDIA / Credly\nHolder: Ishaan Shrivastava\nIssue date: 2025-05-24\nVerification: https://www.credly.com/badges/48cd3a80-fe99-438c-8924-2877e5fc6b8c/public_url\n\n\nThis credential verifies foundational knowledge of AI infrastructure and operations, including GPU compute, scale-up vs scale-out design, networking, containerized ML workloads, inference serving, monitoring, and operational tooling.\n\n\n\n\nAI infrastructure\nGPU clusters\nNVIDIA NGC\nDocker\nNVIDIA Container Toolkit\nTriton Inference Server\nPrometheus\nGrafana\nIn-band and out-of-band management networks\nCompute, storage, and data networks"
-  },
-  {
-    "objectID": "credentials/badges/nvidia-ai-infra-ops.html#summary",
-    "href": "credentials/badges/nvidia-ai-infra-ops.html#summary",
-    "title": "Credential: AI Infrastructure & Operations Fundamentals",
-    "section": "",
-    "text": "This credential verifies foundational knowledge of AI infrastructure and operations, including GPU compute, scale-up vs scale-out design, networking, containerized ML workloads, inference serving, monitoring, and operational tooling."
-  },
-  {
-    "objectID": "credentials/badges/nvidia-ai-infra-ops.html#relevant-skills",
-    "href": "credentials/badges/nvidia-ai-infra-ops.html#relevant-skills",
-    "title": "Credential: AI Infrastructure & Operations Fundamentals",
-    "section": "",
-    "text": "AI infrastructure\nGPU clusters\nNVIDIA NGC\nDocker\nNVIDIA Container Toolkit\nTriton Inference Server\nPrometheus\nGrafana\nIn-band and out-of-band management networks\nCompute, storage, and data networks"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "My Posts",
     "section": "",
-    "text": "About Me\n\n\n\n\n\n\n\n\n\nNov 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nspeculative-decoding\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nNov 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbout Me\n\n\n\n\n\n\n\n\n\nNov 11, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "CV\n\n\n\n\n\n\n\n\n\nMay 24, 2026\n\n\n\n\n\n\n\n\n\n\n\nCV\n\n\n\n\n\n\n\n\n\nMay 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbout Me\n\n\n\n\n\n\n\n\n\nNov 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nspeculative-decoding\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nNov 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbout Me\n\n\n\n\n\n\n\n\n\nNov 11, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/speculative-decoding/index.html#sample-tokens-until-rejection-criteria-is-met",

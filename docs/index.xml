@@ -10,7 +10,36 @@
 <atom:link href="https://shrivastava95.github.io/blog-quarto/index.xml" rel="self" type="application/rss+xml"/>
 <description>A blog built with Quarto</description>
 <generator>quarto-1.9.37</generator>
-<lastBuildDate>Mon, 10 Nov 2025 18:30:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 23 May 2026 18:30:00 GMT</lastBuildDate>
+<item>
+  <title>CV</title>
+  <link>https://shrivastava95.github.io/blog-quarto/cv.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="curriculum-vitae" class="level1">
+<h1>Curriculum Vitae</h1>
+<section id="downloads" class="level2">
+<h2 class="anchored" data-anchor-id="downloads">Downloads</h2>
+<ul>
+<li><a href="Ishaan_Shrivastava_CV.pdf">PDF version</a></li>
+<li><a href="main.tex">LaTeX source</a></li>
+</ul>
+</section>
+<section id="notes" class="level2">
+<h2 class="anchored" data-anchor-id="notes">Notes</h2>
+<p>This page provides the current CV as a public, indexable page on the blog.</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <guid>https://shrivastava95.github.io/blog-quarto/cv.html</guid>
+  <pubDate>Sat, 23 May 2026 18:30:00 GMT</pubDate>
+</item>
 <item>
   <title>About Me</title>
   <link>https://shrivastava95.github.io/blog-quarto/about.html</link>
@@ -22,8 +51,9 @@
 <li>Does all of the above with as little ego as possible</li>
 </ul>
 <p>You do not want to miss out on working with <strong>Ishaan Shrivastava</strong>.</p>
-<p>Read my blog posts here - <a href="./index.html">My Posts</a></p>
 <p>Read my credentials page here - <a href="credentials/">Credentials</a></p>
+<p>Read my CV here - <a href="./cv.html">CV</a></p>
+<p>Read my blog posts here - <a href="./index.html">My Posts</a></p>
 <hr>
 <section id="work" class="level2">
 <h2 data-anchor-id="work">Work</h2>
@@ -39,7 +69,7 @@
 <section id="publications" class="level2">
 <h2 data-anchor-id="publications">Publications</h2>
 <blockquote class="blockquote">
-<p><strong>Learning the Power of “No”: Foundation Models with Negations [WACV 2025 | Citations: <u>31</u>]</strong><br>
+<p><strong>Learning the Power of “No”: Foundation Models with Negations [WACV 2025 | Citations: <u>51</u>]</strong><br>
 Jaisidh Singh*, <strong>Ishaan Shrivastava</strong>*, Richa Singh, Mayank Vatsa, Aparna Bharati<br>
 <a href="https://arxiv.org/abs/2403.20312">[<strong>arXiv</strong>]</a> <a href="https://github.com/jaisidhsingh/CoN-CLIP">[<strong>GitHub</strong>]</a> <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;citation_for_view=Z6fahScAAAAJ:zYLM7Y9cAGgC">[<strong>Google Scholar</strong>]</a><br>
 <br>

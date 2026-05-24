@@ -3,6 +3,7 @@ title: "My Posts"
 listing:
   contents:
     - about.qmd
+    - cv.qmd
     - posts
   feed: true
   sort: "date desc"
@@ -13,4 +14,3 @@ listing:
 page-layout: full
 title-block-banner: true
 ---
-
