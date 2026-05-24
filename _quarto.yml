@@ -5,7 +5,7 @@ project:
 website:
   favicon: favicon.png
   description: "A blog built with Quarto"
-  site-url: https://shrivastava95.github.io/blog-quarto/about.html # you must change this appropriately for RSS feeds to work properly
+  site-url: https://shrivastava95.github.io/blog-quarto/ # you must change this appropriately for RSS feeds to work properly
   title: "Ishaan's Blog"
   navbar:
     right:

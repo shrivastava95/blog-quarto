@@ -1,1 +1,1 @@
-Sitemap: https://shrivastava95.github.io/blog-quarto/about.html/sitemap.xml
+Sitemap: https://shrivastava95.github.io/blog-quarto/sitemap.xml
