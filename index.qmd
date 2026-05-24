@@ -1,10 +1,7 @@
 ---
 title: "My Posts"
 listing:
-  contents:
-    - about.qmd
-    - cv.qmd
-    - posts
+  contents: posts
   feed: true
   sort: "date desc"
   type: grid
