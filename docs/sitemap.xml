@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://shrivastava95.github.io/blog-quarto/posts/rotating-emphasis-manipulation/index.html</loc>
+    <lastmod>2026-05-24T14:45:54.427Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shrivastava95.github.io/blog-quarto/posts/measure-theory/index.html</loc>
+    <lastmod>2026-05-24T14:45:56.879Z</lastmod>
+  </url>
+  <url>
     <loc>https://shrivastava95.github.io/blog-quarto/cv.html</loc>
     <lastmod>2026-05-24T13:14:52.922Z</lastmod>
   </url>
@@ -14,11 +22,19 @@
   </url>
   <url>
     <loc>https://shrivastava95.github.io/blog-quarto/credentials/index.html</loc>
-    <lastmod>2026-05-24T10:44:04.159Z</lastmod>
+    <lastmod>2026-05-24T14:22:38.058Z</lastmod>
   </url>
   <url>
     <loc>https://shrivastava95.github.io/blog-quarto/index.html</loc>
     <lastmod>2026-05-24T13:58:25.767Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shrivastava95.github.io/blog-quarto/posts/part-whole-training/index.html</loc>
+    <lastmod>2026-05-24T14:45:55.664Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shrivastava95.github.io/blog-quarto/posts/reproducing-attention-is-all-you-need-from-scratch-pytorch/index.html</loc>
+    <lastmod>2026-05-24T14:45:58.097Z</lastmod>
   </url>
   <url>
     <loc>https://shrivastava95.github.io/blog-quarto/posts/speculative-decoding/index.html</loc>
