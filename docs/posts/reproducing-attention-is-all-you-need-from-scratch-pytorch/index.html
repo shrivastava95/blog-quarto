@@ -174,6 +174,12 @@ window.Quarto = {
       </div>
     </div>
     
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">May 24, 2026</p>
+      </div>
+    </div>
       
     </div>
     
@@ -189,22 +195,60 @@ window.Quarto = {
 
 
 
-<p>GitHub - https://github.com/shrivastava95/transformer-impl # What is a Transformer? Transformers are a sequence modelling and transduction architecture heavily leveraging self-attention in order to eliminate the need for convolutions or gating. Advantages over RNNs and LSTMs include: 1. <strong>Non recurrent computation</strong> - Computation for a layer at a given depth is completely parallelized, while in prior architectures the computation at a given position and depth required computing for all the depths before them. 2. <strong>Global dependency modelling</strong> - Prior architectures featured a growth in computation required to relate information between positions with larger distance between them. Transformers do away with this limitation by modelling dependencies in a global fashion. 3. <strong>Permutation invariance</strong> - The transformer architecture fundamentally looks at its inputs as a <u>set of elements</u><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, as opposed to a sequence. This makes it incredibly powerful and widely applicable.</p>
+<p>GitHub - https://github.com/shrivastava95/transformer-impl</p>
+<section id="what-is-a-transformer" class="level1">
+<h1>What is a Transformer?</h1>
+<p>Transformers are a sequence modelling and transduction architecture heavily leveraging self-attention in order to eliminate the need for convolutions or gating. Advantages over RNNs and LSTMs include:</p>
+<ol type="1">
+<li><strong>Non recurrent computation</strong> - Computation for a layer at a given depth is completely parallelized, while in prior architectures the computation at a given position and depth required computing for all the depths before them.</li>
+<li><strong>Global dependency modelling</strong> - Prior architectures featured a growth in computation required to relate information between positions with larger distance between them. Transformers do away with this limitation by modelling dependencies in a global fashion.</li>
+<li><strong>Permutation invariance</strong> - The transformer architecture fundamentally looks at its inputs as a <u>set of elements</u><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, as opposed to a sequence. This makes it incredibly powerful and widely applicable.</li>
+</ol>
+</section>
 <section id="transformer-architecture" class="level1">
 <h1>Transformer Architecture</h1>
 <p>The transformer architecture features an encoder-decoder setup in the fashion of a typical neural machine translation task. The encoder maps a sequence of symbol representations <span class="math inline">\((x_1, ..., x_n)\)</span> to a sequence of continuous representations <span class="math inline">\(\bf{z}\)</span><span class="math inline">\(\space= (z_1, ..., z_n)\)</span>. Given <span class="math inline">\(\bf{z}\)</span>, the decoder then generates the output sequence of symbols <span class="math inline">\((y_1, ..., y_m)\)</span> in an auto-regressive fashion.</p>
-<p>Let us introduce the building blocks of the transformer architecture. ### 1. Scaled dot-product attention The output is calculated as a weighted sum of values of dimension <span class="math inline">\(d_v\)</span>. The weights are softmaxed scores, and the scores are obtained by computing the dot-product of an input query with the key vector associated with that value, each being of dimension <span class="math inline">\(d_k\)</span>. <span class="math display">\[\displaylines{q_{pos} = [...]_{1 \times d_k} \\
+<p>Let us introduce the building blocks of the transformer architecture. ### 1. Scaled dot-product attention The output is calculated as a weighted sum of values of dimension <span class="math inline">\(d_v\)</span>. The weights are softmaxed scores, and the scores are obtained by computing the dot-product of an input query with the key vector associated with that value, each being of dimension <span class="math inline">\(d_k\)</span>.</p>
+<p><span class="math display">\[\displaylines{q_{pos} = [...]_{1 \times d_k} \\
 K = [...]_{n \times d_k} \\
-V = [...]_{n \times d_v}}\]</span> … which yields the scaled dot-product attention formula: <span class="math display">\[o_{pos} = \text{softmax}\bigg(\dfrac{q_{pos} \cdot K^T}{\sqrt{d_k}}\bigg)\cdot V\]</span> … which, in practice, is further vectorized: <span class="math display">\[O = \text{Attention}(Q, K, V) = \text{softmax}\bigg(\dfrac{Q\cdot K}{\sqrt{d_k}}\bigg)\cdot V\]</span> ### 2. Multi-head attention It is found that a single attention function with <span class="math inline">\(d_{model}\)</span> dimensional keys, queries and values can be improved upon. The input matrices <span class="math inline">\(Q\)</span> and <span class="math inline">\(K\)</span> are projected to <span class="math inline">\(d_k\)</span>, and <span class="math inline">\(V\)</span> is projected to <span class="math inline">\(d_v\)</span>, and this is done multiple times across <span class="math inline">\(h\)</span> different <u>heads</u><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. The scaled dot-product attention outputs of each head are concatenated and finally projected once again. <span class="math display">\[\displaylines{
+V = [...]_{n \times d_v}}\]</span></p>
+<p>… which yields the scaled dot-product attention formula:</p>
+<p><span class="math display">\[o_{pos} = \text{softmax}\bigg(\dfrac{q_{pos} \cdot K^T}{\sqrt{d_k}}\bigg)\cdot V\]</span></p>
+<p>… which, in practice, is further vectorized:</p>
+<pre><code>$$O = \text{Attention}(Q, K, V) = \text{softmax}\bigg(\dfrac{Q\cdot K}{\sqrt{d_k}}\bigg)\cdot V$$</code></pre>
+<section id="multi-head-attention" class="level3">
+<h3 class="anchored" data-anchor-id="multi-head-attention">2. Multi-head attention</h3>
+<p>It is found that a single attention function with <span class="math inline">\(d_{model}\)</span> dimensional keys, queries and values can be improved upon. The input matrices <span class="math inline">\(Q\)</span> and <span class="math inline">\(K\)</span> are projected to <span class="math inline">\(d_k\)</span>, and <span class="math inline">\(V\)</span> is projected to <span class="math inline">\(d_v\)</span>, and this is done multiple times across <span class="math inline">\(h\)</span> different <u>heads</u><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. The scaled dot-product attention outputs of each head are concatenated and finally projected once again.</p>
+<p><span class="math display">\[\displaylines{
 \text{MultiHeadAttention(Q, K, V) = Concat}(\text{head}_1, ..., \text{head}_h)\cdot W^O \\
 \text{where head}_i = Attention(Q\cdot W^Q_i, K\cdot K^Q_i, V\cdot W^V_i)
-}\]</span> ### 3. Types of Attention - The encoder uses multi-head <strong>self-attention</strong> layers. In self-attention, all of the keys, queries, and values come from the same place, i.e.&nbsp;the output of the previous encoder layer. - The decoder uses two kinds of multi-head attention layers - <strong>cross-attention</strong> takes in keys and values from the encoder outputs, while the queries come from MHSA earlier within the same decoder block. This particular choice allows the decoder to relate the current position with representations from all positions of the encoder. - Additionally, the decoder uses <strong>self-attention layers with masking</strong> in order to allow each position in the decoder to attend to all positions up to and including that position. This is done to prevent leftward information flow in the decoder to preserve the auto-regressive property.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+}\]</span></p>
+</section>
+<section id="types-of-attention" class="level3">
+<h3 class="anchored" data-anchor-id="types-of-attention">3. Types of Attention</h3>
+<ul>
+<li>The encoder uses multi-head <strong>self-attention</strong> layers. In self-attention, all of the keys, queries, and values come from the same place, i.e.&nbsp;the output of the previous encoder layer.</li>
+<li>The decoder uses two kinds of multi-head attention layers - <strong>cross-attention</strong> takes in keys and values from the encoder outputs, while the queries come from MHSA earlier within the same decoder block. This particular choice allows the decoder to relate the current position with representations from all positions of the encoder.</li>
+<li>Additionally, the decoder uses <strong>self-attention layers with masking</strong> in order to allow each position in the decoder to attend to all positions up to and including that position. This is done to prevent leftward information flow in the decoder to preserve the auto-regressive property.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></li>
+</ul>
+</section>
 <section id="position-wise-feed-forward-networks" class="level3">
 <h3 class="anchored" data-anchor-id="position-wise-feed-forward-networks">4. Position-wise feed forward networks</h3>
-<p>Each encoder/decoder block applies a fully-connected feed-forward network on each position, identically and separately. <span class="math display">\[\text{FFN}(x_i) = \text{Linear}(\text{ReLU}(\text{Linear}(x_i)))\]</span> The dimensionality of input and output is <span class="math inline">\(d_{model} = 512\)</span>, while that of the middle layer is <span class="math inline">\(d_{f f} = 2048\)</span> ### 5. Positional encoding Multi-head attention cannot keep track of temporal information unless explicitly given.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> In order for the model to make use of the order of the sequence, we must inject some information about the relative or absolute position of elements in the sequence. To achieve this, we add positional embeddings to the input embeddings. These embeddings carry the same dimension <span class="math inline">\(d_{\text{model}}\)</span> as the embeddings, allowing them to be summed. <span class="math display">\[\displaylines{
+<p>Each encoder/decoder block applies a fully-connected feed-forward network on each position, identically and separately.</p>
+<p><span class="math display">\[\text{FFN}(x_i) = \text{Linear}(\text{ReLU}(\text{Linear}(x_i)))\]</span></p>
+<p>The dimensionality of input and output is <span class="math inline">\(d_{model} = 512\)</span>, while that of the middle layer is <span class="math inline">\(d_{f f} = 2048\)</span></p>
+</section>
+<section id="positional-encoding" class="level3">
+<h3 class="anchored" data-anchor-id="positional-encoding">5. Positional encoding</h3>
+<p>Multi-head attention cannot keep track of temporal information unless explicitly given.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> In order for the model to make use of the order of the sequence, we must inject some information about the relative or absolute position of elements in the sequence. To achieve this, we add positional embeddings to the input embeddings. These embeddings carry the same dimension <span class="math inline">\(d_{\text{model}}\)</span> as the embeddings, allowing them to be summed.</p>
+<p><span class="math display">\[\displaylines{
 PE_{pos, 2i} = sin(pos/10000^{2i/d_\text{model}}) \\
 PE_{pos, 2i+1} = cos(pos/10000^{2i/d_\text{model}})
-}\]</span> ### 6. Tokenizer The tokenizer converts</p>
+}\]</span></p>
+</section>
+<section id="tokenizer" class="level3">
+<h3 class="anchored" data-anchor-id="tokenizer">6. Tokenizer</h3>
+<p>The tokenizer converts</p>
 </section>
 </section>
 <section id="footnotes" class="level1">

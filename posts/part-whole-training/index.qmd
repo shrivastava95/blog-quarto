@@ -1,13 +1,18 @@
 ---
 title: "Part-Whole training"
 author: "Ishaan Shrivastava"
-date: "2026-05-24"
+date: "2026-05-24T20:08:49+05:30"
+date-modified: "2026-05-24T20:08:49+05:30"
 ---
 
 Reference - https://sci-hub.se/https://www.sciencedirect.com/science/article/abs/pii/0001691889900073?via%3Dihub
+
 This is a common approach to the training of a task that is difficult and demanding and cannot be **initially coped with.**
+
 Under this approach, the whole task is **decomposed into segments.**
+
 There are several strategies to decompose tasks - 
+
 - segmentation - divide a task meaningfully across **time**.
 - fractionation - breaking down task into **elements**
 - simplification - reduction in **difficulty**

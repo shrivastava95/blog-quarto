@@ -10,7 +10,7 @@
 <atom:link href="https://shrivastava95.github.io/blog-quarto/index.xml" rel="self" type="application/rss+xml"/>
 <description>A blog built with Quarto</description>
 <generator>quarto-1.9.37</generator>
-<lastBuildDate>Sat, 23 May 2026 18:30:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 24 May 2026 14:38:49 GMT</lastBuildDate>
 <item>
   <title>Part-Whole training</title>
   <dc:creator>Ishaan Shrivastava</dc:creator>
@@ -21,7 +21,15 @@
 
 
 
-<p>Reference - https://sci-hub.se/https://www.sciencedirect.com/science/article/abs/pii/0001691889900073?via%3Dihub This is a common approach to the training of a task that is difficult and demanding and cannot be <strong>initially coped with.</strong> Under this approach, the whole task is <strong>decomposed into segments.</strong> There are several strategies to decompose tasks - - segmentation - divide a task meaningfully across <strong>time</strong>. - fractionation - breaking down task into <strong>elements</strong> - simplification - reduction in <strong>difficulty</strong></p>
+<p>Reference - https://sci-hub.se/https://www.sciencedirect.com/science/article/abs/pii/0001691889900073?via%3Dihub</p>
+<p>This is a common approach to the training of a task that is difficult and demanding and cannot be <strong>initially coped with.</strong></p>
+<p>Under this approach, the whole task is <strong>decomposed into segments.</strong></p>
+<p>There are several strategies to decompose tasks -</p>
+<ul>
+<li>segmentation - divide a task meaningfully across <strong>time</strong>.</li>
+<li>fractionation - breaking down task into <strong>elements</strong></li>
+<li>simplification - reduction in <strong>difficulty</strong></li>
+</ul>
 <section id="pitfalls" class="level1">
 <h1>Pitfalls</h1>
 <p>Training individual schemas has a negative transfer to performance on the whole task, as it is theorized that the main properties of schemas lie in the connections between them (which are not developed subsequently).</p>
@@ -31,7 +39,7 @@
 
  ]]></description>
   <guid>https://shrivastava95.github.io/blog-quarto/posts/part-whole-training/</guid>
-  <pubDate>Sat, 23 May 2026 18:30:00 GMT</pubDate>
+  <pubDate>Sun, 24 May 2026 14:38:49 GMT</pubDate>
 </item>
 <item>
   <title>Reproducing Attention is All you Need, from scratch - PyTorch</title>
@@ -43,14 +51,52 @@
 
 
 
-<p>GitHub - https://github.com/shrivastava95/transformer-impl # What is a Transformer? Transformers are a sequence modelling and transduction architecture heavily leveraging self-attention in order to eliminate the need for convolutions or gating. Advantages over RNNs and LSTMs include: 1. <strong>Non recurrent computation</strong> - Computation for a layer at a given depth is completely parallelized, while in prior architectures the computation at a given position and depth required computing for all the depths before them. 2. <strong>Global dependency modelling</strong> - Prior architectures featured a growth in computation required to relate information between positions with larger distance between them. Transformers do away with this limitation by modelling dependencies in a global fashion. 3. <strong>Permutation invariance</strong> - The transformer architecture fundamentally looks at its inputs as a <u>set of elements</u><sup>1</sup>, as opposed to a sequence. This makes it incredibly powerful and widely applicable.</p>
+<p>GitHub - https://github.com/shrivastava95/transformer-impl</p>
+<section id="what-is-a-transformer" class="level1">
+<h1>What is a Transformer?</h1>
+<p>Transformers are a sequence modelling and transduction architecture heavily leveraging self-attention in order to eliminate the need for convolutions or gating. Advantages over RNNs and LSTMs include:</p>
+<ol type="1">
+<li><strong>Non recurrent computation</strong> - Computation for a layer at a given depth is completely parallelized, while in prior architectures the computation at a given position and depth required computing for all the depths before them.</li>
+<li><strong>Global dependency modelling</strong> - Prior architectures featured a growth in computation required to relate information between positions with larger distance between them. Transformers do away with this limitation by modelling dependencies in a global fashion.</li>
+<li><strong>Permutation invariance</strong> - The transformer architecture fundamentally looks at its inputs as a <u>set of elements</u><sup>1</sup>, as opposed to a sequence. This makes it incredibly powerful and widely applicable.</li>
+</ol>
+</section>
 <section id="transformer-architecture" class="level1">
 <h1>Transformer Architecture</h1>
 <p>The transformer architecture features an encoder-decoder setup in the fashion of a typical neural machine translation task. The encoder maps a sequence of symbol representations <img src="https://latex.codecogs.com/png.latex?(x_1,%20...,%20x_n)"> to a sequence of continuous representations <img src="https://latex.codecogs.com/png.latex?%5Cbf%7Bz%7D"><img src="https://latex.codecogs.com/png.latex?%5Cspace=%20(z_1,%20...,%20z_n)">. Given <img src="https://latex.codecogs.com/png.latex?%5Cbf%7Bz%7D">, the decoder then generates the output sequence of symbols <img src="https://latex.codecogs.com/png.latex?(y_1,%20...,%20y_m)"> in an auto-regressive fashion.</p>
-<p>Let us introduce the building blocks of the transformer architecture. ### 1. Scaled dot-product attention The output is calculated as a weighted sum of values of dimension <img src="https://latex.codecogs.com/png.latex?d_v">. The weights are softmaxed scores, and the scores are obtained by computing the dot-product of an input query with the key vector associated with that value, each being of dimension <img src="https://latex.codecogs.com/png.latex?d_k">. <img src="https://latex.codecogs.com/png.latex?%5Cdisplaylines%7Bq_%7Bpos%7D%20=%20%5B...%5D_%7B1%20%5Ctimes%20d_k%7D%20%5C%5C%0AK%20=%20%5B...%5D_%7Bn%20%5Ctimes%20d_k%7D%20%5C%5C%0AV%20=%20%5B...%5D_%7Bn%20%5Ctimes%20d_v%7D%7D"> … which yields the scaled dot-product attention formula: <img src="https://latex.codecogs.com/png.latex?o_%7Bpos%7D%20=%20%5Ctext%7Bsoftmax%7D%5Cbigg(%5Cdfrac%7Bq_%7Bpos%7D%20%5Ccdot%20K%5ET%7D%7B%5Csqrt%7Bd_k%7D%7D%5Cbigg)%5Ccdot%20V"> … which, in practice, is further vectorized: <img src="https://latex.codecogs.com/png.latex?O%20=%20%5Ctext%7BAttention%7D(Q,%20K,%20V)%20=%20%5Ctext%7Bsoftmax%7D%5Cbigg(%5Cdfrac%7BQ%5Ccdot%20K%7D%7B%5Csqrt%7Bd_k%7D%7D%5Cbigg)%5Ccdot%20V"> ### 2. Multi-head attention It is found that a single attention function with <img src="https://latex.codecogs.com/png.latex?d_%7Bmodel%7D"> dimensional keys, queries and values can be improved upon. The input matrices <img src="https://latex.codecogs.com/png.latex?Q"> and <img src="https://latex.codecogs.com/png.latex?K"> are projected to <img src="https://latex.codecogs.com/png.latex?d_k">, and <img src="https://latex.codecogs.com/png.latex?V"> is projected to <img src="https://latex.codecogs.com/png.latex?d_v">, and this is done multiple times across <img src="https://latex.codecogs.com/png.latex?h"> different <u>heads</u><sup>2</sup>. The scaled dot-product attention outputs of each head are concatenated and finally projected once again. <img src="https://latex.codecogs.com/png.latex?%5Cdisplaylines%7B%0A%5Ctext%7BMultiHeadAttention(Q,%20K,%20V)%20=%20Concat%7D(%5Ctext%7Bhead%7D_1,%20...,%20%5Ctext%7Bhead%7D_h)%5Ccdot%20W%5EO%20%5C%5C%0A%5Ctext%7Bwhere%20head%7D_i%20=%20Attention(Q%5Ccdot%20W%5EQ_i,%20K%5Ccdot%20K%5EQ_i,%20V%5Ccdot%20W%5EV_i)%0A%7D"> ### 3. Types of Attention - The encoder uses multi-head <strong>self-attention</strong> layers. In self-attention, all of the keys, queries, and values come from the same place, i.e.&nbsp;the output of the previous encoder layer. - The decoder uses two kinds of multi-head attention layers - <strong>cross-attention</strong> takes in keys and values from the encoder outputs, while the queries come from MHSA earlier within the same decoder block. This particular choice allows the decoder to relate the current position with representations from all positions of the encoder. - Additionally, the decoder uses <strong>self-attention layers with masking</strong> in order to allow each position in the decoder to attend to all positions up to and including that position. This is done to prevent leftward information flow in the decoder to preserve the auto-regressive property.<sup>3</sup></p>
+<p>Let us introduce the building blocks of the transformer architecture. ### 1. Scaled dot-product attention The output is calculated as a weighted sum of values of dimension <img src="https://latex.codecogs.com/png.latex?d_v">. The weights are softmaxed scores, and the scores are obtained by computing the dot-product of an input query with the key vector associated with that value, each being of dimension <img src="https://latex.codecogs.com/png.latex?d_k">.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cdisplaylines%7Bq_%7Bpos%7D%20=%20%5B...%5D_%7B1%20%5Ctimes%20d_k%7D%20%5C%5C%0AK%20=%20%5B...%5D_%7Bn%20%5Ctimes%20d_k%7D%20%5C%5C%0AV%20=%20%5B...%5D_%7Bn%20%5Ctimes%20d_v%7D%7D"></p>
+<p>… which yields the scaled dot-product attention formula:</p>
+<p><img src="https://latex.codecogs.com/png.latex?o_%7Bpos%7D%20=%20%5Ctext%7Bsoftmax%7D%5Cbigg(%5Cdfrac%7Bq_%7Bpos%7D%20%5Ccdot%20K%5ET%7D%7B%5Csqrt%7Bd_k%7D%7D%5Cbigg)%5Ccdot%20V"></p>
+<p>… which, in practice, is further vectorized:</p>
+<pre><code>$$O = \text{Attention}(Q, K, V) = \text{softmax}\bigg(\dfrac{Q\cdot K}{\sqrt{d_k}}\bigg)\cdot V$$</code></pre>
+<section id="multi-head-attention" class="level3">
+<h3 class="anchored" data-anchor-id="multi-head-attention">2. Multi-head attention</h3>
+<p>It is found that a single attention function with <img src="https://latex.codecogs.com/png.latex?d_%7Bmodel%7D"> dimensional keys, queries and values can be improved upon. The input matrices <img src="https://latex.codecogs.com/png.latex?Q"> and <img src="https://latex.codecogs.com/png.latex?K"> are projected to <img src="https://latex.codecogs.com/png.latex?d_k">, and <img src="https://latex.codecogs.com/png.latex?V"> is projected to <img src="https://latex.codecogs.com/png.latex?d_v">, and this is done multiple times across <img src="https://latex.codecogs.com/png.latex?h"> different <u>heads</u><sup>2</sup>. The scaled dot-product attention outputs of each head are concatenated and finally projected once again.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cdisplaylines%7B%0A%5Ctext%7BMultiHeadAttention(Q,%20K,%20V)%20=%20Concat%7D(%5Ctext%7Bhead%7D_1,%20...,%20%5Ctext%7Bhead%7D_h)%5Ccdot%20W%5EO%20%5C%5C%0A%5Ctext%7Bwhere%20head%7D_i%20=%20Attention(Q%5Ccdot%20W%5EQ_i,%20K%5Ccdot%20K%5EQ_i,%20V%5Ccdot%20W%5EV_i)%0A%7D"></p>
+</section>
+<section id="types-of-attention" class="level3">
+<h3 class="anchored" data-anchor-id="types-of-attention">3. Types of Attention</h3>
+<ul>
+<li>The encoder uses multi-head <strong>self-attention</strong> layers. In self-attention, all of the keys, queries, and values come from the same place, i.e.&nbsp;the output of the previous encoder layer.</li>
+<li>The decoder uses two kinds of multi-head attention layers - <strong>cross-attention</strong> takes in keys and values from the encoder outputs, while the queries come from MHSA earlier within the same decoder block. This particular choice allows the decoder to relate the current position with representations from all positions of the encoder.</li>
+<li>Additionally, the decoder uses <strong>self-attention layers with masking</strong> in order to allow each position in the decoder to attend to all positions up to and including that position. This is done to prevent leftward information flow in the decoder to preserve the auto-regressive property.<sup>3</sup></li>
+</ul>
+</section>
 <section id="position-wise-feed-forward-networks" class="level3">
 <h3 class="anchored" data-anchor-id="position-wise-feed-forward-networks">4. Position-wise feed forward networks</h3>
-<p>Each encoder/decoder block applies a fully-connected feed-forward network on each position, identically and separately. <img src="https://latex.codecogs.com/png.latex?%5Ctext%7BFFN%7D(x_i)%20=%20%5Ctext%7BLinear%7D(%5Ctext%7BReLU%7D(%5Ctext%7BLinear%7D(x_i)))"> The dimensionality of input and output is <img src="https://latex.codecogs.com/png.latex?d_%7Bmodel%7D%20=%20512">, while that of the middle layer is <img src="https://latex.codecogs.com/png.latex?d_%7Bf%20f%7D%20=%202048"> ### 5. Positional encoding Multi-head attention cannot keep track of temporal information unless explicitly given.<sup>4</sup> In order for the model to make use of the order of the sequence, we must inject some information about the relative or absolute position of elements in the sequence. To achieve this, we add positional embeddings to the input embeddings. These embeddings carry the same dimension <img src="https://latex.codecogs.com/png.latex?d_%7B%5Ctext%7Bmodel%7D%7D"> as the embeddings, allowing them to be summed. <img src="https://latex.codecogs.com/png.latex?%5Cdisplaylines%7B%0APE_%7Bpos,%202i%7D%20=%20sin(pos/10000%5E%7B2i/d_%5Ctext%7Bmodel%7D%7D)%20%5C%5C%0APE_%7Bpos,%202i+1%7D%20=%20cos(pos/10000%5E%7B2i/d_%5Ctext%7Bmodel%7D%7D)%0A%7D"> ### 6. Tokenizer The tokenizer converts</p>
+<p>Each encoder/decoder block applies a fully-connected feed-forward network on each position, identically and separately.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Ctext%7BFFN%7D(x_i)%20=%20%5Ctext%7BLinear%7D(%5Ctext%7BReLU%7D(%5Ctext%7BLinear%7D(x_i)))"></p>
+<p>The dimensionality of input and output is <img src="https://latex.codecogs.com/png.latex?d_%7Bmodel%7D%20=%20512">, while that of the middle layer is <img src="https://latex.codecogs.com/png.latex?d_%7Bf%20f%7D%20=%202048"></p>
+</section>
+<section id="positional-encoding" class="level3">
+<h3 class="anchored" data-anchor-id="positional-encoding">5. Positional encoding</h3>
+<p>Multi-head attention cannot keep track of temporal information unless explicitly given.<sup>4</sup> In order for the model to make use of the order of the sequence, we must inject some information about the relative or absolute position of elements in the sequence. To achieve this, we add positional embeddings to the input embeddings. These embeddings carry the same dimension <img src="https://latex.codecogs.com/png.latex?d_%7B%5Ctext%7Bmodel%7D%7D"> as the embeddings, allowing them to be summed.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cdisplaylines%7B%0APE_%7Bpos,%202i%7D%20=%20sin(pos/10000%5E%7B2i/d_%5Ctext%7Bmodel%7D%7D)%20%5C%5C%0APE_%7Bpos,%202i+1%7D%20=%20cos(pos/10000%5E%7B2i/d_%5Ctext%7Bmodel%7D%7D)%0A%7D"></p>
+</section>
+<section id="tokenizer" class="level3">
+<h3 class="anchored" data-anchor-id="tokenizer">6. Tokenizer</h3>
+<p>The tokenizer converts</p>
 </section>
 </section>
 <section id="footnotes" class="level1">
@@ -76,7 +122,7 @@
 </ol>
 </section></div> ]]></description>
   <guid>https://shrivastava95.github.io/blog-quarto/posts/reproducing-attention-is-all-you-need-from-scratch-pytorch/</guid>
-  <pubDate>Sat, 23 May 2026 18:30:00 GMT</pubDate>
+  <pubDate>Sun, 24 May 2026 14:37:59 GMT</pubDate>
 </item>
 <item>
   <title>Rotating Emphasis Manipulation</title>
@@ -88,21 +134,29 @@
 
 
 
-<p>Reference - https://www.sciencedirect.com/science/article/abs/pii/0001691889900073?via%3Dihub # Why The core of <strong>expert performance</strong> is an <u>organised set of response strategies</u> than can be employed flexibly to meet task demands. Subjects trained under <u>rotating emphasis manipulation</u> performed significantly better than control players, and experienced a <strong>continued advantage increase after experiment</strong> termination.</p>
+<p>Reference - https://www.sciencedirect.com/science/article/abs/pii/0001691889900073?via%3Dihub</p>
+<section id="why" class="level1">
+<h1>Why</h1>
+<p>The core of <strong>expert performance</strong> is an <u>organised set of response strategies</u> than can be employed flexibly to meet task demands.</p>
+<p>Subjects trained under <u>rotating emphasis manipulation</u> performed significantly better than control players, and experienced a <strong>continued advantage increase after experiment</strong> termination.</p>
+</section>
 <section id="what" class="level1">
 <h1>What</h1>
-<p>The schema model of executive function observes the formation of <strong>schemas</strong>, individual and indivisible units of control that can be composed together (many, and often multiple at the same time together) in order to meet the demands of a complex task. When performing a complicated task, human subjects often have little knowledge of, and do not spontaneously <strong>explore, alternative strategies</strong>. When led to do so, performance improves. Performance under high-attention load conditions benefits most when subjects are trained on <strong>several, varying levels of subelement priorities.</strong></p>
+<p>The schema model of executive function observes the formation of <strong>schemas</strong>, individual and indivisible units of control that can be composed together (many, and often multiple at the same time together) in order to meet the demands of a complex task.</p>
+<p>When performing a complicated task, human subjects often have little knowledge of, and do not spontaneously <strong>explore, alternative strategies</strong>. When led to do so, performance improves.</p>
+<p>Performance under high-attention load conditions benefits most when subjects are trained on <strong>several, varying levels of subelement priorities.</strong></p>
 </section>
 <section id="how" class="level1">
 <h1>How</h1>
-<p>Divide skills into core components, train individually, together and then experiments with their composition. This is aptly called <strong><a href="../part-whole-training/">Part-Whole training</a></strong>. However, instead of training individual schemas in isolation of each other and in absence of the entire goal, only attempt to manipulate and assign the <strong>relative emphasis (priority)</strong> of selected subcomponents in a rotating manner.</p>
+<p>Divide skills into core components, train individually, together and then experiments with their composition. This is aptly called <strong><a href="../part-whole-training/">Part-Whole training</a></strong>.</p>
+<p>However, instead of training individual schemas in isolation of each other and in absence of the entire goal, only attempt to manipulate and assign the <strong>relative emphasis (priority)</strong> of selected subcomponents in a rotating manner.</p>
 
 
 </section>
 
  ]]></description>
   <guid>https://shrivastava95.github.io/blog-quarto/posts/rotating-emphasis-manipulation/</guid>
-  <pubDate>Sat, 23 May 2026 18:30:00 GMT</pubDate>
+  <pubDate>Sun, 24 May 2026 14:37:43 GMT</pubDate>
 </item>
 <item>
   <title>speculative-decoding</title>
@@ -241,15 +295,23 @@ draft_cache_position = draft_cache_position[-1:] + 1 # add one more position for
 
 <section id="sigma-algebra" class="level1">
 <h1><img src="https://latex.codecogs.com/png.latex?%5Csigma">-Algebra</h1>
-<p>A sigma algebra <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BA%7D"> on a set <img src="https://latex.codecogs.com/png.latex?X"> is a nonempty set of subsets of <img src="https://latex.codecogs.com/png.latex?X"> that is closed under complement, countable union, and countable intersection. In other words: <img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Baligned%7D%20&amp;%5Cmathcal%7BA%7D%20%5Csubseteq%20%5Cmathcal%7BP%7D(X)%20%5Ctext%7B%20is%20a%20%7D%20%5Csigma%5Ctext%7B-algebra%20on%20%7DX%5Ctext%7B%20if:%7D%20%5C%5C%20(a)%20%5Ctext%7B%20%7D%20&amp;%5Cphi,%20X%20%5Cin%20%5Cmathcal%7BA%7D&amp;%20%5C%5C%20(b)%20%5Ctext%7B%20%7D%20&amp;%20A%20%5Cin%20%5Cmathcal%7BA%7D%20%5Cimplies%20A%5Ec%20%5Ccoloneqq%20X%20%5Csetminus%20A%20%5Cin%20%5Cmathcal%7BA%7D%20%5C%5C%20(c)%20%5Ctext%7B%20%7D%20&amp;%20A_i%20%5Cin%20%5Cmathcal%7BA%7D,%20i%20%5Cin%20%5Cmathbb%7BN%7D%20%5Cimplies%20%5Cbigcup%5E%5Cinfty_%7Bi=1%7D%20A_i%20%5Cin%20%5Cmathcal%7BA%7D%5Cend%7Baligned%7D"> <img src="https://latex.codecogs.com/png.latex?A%20%5Cin%20%5Cmathcal%7BA%7D"> is also called a <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BA%7D">-measurable set. In other words, a measure (which is a kind of generalised notion of volume) can be assigned to a <img src="https://latex.codecogs.com/png.latex?%5Csigma">-algebra. This notion is formally established later in Measure</p>
+<p>A sigma algebra <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BA%7D"> on a set <img src="https://latex.codecogs.com/png.latex?X"> is a nonempty set of subsets of <img src="https://latex.codecogs.com/png.latex?X"> that is closed under complement, countable union, and countable intersection. In other words:</p>
+<pre><code>$$\begin{aligned} &amp;\mathcal{A} \subseteq \mathcal{P}(X) \text{ is a } \sigma\text{-algebra on }X\text{ if:} \\ (a) \text{ } &amp;\phi, X \in \mathcal{A}&amp; \\ (b) \text{ } &amp; A \in \mathcal{A} \implies A^c \coloneqq X \setminus A \in \mathcal{A} \\ (c) \text{ } &amp; A_i \in \mathcal{A}, i \in \mathbb{N} \implies \bigcup^\infty_{i=1} A_i \in \mathcal{A}\end{aligned}$$</code></pre>
+<p><img src="https://latex.codecogs.com/png.latex?A%20%5Cin%20%5Cmathcal%7BA%7D"> is also called a <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BA%7D">-measurable set. In other words, a measure (which is a kind of generalised notion of volume) can be assigned to a <img src="https://latex.codecogs.com/png.latex?%5Csigma">-algebra. This notion is formally established later in Measure</p>
 <section id="borel-sigma-algebra" class="level3">
 <h3 class="anchored" data-anchor-id="borel-sigma-algebra">Borel <img src="https://latex.codecogs.com/png.latex?%5Csigma">-Algebra</h3>
-<p>For every <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BM%7D%20%5Csubseteq%20%5Cmathcal%7BP%7D(X)">, there is a smallest <img src="https://latex.codecogs.com/png.latex?%5Csigma">-algebra that contains <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BM%7D">: <img src="https://latex.codecogs.com/png.latex?%5Csigma(%5Cmathcal%7BM%7D)%5Ccoloneqq%20%5Cbigcap_%7B%5Cbegin%7Baligned%7D%20&amp;%5Cmathcal%7BA%7D%5Csupseteq%20%5Cmathcal%7BM%7D%20%5C%5C%20&amp;%5Cmathcal%7BA%7D%20%5Ctext%7B%20%7D%20%5Csigma%20%5Ctext%7B-algebras%7D%20%5Cend%7Baligned%7D%7D%20%5Cmathcal%7BA%7D%20%5Cspace%20%5Cspace%20%5Cleftarrow%20%5Csigma%5Ctext%7B-algebra%20generated%20by%20%7D%5Cmathcal%7BM%7D"> Note that uncountable unions of <img src="https://latex.codecogs.com/png.latex?%5Csigma">-algebras (<img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BA%7D_i%20%5Csubseteq%20%5Cmathcal%7BP%7D(X),%20i%20%5Cin%20%5Ctext%7Bindex%20set%20(uncountable)%7D">) are again valid <img src="https://latex.codecogs.com/png.latex?%5Csigma">-algebras. Easily provable using the original <img src="https://latex.codecogs.com/png.latex?%5Csigma">-algebra definition.</p>
-<p>A Borel <img src="https://latex.codecogs.com/png.latex?%5Csigma">-algebra on a topological space <img src="https://latex.codecogs.com/png.latex?(X,%20%5Ctau)"> (noted as <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BB%7D(X)">) is the <img src="https://latex.codecogs.com/png.latex?%5Csigma">-algebra generated by the open sets <img src="https://latex.codecogs.com/png.latex?%5Ctau">. In other words: <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BB%7D(X)%5Ccoloneqq%20%5Csigma(%5Ctau)"> These Borel <img src="https://latex.codecogs.com/png.latex?%5Csigma">-algebras have some interesting properties that allow us to define a measure, or a generalised notion of volume, upon them, which we will later find is impossible to do on the entire powerset <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BP%7D(X)"></p>
+<p>For every <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BM%7D%20%5Csubseteq%20%5Cmathcal%7BP%7D(X)">, there is a smallest <img src="https://latex.codecogs.com/png.latex?%5Csigma">-algebra that contains <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BM%7D">:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Csigma(%5Cmathcal%7BM%7D)%5Ccoloneqq%20%5Cbigcap_%7B%5Cbegin%7Baligned%7D%20&amp;%5Cmathcal%7BA%7D%5Csupseteq%20%5Cmathcal%7BM%7D%20%5C%5C%20&amp;%5Cmathcal%7BA%7D%20%5Ctext%7B%20%7D%20%5Csigma%20%5Ctext%7B-algebras%7D%20%5Cend%7Baligned%7D%7D%20%5Cmathcal%7BA%7D%20%5Cspace%20%5Cspace%20%5Cleftarrow%20%5Csigma%5Ctext%7B-algebra%20generated%20by%20%7D%5Cmathcal%7BM%7D"></p>
+<p>Note that uncountable unions of <img src="https://latex.codecogs.com/png.latex?%5Csigma">-algebras (<img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BA%7D_i%20%5Csubseteq%20%5Cmathcal%7BP%7D(X),%20i%20%5Cin%20%5Ctext%7Bindex%20set%20(uncountable)%7D">) are again valid <img src="https://latex.codecogs.com/png.latex?%5Csigma">-algebras. Easily provable using the original <img src="https://latex.codecogs.com/png.latex?%5Csigma">-algebra definition.</p>
+<p>A Borel <img src="https://latex.codecogs.com/png.latex?%5Csigma">-algebra on a topological space <img src="https://latex.codecogs.com/png.latex?(X,%20%5Ctau)"> (noted as <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BB%7D(X)">) is the <img src="https://latex.codecogs.com/png.latex?%5Csigma">-algebra generated by the open sets <img src="https://latex.codecogs.com/png.latex?%5Ctau">. In other words:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BB%7D(X)%5Ccoloneqq%20%5Csigma(%5Ctau)"></p>
+<p>These Borel <img src="https://latex.codecogs.com/png.latex?%5Csigma">-algebras have some interesting properties that allow us to define a measure, or a generalised notion of volume, upon them, which we will later find is impossible to do on the entire powerset <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BP%7D(X)"></p>
 </section>
 <section id="measure" class="level3">
 <h3 class="anchored" data-anchor-id="measure">Measure</h3>
-<p>Let us say that <img src="https://latex.codecogs.com/png.latex?(X,%20%5Cmathcal%7BA%7D)"> is a measurable space. <img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Baligned%7D%20&amp;%5Ctext%7BA%20map%20%7D%20%5Cmu%20%5Ccolon%20%5Cmathcal%7BA%7D%20%5Crightarrow%20%5B0,%20%5Cinfty)%20%5Ccup%5C%7B%5Cinfty%5C%7D%20%5Ctext%7B%20is%20called%20a%20measure%20if:%7D%20%5C%5C%20(a)%20%5Cspace%20&amp;%20%5Cmu(%5Cphi)%20=%20%200%5C%5C%20(b)%20%5Cspace%20&amp;%20%5Cmu%5Cbiggl(%5Cbigcup_%7Bi=1%7D%5En%20A_i%20%5Cbiggr)%20=%20%20%5Csum_%7Bi=1%7D%5E%7Bn%7D%5Csigma(A_i),%20%5Cspace%5Cspace%5Cspace%5Cspace%5Cspace%5Cspace%5Cspace%5Cspace%20%5Ctext%7Bwith%20%7DA_i%20%5Ccap%20A_j%20=%20%5Cphi,%20i%20%5Cneq%20j%20%5Ctext%7B%20%7D%5Cforall%20%5Ctext%7B%20countable%20sequences%20%7D%20A_i%20%5Cin%20%5Cmathcal%7BA%7D%5Cend%7Baligned%7D"> Collectively, <img src="https://latex.codecogs.com/png.latex?(X,%20%5Cmathcal%7BA%7D,%20%5Cmu)"> are referred to as a <em>measure space</em>.</p>
+<p>Let us say that <img src="https://latex.codecogs.com/png.latex?(X,%20%5Cmathcal%7BA%7D)"> is a measurable space.</p>
+<pre><code>$$\begin{aligned} &amp;\text{A map } \mu \colon \mathcal{A} \rightarrow [0, \infty) \cup\{\infty\} \text{ is called a measure if:} \\ (a) \space &amp; \mu(\phi) =  0\\ (b) \space &amp; \mu\biggl(\bigcup_{i=1}^n A_i \biggr) =  \sum_{i=1}^{n}\sigma(A_i), \space\space\space\space\space\space\space\space \text{with }A_i \cap A_j = \phi, i \neq j \text{ }\forall \text{ countable sequences } A_i \in \mathcal{A}\end{aligned}$$</code></pre>
+<p>Collectively, <img src="https://latex.codecogs.com/png.latex?(X,%20%5Cmathcal%7BA%7D,%20%5Cmu)"> are referred to as a <em>measure space</em>.</p>
 
 
 </section>
@@ -257,7 +319,7 @@ draft_cache_position = draft_cache_position[-1:] + 1 # add one more position for
 
  ]]></description>
   <guid>https://shrivastava95.github.io/blog-quarto/posts/measure-theory/</guid>
-  <pubDate>Wed, 29 Jan 2025 18:30:00 GMT</pubDate>
+  <pubDate>Thu, 30 Jan 2025 08:31:10 GMT</pubDate>
 </item>
 </channel>
 </rss>
