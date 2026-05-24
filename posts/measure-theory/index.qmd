@@ -5,6 +5,8 @@ date: "2025-01-30T14:01:10+05:30"
 date-modified: "2025-01-30T14:01:10+05:30"
 ---
 
+![measure theory playlist by The Bright Side of Mathematics](mt01.png)
+
 # $\sigma$-Algebra
 A sigma algebra $\mathcal{A}$ on a set $X$ is a nonempty set of subsets of $X$ that is closed under complement, countable union, and countable intersection. In other words:
 

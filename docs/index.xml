@@ -21,7 +21,7 @@
 
 
 
-<p>Reference - https://sci-hub.se/https://www.sciencedirect.com/science/article/abs/pii/0001691889900073?via%3Dihub</p>
+<p>Reference - <a href="Daniel Gopher, 1989 - Practice under changing priorities: An approach to the training of complex skills">https://www.sciencedirect.com/science/article/abs/pii/0001691889900073?via%3Dihub</a></p>
 <p>This is a common approach to the training of a task that is difficult and demanding and cannot be <strong>initially coped with.</strong></p>
 <p>Under this approach, the whole task is <strong>decomposed into segments.</strong></p>
 <p>There are several strategies to decompose tasks -</p>
@@ -51,7 +51,12 @@
 
 
 
-<p>GitHub - https://github.com/shrivastava95/transformer-impl</p>
+<section id="how-to-understand-transformer-in-one-image" class="level1">
+<h1>How to understand transformer in one image?</h1>
+<ul>
+<li>Here is a useful diagram explaining the transformer encoder in great detail. <img src="https://shrivastava95.github.io/blog-quarto/posts/reproducing-attention-is-all-you-need-from-scratch-pytorch/pasted-image-20241011120647.png" class="img-fluid" alt="Transformer encoder diagram"></li>
+</ul>
+</section>
 <section id="what-is-a-transformer" class="level1">
 <h1>What is a Transformer?</h1>
 <p>Transformers are a sequence modelling and transduction architecture heavily leveraging self-attention in order to eliminate the need for convolutions or gating. Advantages over RNNs and LSTMs include:</p>
@@ -101,12 +106,6 @@
 </section>
 <section id="footnotes" class="level1">
 <h1>Footnotes</h1>
-</section>
-<section id="appendix" class="level1">
-<h1>Appendix</h1>
-<ul>
-<li>Here is a useful diagram explaining the transformer encoder in great detail. <img src="https://shrivastava95.github.io/blog-quarto/posts/reproducing-attention-is-all-you-need-from-scratch-pytorch/pasted-image-20241011120647.png" class="img-fluid" alt="Transformer encoder diagram"></li>
-</ul>
 
 
 </section>
@@ -134,7 +133,7 @@
 
 
 
-<p>Reference - https://www.sciencedirect.com/science/article/abs/pii/0001691889900073?via%3Dihub</p>
+<p>Reference - <a href="Daniel Gopher, 1989 - Practice under changing priorities: An approach to the training of complex skills">https://www.sciencedirect.com/science/article/abs/pii/0001691889900073?via%3Dihub</a></p>
 <section id="why" class="level1">
 <h1>Why</h1>
 <p>The core of <strong>expert performance</strong> is an <u>organised set of response strategies</u> than can be employed flexibly to meet task demands.</p>
@@ -293,6 +292,12 @@ draft_cache_position = draft_cache_position[-1:] + 1 # add one more position for
 
 
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://shrivastava95.github.io/blog-quarto/posts/measure-theory/mt01.png" class="img-fluid figure-img"></p>
+<figcaption>measure theory playlist by The Bright Side of Mathematics</figcaption>
+</figure>
+</div>
 <section id="sigma-algebra" class="level1">
 <h1><img src="https://latex.codecogs.com/png.latex?%5Csigma">-Algebra</h1>
 <p>A sigma algebra <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BA%7D"> on a set <img src="https://latex.codecogs.com/png.latex?X"> is a nonempty set of subsets of <img src="https://latex.codecogs.com/png.latex?X"> that is closed under complement, countable union, and countable intersection. In other words:</p>

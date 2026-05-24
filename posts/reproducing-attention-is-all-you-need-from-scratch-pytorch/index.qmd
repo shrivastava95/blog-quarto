@@ -5,7 +5,8 @@ date: "2026-05-24T20:07:59+05:30"
 date-modified: "2026-05-24T20:07:59+05:30"
 ---
 
-GitHub - https://github.com/shrivastava95/transformer-impl
+# How to understand transformer in one image?
+- Here is a useful diagram explaining the transformer encoder in great detail. ![Transformer encoder diagram](pasted-image-20241011120647.png)
 
 # What is a Transformer?
 Transformers are a sequence modelling and transduction architecture heavily leveraging self-attention in order to eliminate the need for convolutions or gating. Advantages over RNNs and LSTMs include:
@@ -69,5 +70,3 @@ The tokenizer converts
 [^2]: Each head can be thought of as computing information from different representation subspaces, attending information from different positions. Using some inspiration from [Toy Models of Superposition](https://transformer-circuits.pub/2022/toy_model/index.html#phase-change), I opine that a head could be thought of as a coarse computation across different feature sets, which would benefit the availability of different heads.
 [^3]: I suppose that information flows where the gradient goes? I do not completely understand the reasons motivating this choice.
 
-# Appendix
-- Here is a useful diagram explaining the transformer encoder in great detail. ![Transformer encoder diagram](pasted-image-20241011120647.png)

@@ -5,7 +5,7 @@ date: "2026-05-24T20:08:49+05:30"
 date-modified: "2026-05-24T20:08:49+05:30"
 ---
 
-Reference - https://sci-hub.se/https://www.sciencedirect.com/science/article/abs/pii/0001691889900073?via%3Dihub
+Reference - [https://www.sciencedirect.com/science/article/abs/pii/0001691889900073?via%3Dihub](Daniel Gopher, 1989 - Practice under changing priorities: An approach to the training of complex skills)
 
 This is a common approach to the training of a task that is difficult and demanding and cannot be **initially coped with.**
 
