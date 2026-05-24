@@ -1,7 +1,9 @@
 ---
 title: "My Posts"
 listing:
-  contents: posts
+  contents:
+    - about.qmd
+    - posts
   feed: true
   sort: "date desc"
   type: grid
@@ -11,5 +13,4 @@ listing:
 page-layout: full
 title-block-banner: true
 ---
-
 

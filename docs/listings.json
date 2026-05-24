@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/about.html",
       "/posts/speculative-decoding/index.html"
     ]
   }

@@ -1,10 +1,38 @@
 [
   {
+    "objectID": "credentials/index.html",
+    "href": "credentials/index.html",
+    "title": "Credentials",
+    "section": "",
+    "text": "Issuer: NVIDIA / Credly\nHolder: Ishaan Shrivastava\nIssue date: 2025-05-24\nVerification: Credly public link\n\n\n\nThis credential verifies foundational knowledge of AI infrastructure and operations, including GPU compute, scale-up vs scale-out design, networking, containerized ML workloads, inference serving, monitoring, and operational tooling.\n\n\n\n\nAI infrastructure\nGPU systems\nCluster operations\nNVIDIA NGC\nContainerized ML workloads\nNetworking for AI clusters\nMonitoring with Prometheus and Grafana\nTriton Inference Server\n\n\n\n\n\nJSON credential record\nMarkdown credential record for LLMs\nCredential PDF"
+  },
+  {
+    "objectID": "credentials/index.html#what-it-certifies",
+    "href": "credentials/index.html#what-it-certifies",
+    "title": "Credentials",
+    "section": "",
+    "text": "This credential verifies foundational knowledge of AI infrastructure and operations, including GPU compute, scale-up vs scale-out design, networking, containerized ML workloads, inference serving, monitoring, and operational tooling."
+  },
+  {
+    "objectID": "credentials/index.html#skills-demonstrated",
+    "href": "credentials/index.html#skills-demonstrated",
+    "title": "Credentials",
+    "section": "",
+    "text": "AI infrastructure\nGPU systems\nCluster operations\nNVIDIA NGC\nContainerized ML workloads\nNetworking for AI clusters\nMonitoring with Prometheus and Grafana\nTriton Inference Server"
+  },
+  {
+    "objectID": "credentials/index.html#machine-readable-and-llm-friendly-artifacts",
+    "href": "credentials/index.html#machine-readable-and-llm-friendly-artifacts",
+    "title": "Credentials",
+    "section": "",
+    "text": "JSON credential record\nMarkdown credential record for LLMs\nCredential PDF"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About Me",
     "section": "",
-    "text": "If you are looking for a tenacious individual who\nYou do not want to miss out on working with Ishaan Shrivastava.\nRead my blog posts here - My Posts"
+    "text": "If you are looking for a tenacious individual who\nYou do not want to miss out on working with Ishaan Shrivastava.\nRead my blog posts here - My Posts\nRead my credentials page here - Credentials"
   },
   {
     "objectID": "about.html#work",
@@ -35,11 +63,32 @@
     "text": "Pet-Projects\nRecurrent Transformer Architectures - check out my implementation of Hierarchical Reasoning Models (HRM) on GitHub.\nSpeculative Decoding - shrivastava95/specdec-minimal, an open-source package to do speculative decoding with any two models from HuggingFace. Full implementation with KV-caching! Blog out soon.\nHeavy-Tailed Self-Regularisation theory - discovered a data-free method that prunes entire layers from VLMs, with minimal loss in performance. Works by finding the best power-law coefficient that fits the eigenspectrum of the weight matrices in a layer. Work in progress with Jaisidh Singh.\n\n\nGot Something to Share?\nI’d love to hear from you. Available for conversations, feel free to reach out via X or LinkedIn."
   },
   {
+    "objectID": "credentials/badges/nvidia-ai-infra-ops.html",
+    "href": "credentials/badges/nvidia-ai-infra-ops.html",
+    "title": "Credential: AI Infrastructure & Operations Fundamentals",
+    "section": "",
+    "text": "Issuer: NVIDIA / Credly\nHolder: Ishaan Shrivastava\nIssue date: 2025-05-24\nVerification: https://www.credly.com/badges/48cd3a80-fe99-438c-8924-2877e5fc6b8c/public_url\n\n\nThis credential verifies foundational knowledge of AI infrastructure and operations, including GPU compute, scale-up vs scale-out design, networking, containerized ML workloads, inference serving, monitoring, and operational tooling.\n\n\n\n\nAI infrastructure\nGPU clusters\nNVIDIA NGC\nDocker\nNVIDIA Container Toolkit\nTriton Inference Server\nPrometheus\nGrafana\nIn-band and out-of-band management networks\nCompute, storage, and data networks"
+  },
+  {
+    "objectID": "credentials/badges/nvidia-ai-infra-ops.html#summary",
+    "href": "credentials/badges/nvidia-ai-infra-ops.html#summary",
+    "title": "Credential: AI Infrastructure & Operations Fundamentals",
+    "section": "",
+    "text": "This credential verifies foundational knowledge of AI infrastructure and operations, including GPU compute, scale-up vs scale-out design, networking, containerized ML workloads, inference serving, monitoring, and operational tooling."
+  },
+  {
+    "objectID": "credentials/badges/nvidia-ai-infra-ops.html#relevant-skills",
+    "href": "credentials/badges/nvidia-ai-infra-ops.html#relevant-skills",
+    "title": "Credential: AI Infrastructure & Operations Fundamentals",
+    "section": "",
+    "text": "AI infrastructure\nGPU clusters\nNVIDIA NGC\nDocker\nNVIDIA Container Toolkit\nTriton Inference Server\nPrometheus\nGrafana\nIn-band and out-of-band management networks\nCompute, storage, and data networks"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "My Posts",
     "section": "",
-    "text": "speculative-decoding\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nNov 11, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "About Me\n\n\n\n\n\n\n\n\n\nNov 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nspeculative-decoding\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nNov 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbout Me\n\n\n\n\n\n\n\n\n\nNov 11, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/speculative-decoding/index.html#sample-tokens-until-rejection-criteria-is-met",

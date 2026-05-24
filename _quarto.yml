@@ -9,6 +9,8 @@ website:
   title: "Ishaan's Blog"
   navbar:
     right:
+      - text: Credentials
+        href: credentials/
       - about.qmd
       - icon: github
         href: https://github.com/shrivastava95
@@ -25,4 +27,8 @@ format:
 metadata-files:
   - drafts.yml
 
-
+resources:
+  - credentials/credentials.json
+  - credentials/badges/nvidia-ai-infra-ops.md
+  - credentials/badge.png
+  - credentials/NVIDIA-CertifiedAssociateAIInfrastructureandOperations202520260524-31-zatt1m.pdf

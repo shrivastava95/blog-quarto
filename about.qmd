@@ -32,6 +32,8 @@ You do not want to miss out on working with **Ishaan Shrivastava**.
 
 Read my blog posts here - [My Posts](index.qmd)
 
+Read my credentials page here - [Credentials](credentials/)
+
 ---
 
 ## Work

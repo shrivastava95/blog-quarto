@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://shrivastava95.github.io/blog-quarto/credentials/index.html</loc>
+    <lastmod>2026-05-24T10:44:04.159Z</lastmod>
+  </url>
+  <url>
     <loc>https://shrivastava95.github.io/blog-quarto/about.html</loc>
-    <lastmod>2026-05-23T11:57:16.964Z</lastmod>
+    <lastmod>2026-05-24T10:39:58.504Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shrivastava95.github.io/blog-quarto/credentials/badges/nvidia-ai-infra-ops.html</loc>
+    <lastmod>2026-05-24T10:44:06.199Z</lastmod>
   </url>
   <url>
     <loc>https://shrivastava95.github.io/blog-quarto/index.html</loc>
-    <lastmod>2026-05-23T11:57:17.004Z</lastmod>
+    <lastmod>2026-05-24T10:58:25.258Z</lastmod>
   </url>
   <url>
     <loc>https://shrivastava95.github.io/blog-quarto/posts/speculative-decoding/index.html</loc>
