@@ -32,7 +32,7 @@
     "href": "about.html#pet-projects",
     "title": "About Me",
     "section": "Pet-Projects",
-    "text": "Pet-Projects\nRecurrent Transformer Architectures - check out my implementation of Hierarchical Reasoning Models (HRM) on GitHub.\nSparseRNN - shrivastava95/sparsernn Implemented SparseRNN, an RNN with exponentially dilated temporal connectivity with subquadratic complexity, as an alternative to dense transformer decoder, beating RNN, LSTM, and naive transformer baseline on sequence classification and tagging tasks. Demo and Report linked in GitHub repo!"
+    "text": "Pet-Projects\nRecurrent Transformer Architectures - check out my implementation of Hierarchical Reasoning Models (HRM) on GitHub.\nSparseRNN - shrivastava95/sparsernn Implemented SparseRNN, an RNN with exponentially dilated temporal connectivity with subquadratic complexity, as an alternative to dense transformer decoder, beating RNN, LSTM, and naive transformer baseline on sequence classification and tagging tasks. Demo and Report linked in GitHub repo!\n\nHeavy-Tailed Self-Regularisation theory - discovered a data-free method that prunes entire layers from VLMs, with minimal loss in performance. Works by finding the best power-law coefficient that fits the eigenspectrum of the weight matrices in a layer. Work in progress with Jaisidh Singh.\n\n\nGot Something to Share?\nI’d love to hear from you. Available for conversations, feel free to reach out via X or LinkedIn."
   },
   {
     "objectID": "posts/reproducing-attention-is-all-you-need-from-scratch-pytorch/index.html",

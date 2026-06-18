@@ -69,7 +69,9 @@ Improved compositional reasoning in VLMs via **CoN-CLIP**, a proposed modificati
 **SparseRNN** - [shrivastava95/sparsernn](https://github.com/shrivastava95/sparsernn) Implemented SparseRNN, an RNN with exponentially dilated temporal
 connectivity with subquadratic complexity, as an alternative to dense transformer decoder, beating RNN, LSTM, and naive transformer baseline on sequence classification and tagging tasks. Demo and Report linked in GitHub repo!
 
-# **Speculative Decoding** - [shrivastava95/specdec-minimal](https://github.com/shrivastava95/specdec-minimal), an open-source package to do speculative decoding with any two models from HuggingFace. Full implementation with KV-caching! [Blog]() out soon.
+<!---
+**Speculative Decoding** - [shrivastava95/specdec-minimal](https://github.com/shrivastava95/specdec-minimal), an open-source package to do speculative decoding with any two models from HuggingFace. Full implementation with KV-caching! [Blog]() out soon.
+-->
 
 **Heavy-Tailed Self-Regularisation theory** - discovered a data-free method that prunes entire layers from VLMs, with minimal loss in performance. Works by finding the best power-law coefficient that fits the eigenspectrum of the weight matrices in a layer. Work in progress with [Jaisidh Singh](https://x.com/jaisidhsingh).
 
