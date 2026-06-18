@@ -38,7 +38,7 @@ Read my blog posts here - [My Posts](index.qmd)
 
 ## Work
 
-I'm part of the **computer vision research** team at [Metafusion](https://www.metafusion.ai/).
+I was part of the **computer vision research** team at [Metafusion](https://www.metafusion.ai/). The coolest thing I did here - dropped 3k lines of code over a weekend to remove a data pipeline bottleneck, which increased the throughput of my training runs 15x.
 
 ---
 
