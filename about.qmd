@@ -30,10 +30,7 @@ If you are looking for a tenacious individual who
 
 You do not want to miss out on working with **Ishaan Shrivastava**.
 
-
-Read my credentials page here - [Credentials](credentials/)
-
-Read my CV here - [CV](cv.qmd)
+Read my CV here - [Curriculum Vitae](cv.qmd)
 
 Read my blog posts here - [My Posts](index.qmd)
 

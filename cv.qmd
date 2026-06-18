@@ -9,8 +9,7 @@ page-layout: full
 
 ## Downloads
 
-- [PDF version](Ishaan_Shrivastava_CV.pdf)
-- [LaTeX source](main.tex)
+- [PDF version](Ishaan_Shrivastava_CurriculumVitae.pdf)
 
 ## Notes
 
