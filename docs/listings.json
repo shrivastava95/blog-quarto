@@ -2,11 +2,11 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/gemma/index.html",
       "/posts/part-whole-training/index.html",
       "/posts/reproducing-attention-is-all-you-need-from-scratch-pytorch/index.html",
       "/posts/rotating-emphasis-manipulation/index.html",
       "/posts/speculative-decoding/index.html",
-      "/posts/gemma/index.html",
       "/posts/measure-theory/index.html"
     ]
   }

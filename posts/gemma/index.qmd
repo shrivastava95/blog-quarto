@@ -1,8 +1,8 @@
 ---
 title: "WTF is going on inside Gemma? Thoughts, and some experiments with hybrid post-pre-norm and Per-Layer-Embeddings (PLE)"
 author: "Ishaan Shrivastava"
-date: "2025-01-30T14:01:10+05:30"
-date-modified: "2025-01-30T14:01:10+05:30"
+date: "2026-06-23T17:42:51+05:30"
+date-modified: "2026-06-23T17:42:51+05:30"
 ---
 
 Does anyone have any idea of what Gemma-style Per-Layer-Embeddings actually do? Lets pull up **Gemma 4 E4B** for a closer look. 
