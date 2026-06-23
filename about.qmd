@@ -44,6 +44,8 @@ I was part of the **computer vision research** team at [Metafusion](https://www.
 
 ## Interests
 
+I love all things rationalism, AI Safety and mech interp. I also post on [Lesswrong!](https://www.lesswrong.com/posts/tiNQLbvYatHPJpt38?commentId=XrprqvScu8KjzhzC7) 
+
 I am [rated 1705 on codeforces](https://codeforces.com/profile/ishaanshri95), which puts me in the top 7% of codeforces competitive programmers, as well as being [ranked #1 on TensorTonic](https://x.com/avatsavirhs/status/1985193725359014267), a website where you earn points by implementing machine learning algorithms.
 
 Outside of work, I mess around with vision-language models to make them reason faster and better. I also read blogs on lesswrong dot com, meditate, go to the gym, and fold origami.
@@ -63,7 +65,13 @@ Improved compositional reasoning in VLMs via **CoN-CLIP**, a proposed modificati
 ---
 
 ## Pet-Projects
-	
+
+Currently participating in [ALETHEIA'S QUEST - An AI Lie Detection Challenge by Cadenza Labs and Schmidt Sciences](https://aletheias-quest.github.io), read my [Proposal here](aletheias_quest_proposal_CENTRAL.pdf) ([jupyter notebook](NDIFGetStarted.ipynb))
+
+**Experiments with hybrid post-pre-norm and Per-Layer-Embeddings** - I am on a mission to figure out the reason behind all the innovations jam-packed into the Gemma-3n (and, more recently, Gemma-4 series) models - Read my [Gemma Blog!](posts/gemma/index.qmd)
+
+**Grokking, in JAX** - I spend some time running experiments for this every day! [GitHub - shrivastava95/jax-moe-ladder](https://github.com/shrivastava95/jax-moe-ladder)
+
 **Recurrent Transformer Architectures** - check out [my implementation of Hierarchical Reasoning Models (HRM) on GitHub](https://github.com/shrivastava95/HRM-minimal).
 
 **SparseRNN** - [shrivastava95/sparsernn](https://github.com/shrivastava95/sparsernn) Implemented SparseRNN, an RNN with exponentially dilated temporal

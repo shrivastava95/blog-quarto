@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ishaan Shrivastava">
+<meta name="dcterms.date" content="2025-01-30">
 
-<title>About Me – Ishaan’s Blog</title>
+<title>WTF is going on inside Gemma? Thoughts, and some experiments with hybrid post-pre-norm and Per-Layer-Embeddings (PLE) – Ishaan’s Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7649183ed20b531207e65c90d22e7f6d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-7649183ed20b531207e65c90d22e7f6d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,20 +72,49 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Ishaan’s Blog</span>
     </a>
   </div>
@@ -93,11 +125,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./credentials/"> 
+    <a class="nav-link" href="../../credentials/"> 
 <span class="menu-text">Credentials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item compact">
@@ -118,96 +150,174 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">WTF is going on inside Gemma? Thoughts, and some experiments with hybrid post-pre-norm and Per-Layer-Embeddings (PLE)</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Ishaan Shrivastava </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 30, 2025</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">January 30, 2025</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-solana column-body">
-  <div class="about-entity">
-    <div class="entity-contents">
-      <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About Me</h1>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>Does anyone have any idea of what Gemma-style Per-Layer-Embeddings actually do? Lets pull up <strong>Gemma 4 E4B</strong> for a closer look.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="gemma-3n-parameters.png" class="img-fluid figure-img"></p>
+<figcaption>gemma-3n-parameters.png</figcaption>
+</figure>
 </div>
-<div class="quarto-title-meta">
-  </div>
-</header> <div class="about-links">
-  <a href="https://x.com/avatsavirhs" class="about-link" rel="" target="">
-    <i class="bi bi-twitter"></i>
-     <span class="about-link-text">X/Twitter(<span class="citation" data-cites="avatsavirhs">@avatsavirhs</span>)</span>
-  </a>
-  <a href="https://www.linkedin.com/in/ishaanshri95" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/shrivastava95" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github(shrivastava95)</span>
-  </a>
+<p>Google itself doesn’t offer much on this matter<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, so let me explain. It’s simple - you can offload the per-layer embeddings to the CPU without impacting throughput. Think of it like a form of sparsity, different in nature from Mixture of Experts (MoE), since we are improving the capabilities of a model by adding additional sets of embeddings at every single layer, instead of scaling the model width or depth. This allows us to store the entire lookup table on flash storage (a whopping 3.5B params out of 8B!) rather than needing valuable VRAM meant for storing the rest of the model parameters.</p>
+<p>Let’s do a <a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation">back-of-the-envelope calculation</a> on the memory transferred between the CPU-offloaded embedding table in the case. The core idea here is to observe that the memory traffic for the embeddings being sent between devices is far less than the whole size of the PLE table.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="gemma4-ple-construction.webp" class="img-fluid figure-img"></p>
+<figcaption>gemma4-ple-construction.webp</figcaption>
+</figure>
 </div>
-      <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>If you are looking for a tenacious individual who</p>
-<ul>
-<li>Dives deep into complexity &amp; never cuts corners</li>
-<li>Navigates difficult/untrodden paths with surgical precision</li>
-<li>Does all of the above with as little ego as possible</li>
-</ul>
-<p>You do not want to miss out on working with <strong>Ishaan Shrivastava</strong>.</p>
-<p>Read my CV here - <a href="./cv.html">Curriculum Vitae</a></p>
-<p>Read my blog posts here - <a href="./index.html">My Posts</a></p>
-<hr>
-<section id="work" class="level2">
-<h2 data-anchor-id="work">Work</h2>
-<p>I was part of the <strong>computer vision research</strong> team at <a href="https://www.metafusion.ai/">Metafusion</a>. The coolest thing I did here - dropped 3k lines of code over a weekend to remove a data pipeline bottleneck, which increased the throughput of my training runs 15x.</p>
-<hr>
+<p><span class="math display">\[\begin{aligned}\text{Total PLE bytes } = \text{ 262,144 vocabulary size * 35 N layers * 256 embed dim } = 2.35 * 10^9\text{  bytes}\end{aligned}\]</span></p>
+<p>whereas</p>
+<p><span class="math display">\[\text{Memory Traffic per token decoded} = \text{ 1 token indexed per layer per decode * 35 N layers * 256 embed dim } = 8.9 * 10^3\text{ bytes}\]</span></p>
+<p>which is <em>6 orders of magnitude smaller</em> than the entire embedding table! Thus, we can index the embedding table on the CPU and then send the bytes over to the device for layerwise inference, and it doesn’t end up becoming a inference bottleneck.</p>
+<p>I couldn’t find code to do this on the HuggingFace version of Gemma 3n, so I wrote my own little snippet to do this using pytorch hooks - <a href="https://gist.github.com/shrivastava95/6a6249c5d8cdb3d79376075a98678c63">Full reproducible script annotated with comments here</a></p>
+<pre><code>Gemma3nForConditionalGeneration.from_pretrained('google/gemma-3n-e2b-it', torch_dtype=torch.bfloat16,).to('cuda').eval()
+
+lm = model.model.language_model
+lm.embed_tokens_per_layer.to(device="cpu", dtype=torch.float16)
+
+@torch.no_grad()
+def get_per_layer_inputs_cpu(self, input_ids: torch.LongTensor) -&gt; torch.Tensor:
+    ids_cpu = input_ids.to("cpu", non_blocking=True)
+    ple_cpu = self.embed_tokens_per_layer(ids_cpu)
+    ple_cpu = ple_cpu.reshape(*ids_cpu.shape, self.config.num_hidden_layers, self.hidden_size_per_layer_input,)
+    return ple_cpu.to(device=input_ids.device, dtype=torch.bfloat16, non_blocking=True)
+
+lm.get_per_layer_inputs = types.MethodType(get_per_layer_inputs_cpu, lm)
+del model.model.audio_tower, model.model.embed_audio
+gc.collect()
+torch.cuda.empty_cache()
+
+generation = model.generate(**inputs, max_new_tokens=100, do_sample=False)
+print(processor.decode(generation[0]), skip_special_tokens=True)
+
+# **Overall Impression:** The image is a close-up shot of a vibrant garden scene,
+# focusing on a cluster of pink cosmos flowers and a busy bumblebee.
+# It has a slightly soft, natural feel, likely captured in daylight.</code></pre>
+<p>Here are the VRAM savings, the GPU usage visibly drops right after the hook is applied, seen through <code>nvtop</code></p>
+<p>Before CPU offload: <img src="gemma01_before_cpu.png" class="img-fluid" alt="gemma01_before_cpu.png"></p>
+<p>After CPU offload: <img src="gemma02_after_cpu.png" class="img-fluid" alt="gemma02_after_cpu.png"></p>
+<section id="ple-performance-gains" class="level3">
+<h3 class="anchored" data-anchor-id="ple-performance-gains">PLE performance gains?</h3>
+<p>It is not immediately obvious <em>HOW</em> PLE improves performance. Why even bother? What problem do they solve at this model scale? All I’ve been able to find so far on this matter are sloppy medium posts and I don’t trust them. I spent a good while trying to figure it out… honestly, I still don’t know for sure, I think it would make for a great mech-interp paper. Let’s try to work this out anyway!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="layernorm.jpeg" class="img-fluid figure-img"></p>
+<figcaption>layernorm.jpeg</figcaption>
+</figure>
+</div>
+<p>My rough understanding of transformers is that attention approximates computation and MLP approximates memory. Looking at the architecture diagram, we can see two things:</p>
+<ol type="1">
+<li><p><strong>Residual stream gating the PLE lookup</strong> - A simple hypothesis I have is that the layer-wise lookup allows the model to store and recall a great deal of information as the lookup is precomputed for every forward pass, instead of going through matmuls in the MLP, thereby increasing capacity without commensurate increases in VRAM occupancy.</p></li>
+<li><p><strong>Mix-LayerNorm (pre + post)</strong> - The transformer blocks use post-norm as well as pre-norm. The disadvantage of Post-norm is that it keeps the L2 norm of the hidden state activations approximately constant across layers as there is no identity path, which means signals originating from early layers keep shrinking as they propagate forward, leading to vanishing influence on the output (and, correspondingly, vanishing gradients). This is a well known problem with post-norm, which is why most LLMs these days use pre-norm as it avoids training instability issues with increase in depth <a href="https://kindxiaoming.github.io/blog/2026/depth-1/">reference - blog by Ziming Liu</a>. Since gemma uses both, it might still suffer from the described post-norm limitation. I have a suspicion that if post-norm were not used in the Gemma architecture, these per-layer embeddings would correspondingly not also have been necessary (simply allow information from first layer token embeddings to flow through the residual stream and reach every layer normally).</p></li>
+</ol>
 </section>
-<section id="interests" class="level2">
-<h2 data-anchor-id="interests">Interests</h2>
-<p>I love all things rationalism, AI Safety and mech interp. I also post on <a href="https://www.lesswrong.com/posts/tiNQLbvYatHPJpt38?commentId=XrprqvScu8KjzhzC7">Lesswrong!</a></p>
-<p>I am <a href="https://codeforces.com/profile/ishaanshri95">rated 1705 on codeforces</a>, which puts me in the top 7% of codeforces competitive programmers, as well as being <a href="https://x.com/avatsavirhs/status/1985193725359014267">ranked #1 on TensorTonic</a>, a website where you earn points by implementing machine learning algorithms.</p>
-<p>Outside of work, I mess around with vision-language models to make them reason faster and better. I also read blogs on lesswrong dot com, meditate, go to the gym, and fold origami.</p>
-<hr>
+<section id="implementing-ple-it-works" class="level2">
+<h2 class="anchored" data-anchor-id="implementing-ple-it-works">Implementing PLE (it works!)</h2>
+<p>Out of curiosity, I cooked up a small-scale transformer baseline on the shakespeare corpus, modeled as NTP on raw byte pairs (yes, I didn’t use a tokenizer, literally next-byte prediction). Here are some results:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="depth_norm_depth_comparison.webp" class="img-fluid figure-img"></p>
+<figcaption>depth_norm_depth_comparison.webp</figcaption>
+</figure>
+</div>
+<pre><code>  - prenorm=False, postnorm=False
+      - ple_dim=0: 1.601218
+      - ple_dim=8: 1.571632
+      - ple_dim=32: 1.550698
+      - ple_dim=128: 1.622619
+
+  - prenorm=False, postnorm=True
+      - ple_dim=0: 1.581143
+      - ple_dim=8: 1.595611
+      - ple_dim=32: 1.579468
+      - ple_dim=128: 1.559271
+
+  - prenorm=True, postnorm=False
+      - ple_dim=0: 1.541992
+      - ple_dim=8: 1.546094
+      - ple_dim=32: 1.537176
+      - ple_dim=128: 1.529346
+
+  - prenorm=True, postnorm=True
+      - ple_dim=0: 1.541877
+      - ple_dim=8: 1.544192
+      - ple_dim=32: 1.534553
+      - ple_dim=128: 1.528164
+
+  Averaged across all four norm settings
+  - ple_dim=0: 1.566558
+  - ple_dim=8: 1.564382
+  - ple_dim=32: 1.550474
+  - ple_dim=128: 1.559850</code></pre>
+<p>Ignoring the weird error bars on the rightmost chart for x=8, we can see that the average performance over validation generally improves with increase in PLE dimension</p>
 </section>
-<section id="publications" class="level2">
-<h2 data-anchor-id="publications">Publications</h2>
-<blockquote class="blockquote">
-<p><strong>Learning the Power of “No”: Foundation Models with Negations [WACV 2025 | Citations: <u>51</u>]</strong><br>
-Jaisidh Singh*, <strong>Ishaan Shrivastava</strong>*, Richa Singh, Mayank Vatsa, Aparna Bharati<br>
-<a href="https://arxiv.org/abs/2403.20312">[<strong>arXiv</strong>]</a> <a href="https://github.com/jaisidhsingh/CoN-CLIP">[<strong>GitHub</strong>]</a> <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;citation_for_view=Z6fahScAAAAJ:zYLM7Y9cAGgC">[<strong>Google Scholar</strong>]</a><br>
-<br>
-Improved compositional reasoning in VLMs via <strong>CoN-CLIP</strong>, a proposed modification to CLIP’s contrastive learning objective. Also open-sourced <strong>CC-Neg</strong>, a novel unbiased dataset to benchmark whether models understand the absence of concepts implied by negation semantics such as <em>no</em>, <em>not</em>, and <em>without</em> in CLIP-like VLMs. I worked on this during my <strong>undergraduate in Artificial Intelligence and Data Science <span class="citation" data-cites="Indian">@Indian</span> Institute of Technology, Jodhpur</strong></p>
-</blockquote>
-<hr>
-</section>
-<section id="pet-projects" class="level2">
-<h2 data-anchor-id="pet-projects">Pet-Projects</h2>
-<p>Currently participating in <a href="https://aletheias-quest.github.io">ALETHEIA’S QUEST - An AI Lie Detection Challenge by Cadenza Labs and Schmidt Sciences</a>, read my <a href="aletheias_quest_proposal_CENTRAL.pdf">Proposal here</a> (<a href="./NDIFGetStarted.html">jupyter notebook</a>)</p>
-<p><strong>Experiments with hybrid post-pre-norm and Per-Layer-Embeddings</strong> - I am on a mission to figure out the reason behind all the innovations jam-packed into the Gemma-3n (and, more recently, Gemma-4 series) models - Read my <a href="./posts/gemma/index.html">Gemma Blog!</a></p>
-<p><strong>Grokking, in JAX</strong> - I spend some time running experiments for this every day! <a href="https://github.com/shrivastava95/jax-moe-ladder">GitHub - shrivastava95/jax-moe-ladder</a></p>
-<p><strong>Recurrent Transformer Architectures</strong> - check out <a href="https://github.com/shrivastava95/HRM-minimal">my implementation of Hierarchical Reasoning Models (HRM) on GitHub</a>.</p>
-<p><strong>SparseRNN</strong> - <a href="https://github.com/shrivastava95/sparsernn">shrivastava95/sparsernn</a> Implemented SparseRNN, an RNN with exponentially dilated temporal connectivity with subquadratic complexity, as an alternative to dense transformer decoder, beating RNN, LSTM, and naive transformer baseline on sequence classification and tagging tasks. Demo and Report linked in GitHub repo!</p>
-<!---
-**Speculative Decoding** - [shrivastava95/specdec-minimal](https://github.com/shrivastava95/specdec-minimal), an open-source package to do speculative decoding with any two models from HuggingFace. Full implementation with KV-caching! [Blog]() out soon.
--->
-<p><strong>Heavy-Tailed Self-Regularisation theory</strong> - discovered a data-free method that prunes entire layers from VLMs, with minimal loss in performance. Works by finding the best power-law coefficient that fits the eigenspectrum of the weight matrices in a layer. Work in progress with <a href="https://x.com/jaisidhsingh">Jaisidh Singh</a>.</p>
-<hr>
-<section id="got-something-to-share" class="level3">
-<h3 data-anchor-id="got-something-to-share">Got Something to Share?</h3>
-<p>I’d love to hear from you. Available for conversations, feel free to reach out via <u><a href="https://x.com/avatsavirhs"><strong>X</strong></a></u> or <u><a href="https://www.linkedin.com/in/ishaanshri95"><strong>LinkedIn</strong></a></u>.</p>
+<section id="footnotes" class="level1">
+<h1>footnotes</h1>
 
 
 </section>
-</section>
-</main></div>
-    </div>
-    <img src="profile.jpg" alt="Ishaan Shrivastava and Abu Shahid" class="about-image
-  round " style="height: 10em; width: 10em;">
-  </div>
-</div>
- <!-- /main -->
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Google generously spent the equivalent of a paragraph worth of tokens to explain Per-Layer-Embeddings in their <a href="https://ai.google.dev/gemma/docs/gemma-3n">blog on Gemma 3n</a> last year. Recently, they one-upped themselves, offering a <em>single sentence</em> worth of information about PLE in the docs for their latest open-source model series, <a href="https://ai.google.dev/gemma/docs/core">Gemma 4 - link here</a>. In other words, they offer zero explanation about why it improves the performance over simply injecting the embeddings into the residual stream, or why they could not have simply kept a normal embedding table and just made it larger, and so on.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

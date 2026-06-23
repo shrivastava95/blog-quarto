@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://shrivastava95.github.io/blog-quarto/about.html</loc>
-    <lastmod>2026-06-18T12:29:56.661Z</lastmod>
+    <lastmod>2026-06-23T03:49:34.062Z</lastmod>
   </url>
   <url>
     <loc>https://shrivastava95.github.io/blog-quarto/posts/reproducing-attention-is-all-you-need-from-scratch-pytorch/index.html</loc>
@@ -13,20 +13,28 @@
     <lastmod>2026-06-18T09:06:05.407Z</lastmod>
   </url>
   <url>
-    <loc>https://shrivastava95.github.io/blog-quarto/cv.html</loc>
-    <lastmod>2026-06-18T12:08:01.462Z</lastmod>
+    <loc>https://shrivastava95.github.io/blog-quarto/credentials/badges/nvidia-ai-infra-ops.html</loc>
+    <lastmod>2026-06-18T09:06:05.391Z</lastmod>
   </url>
   <url>
-    <loc>https://shrivastava95.github.io/blog-quarto/credentials/index.html</loc>
-    <lastmod>2026-06-18T09:06:05.391Z</lastmod>
+    <loc>https://shrivastava95.github.io/blog-quarto/NDIFGetStarted.html</loc>
+    <lastmod>2026-06-23T08:22:29.549Z</lastmod>
   </url>
   <url>
     <loc>https://shrivastava95.github.io/blog-quarto/index.html</loc>
     <lastmod>2026-06-18T09:06:05.407Z</lastmod>
   </url>
   <url>
-    <loc>https://shrivastava95.github.io/blog-quarto/credentials/badges/nvidia-ai-infra-ops.html</loc>
+    <loc>https://shrivastava95.github.io/blog-quarto/credentials/index.html</loc>
     <lastmod>2026-06-18T09:06:05.391Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shrivastava95.github.io/blog-quarto/cv.html</loc>
+    <lastmod>2026-06-18T12:08:01.462Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shrivastava95.github.io/blog-quarto/posts/gemma/index.html</loc>
+    <lastmod>2026-06-23T08:48:42.518Z</lastmod>
   </url>
   <url>
     <loc>https://shrivastava95.github.io/blog-quarto/posts/rotating-emphasis-manipulation/index.html</loc>
