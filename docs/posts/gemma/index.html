@@ -239,8 +239,8 @@ print(processor.decode(generation[0]), skip_special_tokens=True)
 # focusing on a cluster of pink cosmos flowers and a busy bumblebee.
 # It has a slightly soft, natural feel, likely captured in daylight.</code></pre>
 <p>Here are the VRAM savings, the GPU usage visibly drops right after the hook is applied, seen through <code>nvtop</code></p>
-<p>Before CPU offload: <img src="gemma01_before_cpu.png" class="img-fluid" alt="gemma01_before_cpu.png"></p>
-<p>After CPU offload: <img src="gemma02_after_cpu.png" class="img-fluid" alt="gemma02_after_cpu.png"></p>
+<p>Before CPU offload: <img src="gp1.png" class="img-fluid" alt="gemma01_before_cpu.png"></p>
+<p>After CPU offload: <img src="gp2.png" class="img-fluid" alt="gemma02_after_cpu.png"></p>
 <section id="ple-performance-gains" class="level3">
 <h3 class="anchored" data-anchor-id="ple-performance-gains">PLE performance gains?</h3>
 <p>It is not immediately obvious <em>HOW</em> PLE improves performance. Why even bother? What problem do they solve at this model scale? All I’ve been able to find so far on this matter are sloppy medium posts and I don’t trust them. I spent a good while trying to figure it out… honestly, I still don’t know for sure, I think it would make for a great mech-interp paper. Let’s try to work this out anyway!</p>
@@ -256,8 +256,8 @@ print(processor.decode(generation[0]), skip_special_tokens=True)
 <li><p><strong>Mix-LayerNorm (pre + post)</strong> - The transformer blocks use post-norm as well as pre-norm. The disadvantage of Post-norm is that it keeps the L2 norm of the hidden state activations approximately constant across layers as there is no identity path, which means signals originating from early layers keep shrinking as they propagate forward, leading to vanishing influence on the output (and, correspondingly, vanishing gradients). This is a well known problem with post-norm, which is why most LLMs these days use pre-norm as it avoids training instability issues with increase in depth <a href="https://kindxiaoming.github.io/blog/2026/depth-1/">reference - blog by Ziming Liu</a>. Since gemma uses both, it might still suffer from the described post-norm limitation. I have a suspicion that if post-norm were not used in the Gemma architecture, these per-layer embeddings would correspondingly not also have been necessary (simply allow information from first layer token embeddings to flow through the residual stream and reach every layer normally).</p></li>
 </ol>
 </section>
-<section id="implementing-ple-it-works" class="level2">
-<h2 class="anchored" data-anchor-id="implementing-ple-it-works">Implementing PLE (it works!)</h2>
+<section id="implementing-ple---from-scratch-it-works" class="level2">
+<h2 class="anchored" data-anchor-id="implementing-ple---from-scratch-it-works">Implementing PLE - from scratch (it works!)</h2>
 <p>Out of curiosity, I cooked up a small-scale transformer baseline on the shakespeare corpus, modeled as NTP on raw byte pairs (yes, I didn’t use a tokenizer, literally next-byte prediction). Here are some results:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -294,7 +294,7 @@ print(processor.decode(generation[0]), skip_special_tokens=True)
   - ple_dim=8: 1.564382
   - ple_dim=32: 1.550474
   - ple_dim=128: 1.559850</code></pre>
-<p>Ignoring the weird error bars on the rightmost chart for x=8, we can see that the average performance over validation generally improves with increase in PLE dimension</p>
+<p>Ignoring the weird error bars on the rightmost chart for x=8, we can see that the average performance over validation generally improves with increase in PLE dimension which tells us that PLE does indeed improve performance on this simple toy task.</p>
 </section>
 <section id="footnotes" class="level1">
 <h1>footnotes</h1>

@@ -54,10 +54,10 @@ print(processor.decode(generation[0]), skip_special_tokens=True)
 Here are the VRAM savings, the GPU usage visibly drops right after the hook is applied, seen through `nvtop`
 
 Before CPU offload:
-![gemma01_before_cpu.png](gemma01_before_cpu.png)
+![gemma01_before_cpu.png](gp1.png)
 
 After CPU offload:
-![gemma02_after_cpu.png](gemma02_after_cpu.png)
+![gemma02_after_cpu.png](gp2.png)
 
 ### PLE performance gains?
 
@@ -71,7 +71,7 @@ My rough understanding of transformers is that attention approximates computatio
 
 2. **Mix-LayerNorm (pre + post)** - The transformer blocks use post-norm as well as pre-norm. The disadvantage of Post-norm is that it keeps the L2 norm of the hidden state activations approximately constant across layers as there is no identity path, which means signals originating from early layers keep shrinking as they propagate forward, leading to vanishing influence on the output (and, correspondingly, vanishing gradients). This is a well known problem with post-norm, which is why most LLMs these days use pre-norm as it avoids training instability issues with increase in depth [reference - blog by Ziming Liu](https://kindxiaoming.github.io/blog/2026/depth-1/). Since gemma uses both, it might still suffer from the described post-norm limitation. I have a suspicion that if post-norm were not used in the Gemma architecture, these per-layer embeddings would correspondingly not also have been necessary (simply allow information from first layer token embeddings to flow through the residual stream and reach every layer normally).
 
-## Implementing PLE (it works!)
+## Implementing PLE - from scratch (it works!)
 
 Out of curiosity, I cooked up a small-scale transformer baseline on the shakespeare corpus, modeled as NTP on raw byte pairs (yes, I didn't use a tokenizer, literally next-byte prediction). Here are some results:  
 
@@ -109,7 +109,7 @@ Out of curiosity, I cooked up a small-scale transformer baseline on the shakespe
   - ple_dim=128: 1.559850
 ```
 
-Ignoring the weird error bars on the rightmost chart for x=8, we can see that the average performance over validation generally improves with increase in PLE dimension 
+Ignoring the weird error bars on the rightmost chart for x=8, we can see that the average performance over validation generally improves with increase in PLE dimension which tells us that PLE does indeed improve performance on this simple toy task. 
 
 
 # footnotes
