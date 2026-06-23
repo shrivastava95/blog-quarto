@@ -67,7 +67,7 @@ It is not immediately obvious *HOW* PLE improves performance. Why even bother? W
 
 My rough understanding of transformers is that attention approximates computation and MLP approximates memory. Looking at the architecture diagram, we can see two things:
 
-1. **Residual stream gating the PLE lookup** - A simple hypothesis I have is that the layer-wise lookup allows the model to store and recall a great deal of information as the lookup is precomputed for every forward pass, instead of going through matmuls in the MLP, thereby increasing capacity without commensurate increases in VRAM occupancy.
+1. **Residual stream gating the PLE lookup** - A simple hypothesis I agree with[^2] is that the layer-wise lookup allows the model to store and recall a great deal of information as the lookup is precomputed for every forward pass, instead of going through matmuls in the MLP, thereby increasing capacity without commensurate increases in VRAM occupancy.
 
 2. **Mix-LayerNorm (pre + post)** - The transformer blocks use post-norm as well as pre-norm. The disadvantage of Post-norm is that it keeps the L2 norm of the hidden state activations approximately constant across layers as there is no identity path, which means signals originating from early layers keep shrinking as they propagate forward, leading to vanishing influence on the output (and, correspondingly, vanishing gradients). This is a well known problem with post-norm, which is why most LLMs these days use pre-norm as it avoids training instability issues with increase in depth [reference - blog by Ziming Liu](https://kindxiaoming.github.io/blog/2026/depth-1/). Since gemma uses both, it might still suffer from the described post-norm limitation. I have a suspicion that if post-norm were not used in the Gemma architecture, these per-layer embeddings would correspondingly not also have been necessary (simply allow information from first layer token embeddings to flow through the residual stream and reach every layer normally).
 
@@ -112,5 +112,53 @@ Out of curiosity, I cooked up a small-scale transformer baseline on the shakespe
 Ignoring the weird error bars on the rightmost chart for x=8, we can see that the average performance over validation generally improves with increase in PLE dimension which tells us that PLE does indeed improve performance on this simple toy task. 
 
 
-# footnotes
+### wtf is MatFormer?
+
+I do not have the motivation nor understanding to explain what it is, but it has something to do with training nested subsets of the FFN blocks in such a way that they can be sliced width-wise in each layer with only negligible degradation. I've made some (minor) fixes to the demo colab - https://colab.research.google.com/drive/1g3S_On6aDHmHmeiRwf_-bI0yZvPiJelF
+
+Do try it out. I'm tryna find good subsets smaller than E2B rn, here's two I found that inferenced just fiiine.
+- [capriciousmarauder/test-submodel-3](https://huggingface.co/capriciousmarauder/test-submodel-3) This one is more sliced than E2B.
+- [capriciousmarauder/test-submodel-4](https://huggingface.co/capriciousmarauder/test-submodel-4) This one is very aggressively sliced, even more than the other one.
+
+```
+# score for google/gemma-3n-E2B-it, google's official published slice of Gemma3n-E4B-it
+{
+    "en_text_recognition": 0.6096878412118829,
+    "en_text_detection": 0.23172620479653033,
+    "en_text_spotting": 0.0,
+    "en_element_parsing": 0.04,
+    "en_mathematical_calculation": 0.3240026170865559,
+    "en_visual_text_understanding": 0.7103983997859018,
+    "en_knowledge_reasoning": 0.5074402603391522,
+    "English Overall Score": 0.34617933188857475
+}
+
+# score for capriciousmarauder/test-submodel-3, which is a slice of Gemma3n-E4B-it
+{
+    "en_text_recognition": 0.5459304480487074,
+    "en_text_detection": 0.21590682007667475,
+    "en_text_spotting": 0.0,
+    "en_element_parsing": 0.0275,
+    "en_mathematical_calculation": 0.2693079603436732,
+    "en_visual_text_understanding": 0.676684722674171,
+    "en_knowledge_reasoning": 0.4669721878768469,
+    "English Overall Score": 0.3146145912885819
+}
+
+# score for capriciousmarauder/test-submodel-4, which is a slice of Gemma3n-E4B-it
+{
+    "en_text_recognition": 0.34489594363685844,
+    "en_text_detection": 0.14555663691294746,
+    "en_text_spotting": 0.0,
+    "en_element_parsing": 0.02,
+    "en_mathematical_calculation": 0.20092149837002324,
+    "en_visual_text_understanding": 0.5540588220515938,
+    "en_knowledge_reasoning": 0.44284559706420745,
+    "English Overall Score": 0.2440397854336615
+}
+```
+
+
+
 [^1]: Google generously spent the equivalent of a paragraph worth of tokens to explain Per-Layer-Embeddings in their [blog on Gemma 3n](https://ai.google.dev/gemma/docs/gemma-3n) last year. Recently, they one-upped themselves, offering a *single sentence* worth of information about PLE in the docs for their latest open-source model series, [Gemma 4 - link here](https://ai.google.dev/gemma/docs/core). In other words, they offer zero explanation about why it improves the performance over simply injecting the embeddings into the residual stream, or why they could not have simply kept a normal embedding table and just made it larger, and so on.
+[^2]: The credit for this particular hypothesis as well as elicitation of a lot of the discussion in the blog is thanks to aletheia who is the creator of Mirage, a custom zeroth-order optimization library for Episteme, a superhuman UCI chess engine - [check out their blog!](https://aletheiaaaaa.github.io/index.html)
