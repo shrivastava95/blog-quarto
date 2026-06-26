@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/multivariable-statistics/index.html",
       "/posts/gemma/index.html",
       "/posts/part-whole-training/index.html",
       "/posts/reproducing-attention-is-all-you-need-from-scratch-pytorch/index.html",

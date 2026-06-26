@@ -1,0 +1,52 @@
+---
+title: "Multivariable Statistics"
+author: "Ishaan Shrivastava"
+date: "2026-06-26T22:34:10+05:30"
+date-modified: "2026-06-26T22:34:10+05:30"
+---
+
+While trying to understand what a `privileged-basis` means, I realised that I am significantly underequipped with the prerequisites. These are my notes for all the problems I have solved so far, and the things that I have learnt. I intend to turn this into something that is more like an index of theorems once I am more familiar with everything in here.
+
+# Prerequisite Notes for the ReLU Privileged-Basis Problem
+
+This document records:
+
+1. the concepts introduced,
+2. the questions attempted,
+3. my original solutions,
+4. what was correct,
+5. what was incorrect or incomplete,
+6. the corrected derivations.
+
+---
+
+# Question 1 — Covariance and second moments
+
+Let $X \in \mathbb{R}^d$ be a random vector with mean $\mu=\mathbb{E}[X]$. We know that, the covariance of (not necessarily independent) two random variables $A, B \in \mathbb{R}$ is expressed as: 
+
+$$\operatorname{Cov}(A, B) = \mathbb{E}[(A - \mathbb{E}[A])(B - \mathbb{E}[B])]$$. 
+
+We can use this notion of covariance of two random variables to construct the notion of <u>**covariance of a vector**</u> with itself: 
+
+$$\operatorname{Cov}(X)_{ij} = \mathbb{E}[(X_i - \mathbb{E}[X])(X_j - \mathbb{E}[X])],$$ 
+
+or, in matrix form, equivalently: 
+
+$$\operatorname{Cov}(X) = \mathbb{E}[(X - \mathbb{E}[X])(X - \mathbb{E}[X])^T]$$
+
+- The diagonal entries are called the <u>**coordinate variances**</u> $\operatorname{Cov}(X)_{ii} = \mathbb E[(X_i-\mu_i)^2] = \operatorname{Var}(X_i)$
+- The <u>**Euclidean norm**</u> is expressed as $|x| = \sqrt{\sum_{i=1}^d x_i^2}$
+- Trivial Identity: $\mathbb E|X-\mu|^2 = \operatorname{tr}(\operatorname{Cov}(X))$
+- Inner and Outer producs: For vectors $a,b\in\mathbb{R}^d ,$
+	- The standard <u>**Euclidean inner product**</u> is $\langle a,b\rangle = \sum_{i=1}^d a_i b_i,$ equivalently expressed as $a^Tb$.
+	- The <u>**Outer product**</u> is $ab^T \in \mathbb{R}^{d \times d}$
+- $|(a + b)|^2 = |a|^2 + |b|^2 + 2a^Tb$ for vectors $a,b\in\mathbb{R}^d$
+- Using the above trivial identity, one can derive another useful identity - ${\mathbb E|X|^2 = \operatorname{tr}(\operatorname{Cov}(X)) + |\mathbb E[X]|^2}$
+- Useful - $\operatorname{tr}(xy^T) = x^Ty$
+- <u>**Linearity of Expectation**</u> - For integrable random variables $X,Y$ and constants $a,b\in\mathbb{R},$ $$\mathbb{E}[aX+bY] = a\mathbb E[X]+b\mathbb E[Y]$$
+- If $X$ and $Y$ are independent and the relevant expectations exist, then $\mathbb E[XY] = \mathbb E[X]\mathbb E[Y]$. Independence is sufficient, but not necessary.
+- The second <u>**moment**</u> of a random variable is simply the expectation $\mathbb{E}[X^2]$
+- For two random variables $A, B$ it is simple to see that $\operatorname{Cov}(X, Y) = \mathbb E[XY] - \mathbb{E}[X]\mathbb{E}[Y]$
+- Using the above, it can be seen that independence implies zero covariance - just expand the terms inside $\mathbb E[XY]$ and write them elementwise for the entire probability space (use summation or integrals)
+
+

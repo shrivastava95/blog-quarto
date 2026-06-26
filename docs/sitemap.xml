@@ -1,51 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://shrivastava95.github.io/blog-quarto/about.html</loc>
-    <lastmod>2026-06-23T03:49:34.062Z</lastmod>
+    <loc>https://shrivastava95.github.io/blog-quarto/posts/rotating-emphasis-manipulation/index.html</loc>
+    <lastmod>2026-05-24T15:17:05.734Z</lastmod>
   </url>
   <url>
-    <loc>https://shrivastava95.github.io/blog-quarto/posts/reproducing-attention-is-all-you-need-from-scratch-pytorch/index.html</loc>
-    <lastmod>2026-06-18T09:06:05.408Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shrivastava95.github.io/blog-quarto/posts/measure-theory/index.html</loc>
-    <lastmod>2026-06-18T09:06:05.407Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shrivastava95.github.io/blog-quarto/credentials/badges/nvidia-ai-infra-ops.html</loc>
-    <lastmod>2026-06-18T09:06:05.391Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shrivastava95.github.io/blog-quarto/NDIFGetStarted.html</loc>
-    <lastmod>2026-06-23T08:22:29.549Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shrivastava95.github.io/blog-quarto/index.html</loc>
-    <lastmod>2026-06-18T09:06:05.407Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shrivastava95.github.io/blog-quarto/credentials/index.html</loc>
-    <lastmod>2026-06-18T09:06:05.391Z</lastmod>
-  </url>
-  <url>
-    <loc>https://shrivastava95.github.io/blog-quarto/cv.html</loc>
-    <lastmod>2026-06-18T12:08:01.462Z</lastmod>
+    <loc>https://shrivastava95.github.io/blog-quarto/posts/multivariable-statistics/index.html</loc>
+    <lastmod>2026-06-26T18:40:25.922Z</lastmod>
   </url>
   <url>
     <loc>https://shrivastava95.github.io/blog-quarto/posts/gemma/index.html</loc>
-    <lastmod>2026-06-23T12:56:13.676Z</lastmod>
+    <lastmod>2026-06-26T17:02:06.018Z</lastmod>
   </url>
   <url>
-    <loc>https://shrivastava95.github.io/blog-quarto/posts/rotating-emphasis-manipulation/index.html</loc>
-    <lastmod>2026-06-18T09:06:05.413Z</lastmod>
+    <loc>https://shrivastava95.github.io/blog-quarto/index.html</loc>
+    <lastmod>2026-05-24T13:58:25.767Z</lastmod>
   </url>
   <url>
-    <loc>https://shrivastava95.github.io/blog-quarto/posts/speculative-decoding/index.html</loc>
-    <lastmod>2025-11-11T02:19:46.498Z</lastmod>
+    <loc>https://shrivastava95.github.io/blog-quarto/credentials/index.html</loc>
+    <lastmod>2026-05-24T14:56:10.979Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shrivastava95.github.io/blog-quarto/about.html</loc>
+    <lastmod>2026-06-26T17:02:04.877Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shrivastava95.github.io/blog-quarto/credentials/badges/nvidia-ai-infra-ops.html</loc>
+    <lastmod>2026-05-24T10:44:06.199Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shrivastava95.github.io/blog-quarto/cv.html</loc>
+    <lastmod>2026-06-26T17:02:04.982Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shrivastava95.github.io/blog-quarto/NDIFGetStarted.html</loc>
+    <lastmod>2026-06-26T17:02:04.860Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shrivastava95.github.io/blog-quarto/posts/measure-theory/index.html</loc>
+    <lastmod>2026-05-24T15:24:18.844Z</lastmod>
   </url>
   <url>
     <loc>https://shrivastava95.github.io/blog-quarto/posts/part-whole-training/index.html</loc>
-    <lastmod>2026-06-18T09:06:05.408Z</lastmod>
+    <lastmod>2026-05-24T15:17:54.686Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shrivastava95.github.io/blog-quarto/posts/reproducing-attention-is-all-you-need-from-scratch-pytorch/index.html</loc>
+    <lastmod>2026-05-24T15:15:04.919Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shrivastava95.github.io/blog-quarto/posts/speculative-decoding/index.html</loc>
+    <lastmod>2026-05-23T11:57:17.231Z</lastmod>
   </url>
 </urlset>

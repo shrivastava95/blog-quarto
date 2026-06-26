@@ -9,8 +9,66 @@
 <link>https://shrivastava95.github.io/blog-quarto/</link>
 <atom:link href="https://shrivastava95.github.io/blog-quarto/index.xml" rel="self" type="application/rss+xml"/>
 <description>A blog built with Quarto</description>
-<generator>quarto-1.8.25</generator>
-<lastBuildDate>Tue, 23 Jun 2026 12:12:51 GMT</lastBuildDate>
+<generator>quarto-1.9.37</generator>
+<lastBuildDate>Fri, 26 Jun 2026 17:04:10 GMT</lastBuildDate>
+<item>
+  <title>Multivariable Statistics</title>
+  <dc:creator>Ishaan Shrivastava</dc:creator>
+  <link>https://shrivastava95.github.io/blog-quarto/posts/multivariable-statistics/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>While trying to understand what a <code>privileged-basis</code> means, I realised that I am significantly underequipped with the prerequisites. These are my notes for all the problems I have solved so far, and the things that I have learnt. I intend to turn this into something that is more like an index of theorems once I am more familiar with everything in here.</p>
+<section id="prerequisite-notes-for-the-relu-privileged-basis-problem" class="level1">
+<h1>Prerequisite Notes for the ReLU Privileged-Basis Problem</h1>
+<p>This document records:</p>
+<ol type="1">
+<li>the concepts introduced,</li>
+<li>the questions attempted,</li>
+<li>my original solutions,</li>
+<li>what was correct,</li>
+<li>what was incorrect or incomplete,</li>
+<li>the corrected derivations.</li>
+</ol>
+<hr>
+</section>
+<section id="question-1-covariance-and-second-moments" class="level1">
+<h1>Question 1 — Covariance and second moments</h1>
+<p>Let <img src="https://latex.codecogs.com/png.latex?X%20%5Cin%20%5Cmathbb%7BR%7D%5Ed"> be a random vector with mean <img src="https://latex.codecogs.com/png.latex?%5Cmu=%5Cmathbb%7BE%7D%5BX%5D">. We know that, the covariance of (not necessarily independent) two random variables <img src="https://latex.codecogs.com/png.latex?A,%20B%20%5Cin%20%5Cmathbb%7BR%7D"> is expressed as:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7BCov%7D(A,%20B)%20=%20%5Cmathbb%7BE%7D%5B(A%20-%20%5Cmathbb%7BE%7D%5BA%5D)(B%20-%20%5Cmathbb%7BE%7D%5BB%5D)%5D">.</p>
+<p>We can use this notion of covariance of two random variables to construct the notion of <u><strong>covariance of a vector</strong></u> with itself:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7BCov%7D(X)_%7Bij%7D%20=%20%5Cmathbb%7BE%7D%5B(X_i%20-%20%5Cmathbb%7BE%7D%5BX%5D)(X_j%20-%20%5Cmathbb%7BE%7D%5BX%5D)%5D,"></p>
+<p>or, in matrix form, equivalently:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7BCov%7D(X)%20=%20%5Cmathbb%7BE%7D%5B(X%20-%20%5Cmathbb%7BE%7D%5BX%5D)(X%20-%20%5Cmathbb%7BE%7D%5BX%5D)%5ET%5D"></p>
+<ul>
+<li>The diagonal entries are called the <u><strong>coordinate variances</strong></u> <img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7BCov%7D(X)_%7Bii%7D%20=%20%5Cmathbb%20E%5B(X_i-%5Cmu_i)%5E2%5D%20=%20%5Coperatorname%7BVar%7D(X_i)"></li>
+<li>The <u><strong>Euclidean norm</strong></u> is expressed as <img src="https://latex.codecogs.com/png.latex?%7Cx%7C%20=%20%5Csqrt%7B%5Csum_%7Bi=1%7D%5Ed%20x_i%5E2%7D"></li>
+<li>Trivial Identity: <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%20E%7CX-%5Cmu%7C%5E2%20=%20%5Coperatorname%7Btr%7D(%5Coperatorname%7BCov%7D(X))"></li>
+<li>Inner and Outer producs: For vectors <img src="https://latex.codecogs.com/png.latex?a,b%5Cin%5Cmathbb%7BR%7D%5Ed%20,">
+<ul>
+<li>The standard <u><strong>Euclidean inner product</strong></u> is <img src="https://latex.codecogs.com/png.latex?%5Clangle%20a,b%5Crangle%20=%20%5Csum_%7Bi=1%7D%5Ed%20a_i%20b_i,"> equivalently expressed as <img src="https://latex.codecogs.com/png.latex?a%5ETb">.</li>
+<li>The <u><strong>Outer product</strong></u> is <img src="https://latex.codecogs.com/png.latex?ab%5ET%20%5Cin%20%5Cmathbb%7BR%7D%5E%7Bd%20%5Ctimes%20d%7D"></li>
+</ul></li>
+<li><img src="https://latex.codecogs.com/png.latex?%7C(a%20+%20b)%7C%5E2%20=%20%7Ca%7C%5E2%20+%20%7Cb%7C%5E2%20+%202a%5ETb"> for vectors <img src="https://latex.codecogs.com/png.latex?a,b%5Cin%5Cmathbb%7BR%7D%5Ed"></li>
+<li>Using the above trivial identity, one can derive another useful identity - <img src="https://latex.codecogs.com/png.latex?%7B%5Cmathbb%20E%7CX%7C%5E2%20=%20%5Coperatorname%7Btr%7D(%5Coperatorname%7BCov%7D(X))%20+%20%7C%5Cmathbb%20E%5BX%5D%7C%5E2%7D"></li>
+<li>Useful - <img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7Btr%7D(xy%5ET)%20=%20x%5ETy"></li>
+<li><u><strong>Linearity of Expectation</strong></u> - For integrable random variables <img src="https://latex.codecogs.com/png.latex?X,Y"> and constants <img src="https://latex.codecogs.com/png.latex?a,b%5Cin%5Cmathbb%7BR%7D,"> <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BE%7D%5BaX+bY%5D%20=%20a%5Cmathbb%20E%5BX%5D+b%5Cmathbb%20E%5BY%5D"></li>
+<li>If <img src="https://latex.codecogs.com/png.latex?X"> and <img src="https://latex.codecogs.com/png.latex?Y"> are independent and the relevant expectations exist, then <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%20E%5BXY%5D%20=%20%5Cmathbb%20E%5BX%5D%5Cmathbb%20E%5BY%5D">. Independence is sufficient, but not necessary.</li>
+<li>The second <u><strong>moment</strong></u> of a random variable is simply the expectation <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BE%7D%5BX%5E2%5D"></li>
+<li>For two random variables <img src="https://latex.codecogs.com/png.latex?A,%20B"> it is simple to see that <img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7BCov%7D(X,%20Y)%20=%20%5Cmathbb%20E%5BXY%5D%20-%20%5Cmathbb%7BE%7D%5BX%5D%5Cmathbb%7BE%7D%5BY%5D"></li>
+<li>Using the above, it can be seen that independence implies zero covariance - just expand the terms inside <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%20E%5BXY%5D"> and write them elementwise for the entire probability space (use summation or integrals)</li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://shrivastava95.github.io/blog-quarto/posts/multivariable-statistics/</guid>
+  <pubDate>Fri, 26 Jun 2026 17:04:10 GMT</pubDate>
+</item>
 <item>
   <title>WTF is going on inside Gemma? Thoughts, and some experiments with hybrid post-pre-norm and Per-Layer-Embeddings (PLE)</title>
   <dc:creator>Ishaan Shrivastava</dc:creator>
