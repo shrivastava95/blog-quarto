@@ -3,6 +3,10 @@ title: "Measure Theory"
 author: "Ishaan Shrivastava"
 date: "2025-01-30T14:01:10+05:30"
 date-modified: "2025-01-30T14:01:10+05:30"
+format:
+  html:
+    toc: true
+    number-sections: true
 ---
 
 ![measure theory playlist by The Bright Side of Mathematics](mt01.png)

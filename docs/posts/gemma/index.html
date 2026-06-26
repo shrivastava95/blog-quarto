@@ -107,7 +107,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -187,7 +187,19 @@ window.Quarto = {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#ple-performance-gains" id="toc-ple-performance-gains" class="nav-link active" data-scroll-target="#ple-performance-gains"><span class="header-section-number">0.1</span> PLE performance gains?</a></li>
+  <li><a href="#implementing-ple---from-scratch-it-works" id="toc-implementing-ple---from-scratch-it-works" class="nav-link" data-scroll-target="#implementing-ple---from-scratch-it-works"><span class="header-section-number">1</span> Implementing PLE - from scratch (it works!)</a>
+  <ul class="collapse">
+  <li><a href="#wtf-is-matformer" id="toc-wtf-is-matformer" class="nav-link" data-scroll-target="#wtf-is-matformer"><span class="header-section-number">1.1</span> wtf is MatFormer?</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -241,8 +253,8 @@ print(processor.decode(generation[0]), skip_special_tokens=True)
 <p>Here are the VRAM savings, the GPU usage visibly drops right after the hook is applied, seen through <code>nvtop</code></p>
 <p>Before CPU offload: <img src="gp1.png" class="img-fluid" alt="gemma01_before_cpu.png"></p>
 <p>After CPU offload: <img src="gp2.png" class="img-fluid" alt="gemma02_after_cpu.png"></p>
-<section id="ple-performance-gains" class="level3">
-<h3 class="anchored" data-anchor-id="ple-performance-gains">PLE performance gains?</h3>
+<section id="ple-performance-gains" class="level3" data-number="0.1">
+<h3 data-number="0.1" class="anchored" data-anchor-id="ple-performance-gains"><span class="header-section-number">0.1</span> PLE performance gains?</h3>
 <p>It is not immediately obvious <em>HOW</em> PLE improves performance. Why even bother? What problem do they solve at this model scale? All I’ve been able to find so far on this matter are sloppy medium posts and I don’t trust them. I spent a good while trying to figure it out… honestly, I still don’t know for sure, I think it would make for a great mech-interp paper. Let’s try to work this out anyway!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -256,8 +268,8 @@ print(processor.decode(generation[0]), skip_special_tokens=True)
 <li><p><strong>Mix-LayerNorm (pre + post)</strong> - The transformer blocks use post-norm as well as pre-norm. The disadvantage of Post-norm is that it keeps the L2 norm of the hidden state activations approximately constant across layers as there is no identity path, which means signals originating from early layers keep shrinking as they propagate forward, leading to vanishing influence on the output (and, correspondingly, vanishing gradients). This is a well known problem with post-norm, which is why most LLMs these days use pre-norm as it avoids training instability issues with increase in depth <a href="https://kindxiaoming.github.io/blog/2026/depth-1/">reference - blog by Ziming Liu</a>. Since gemma uses both, it might still suffer from the described post-norm limitation. I have a suspicion that if post-norm were not used in the Gemma architecture, these per-layer embeddings would correspondingly not also have been necessary (simply allow information from first layer token embeddings to flow through the residual stream and reach every layer normally).</p></li>
 </ol>
 </section>
-<section id="implementing-ple---from-scratch-it-works" class="level2">
-<h2 class="anchored" data-anchor-id="implementing-ple---from-scratch-it-works">Implementing PLE - from scratch (it works!)</h2>
+<section id="implementing-ple---from-scratch-it-works" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="implementing-ple---from-scratch-it-works"><span class="header-section-number">1</span> Implementing PLE - from scratch (it works!)</h2>
 <p>Out of curiosity, I cooked up a small-scale transformer baseline on the shakespeare corpus, modeled as NTP on raw byte pairs (yes, I didn’t use a tokenizer, literally next-byte prediction). Here are some results:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -295,8 +307,8 @@ print(processor.decode(generation[0]), skip_special_tokens=True)
   - ple_dim=32: 1.550474
   - ple_dim=128: 1.559850</code></pre>
 <p>Ignoring the weird error bars on the rightmost chart for x=8, we can see that the average performance over validation generally improves with increase in PLE dimension which tells us that PLE does indeed improve performance on this simple toy task.</p>
-<section id="wtf-is-matformer" class="level3">
-<h3 class="anchored" data-anchor-id="wtf-is-matformer">wtf is MatFormer?</h3>
+<section id="wtf-is-matformer" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="wtf-is-matformer"><span class="header-section-number">1.1</span> wtf is MatFormer?</h3>
 <p>I do not have the motivation nor understanding to explain what it is, but it has something to do with training nested subsets of the FFN blocks in such a way that they can be sliced width-wise in each layer with only negligible degradation. I’ve made some (minor) fixes to the demo colab - https://colab.research.google.com/drive/1g3S_On6aDHmHmeiRwf_-bI0yZvPiJelF</p>
 <p>Do try it out. I’m tryna find good subsets smaller than E2B rn, here’s two I found that inferenced just fiiine. - <a href="https://huggingface.co/capriciousmarauder/test-submodel-3">capriciousmarauder/test-submodel-3</a> This one is more sliced than E2B. - <a href="https://huggingface.co/capriciousmarauder/test-submodel-4">capriciousmarauder/test-submodel-4</a> This one is very aggressively sliced, even more than the other one.</p>
 <pre><code># score for google/gemma-3n-E2B-it, google's official published slice of Gemma3n-E4B-it

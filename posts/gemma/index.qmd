@@ -3,6 +3,10 @@ title: "WTF is going on inside Gemma? Thoughts, and some experiments with hybrid
 author: "Ishaan Shrivastava"
 date: "2026-06-23T17:42:51+05:30"
 date-modified: "2026-06-23T17:42:51+05:30"
+format:
+  html:
+    toc: true
+    number-sections: true
 ---
 
 Does anyone have any idea of what Gemma-style Per-Layer-Embeddings actually do? Lets pull up **Gemma 4 E4B** for a closer look. 
