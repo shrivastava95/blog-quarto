@@ -1,0 +1,1221 @@
+---
+title: "ANSWER KEY TO PRIVILEGED BASIS AND RELU QUIZ"
+format:
+  html:
+    toc: true
+    number-sections: true
+---
+
+# answer sheet
+
+[Here is the answer sheet - index.qmd](./index.qmd)
+
+# Grading rule
+
+Each main question is worth \(2\) points.
+
+- \(0\): absent, materially false, circular, or confuses object types;
+- \(1\): correct central idea with a missing definition, assumption, or proof step;
+- \(2\): correct, explicit, and type-consistent.
+
+Equivalent formulations are acceptable.
+
+# Part I — Measurability and information
+
+## Answer 1
+
+A sigma-algebra \(\mathcal F\subseteq 2^\Omega\) satisfies:
+
+1. \(\Omega\in\mathcal F\);
+2. \(E\in\mathcal F\Rightarrow E^c\in\mathcal F\);
+3. \(E_n\in\mathcal F\) for all \(n\Rightarrow\bigcup_{n=1}^\infty E_n\in\mathcal F\).
+
+A probability space is a triple
+
+$$
+(\Omega,\mathcal F,\mathbb P)
+$$
+
+where \(\mathcal F\) is a sigma-algebra and
+
+$$
+\mathbb P:\mathcal F\to[0,1]
+$$
+
+satisfies
+
+$$
+\mathbb P(\Omega)=1
+$$
+
+and countable additivity on pairwise disjoint events.
+
+## Answer 2
+
+For \(\mathcal G\):
+
+- \(\Omega,\varnothing\in\mathcal G\);
+- complements swap \(\{1,2\}\) and \(\{3,4\}\);
+- every countable union reduces to one of the four listed sets.
+
+Thus \(\mathcal G\) is a sigma-algebra.
+
+For \(\mathcal H\), note
+
+$$
+\{1,2\}\cup\{1,3\}
+=
+\{1,2,3\}\notin\mathcal H.
+$$
+
+Therefore \(\mathcal H\) is not closed under unions and is not a sigma-algebra.
+
+## Answer 3
+
+\(X\) is measurable iff
+
+$$
+X^{-1}(B)\in\mathcal F
+\qquad
+\forall B\in\mathcal E.
+$$
+
+Preimages are used because they preserve complements and arbitrary unions:
+
+$$
+X^{-1}(B^c)
+=
+(X^{-1}(B))^c,
+$$
+
+$$
+X^{-1}\left(\bigcup_n B_n\right)
+=
+\bigcup_nX^{-1}(B_n).
+$$
+
+Images do not generally preserve complements or intersections in the required way.
+
+## Answer 4
+
+For any \(C\in\mathcal S\),
+
+$$
+(f\circ X)^{-1}(C)
+=
+X^{-1}(f^{-1}(C)).
+$$
+
+Since \(f\) is measurable,
+
+$$
+f^{-1}(C)\in\mathcal E.
+$$
+
+Since \(X\) is measurable,
+
+$$
+X^{-1}(f^{-1}(C))\in\mathcal F.
+$$
+
+Hence \(f\circ X\) is measurable.
+
+## Answer 5
+
+The fibres of \(X\) are
+
+$$
+F_0=\{\omega_1,\omega_2\},
+\qquad
+F_1=\{\omega_3\},
+\qquad
+F_2=\{\omega_4\}.
+$$
+
+Therefore \(\sigma(X)\) consists of every union of these fibres:
+
+$$
+\begin{aligned}
+\sigma(X)=\{&
+\varnothing,\Omega,
+F_0,F_1,F_2,\\
+&F_0\cup F_1,
+F_0\cup F_2,
+F_1\cup F_2
+\}.
+\end{aligned}
+$$
+
+Observing \(X\) distinguishes the three fibres but cannot distinguish \(\omega_1\) from \(\omega_2\).
+
+## Answer 6
+
+The atomic masses are
+
+$$
+\mathbb P_X(\{0\})
+=
+0.1+0.2
+=
+0.3,
+$$
+
+$$
+\mathbb P_X(\{1\})
+=
+0.3,
+$$
+
+$$
+\mathbb P_X(\{2\})
+=
+0.4.
+$$
+
+Therefore:
+
+$$
+\begin{array}{c|c}
+B&\mathbb P_X(B)\\
+\hline
+\varnothing&0\\
+\{0\}&0.3\\
+\{1\}&0.3\\
+\{2\}&0.4\\
+\{0,1\}&0.6\\
+\{0,2\}&0.7\\
+\{1,2\}&0.7\\
+\{0,1,2\}&1
+\end{array}
+$$
+
+## Answer 7
+
+In the real- or Euclidean-valued setting used here:
+
+$$
+Y\text{ is }\sigma(X)\text{-measurable}
+\iff
+\exists\text{ measurable }f\text{ such that }Y=f(X).
+$$
+
+An estimator that uses only the information contained in \(A\) must be \(\sigma(A)\)-measurable. The theorem then gives
+
+$$
+\widehat Z=g(A)
+$$
+
+for some measurable \(g\). Conversely, every measurable \(g(A)\) is \(\sigma(A)\)-measurable.
+
+## Answer 8
+
+1. \(A\) is a measurable map \(\Omega\to\mathbb R^d\).
+2. \(a\) is a deterministic vector in \(\mathbb R^d\).
+3. \(\sigma(A)\) is a collection of subsets of \(\Omega\), specifically a sub-sigma-algebra of \(\mathcal F\).
+4. \(\{A\in B\}=A^{-1}(B)\) is an event in \(\mathcal F\).
+5. \(\mathbb E[Z\mid A]\) is a random vector, defined up to almost-sure equality, and is \(\sigma(A)\)-measurable.
+
+## Answer 9
+
+The map
+
+$$
+z\mapsto Qz
+$$
+
+is linear and continuous, hence Borel measurable.
+
+Coordinatewise ReLU
+
+$$
+r(y)_i=\max(0,y_i)
+$$
+
+is continuous, hence Borel measurable.
+
+Since \(Z\) is measurable and compositions of measurable maps are measurable,
+
+$$
+A=r\circ Q\circ Z
+$$
+
+is measurable.
+
+# Part II — Conditional expectation
+
+## Answer 10
+
+A conditional expectation \(Y=\mathbb E[X\mid\mathcal G]\) satisfies:
+
+1. \(Y\) is \(\mathcal G\)-measurable;
+2. \(Y\in L^1\);
+3. for every \(G\in\mathcal G\),
+   $$
+   \mathbb E[X1_G]
+   =
+   \mathbb E[Y1_G].
+   $$
+
+It is unique up to almost-sure equality.
+
+## Answer 11
+
+The two atoms of \(\mathcal G\) are
+
+$$
+G_1=\{1,2\},
+\qquad
+G_2=\{3,4\}.
+$$
+
+On \(G_1\),
+
+$$
+\mathbb E[X\mid G_1]
+=
+\frac{0.1(2)+0.2(-1)}{0.1+0.2}
+=
+0.
+$$
+
+On \(G_2\),
+
+$$
+\mathbb E[X\mid G_2]
+=
+\frac{0.3(4)+0.4(0)}{0.3+0.4}
+=
+\frac{12}{7}.
+$$
+
+Hence
+
+$$
+\mathbb E[X\mid\mathcal G]
+=
+\left(0,0,\frac{12}{7},\frac{12}{7}\right).
+$$
+
+## Answer 12
+
+The events in \(\mathcal G\) are
+
+$$
+\varnothing,\Omega,G_1,G_2.
+$$
+
+For \(\varnothing\), both sides are zero.
+
+For \(G_1\),
+
+$$
+\mathbb E[X1_{G_1}]
+=
+0.1(2)+0.2(-1)
+=
+0,
+$$
+
+while
+
+$$
+\mathbb E[\mathbb E[X\mid\mathcal G]1_{G_1}]
+=
+0.
+$$
+
+For \(G_2\),
+
+$$
+\mathbb E[X1_{G_2}]
+=
+1.2,
+$$
+
+while
+
+$$
+\mathbb E[\mathbb E[X\mid\mathcal G]1_{G_2}]
+=
+(0.3+0.4)\frac{12}{7}
+=
+1.2.
+$$
+
+For \(\Omega\), add the two block identities.
+
+## Answer 13
+
+\(X\) itself is \(\mathcal G\)-measurable and integrable. For every \(G\in\mathcal G\),
+
+$$
+\mathbb E[X1_G]
+=
+\mathbb E[X1_G].
+$$
+
+Thus \(X\) satisfies the defining properties of \(\mathbb E[X\mid\mathcal G]\). By almost-sure uniqueness,
+
+$$
+\mathbb E[X\mid\mathcal G]=X
+\quad\text{a.s.}
+$$
+
+## Answer 14
+
+The constant \(\mathbb E[X]\) is \(\mathcal G\)-measurable. For \(G\in\mathcal G\), independence gives
+
+$$
+\mathbb E[X1_G]
+=
+\mathbb E[X]\mathbb E[1_G]
+=
+\mathbb E[X]\mathbb P(G).
+$$
+
+Also,
+
+$$
+\mathbb E[\mathbb E[X]1_G]
+=
+\mathbb E[X]\mathbb P(G).
+$$
+
+Hence the constant \(\mathbb E[X]\) satisfies the defining property.
+
+## Answer 15
+
+Let
+
+$$
+Y=\mathbb E[\mathbb E[X\mid\mathcal G]\mid\mathcal H].
+$$
+
+Then \(Y\) is \(\mathcal H\)-measurable.
+
+For every \(H\in\mathcal H\), since \(H\in\mathcal G\),
+
+$$
+\begin{aligned}
+\mathbb E[Y1_H]
+&=
+\mathbb E[\mathbb E[X\mid\mathcal G]1_H]\\
+&=
+\mathbb E[X1_H].
+\end{aligned}
+$$
+
+Thus \(Y\) satisfies the defining property of \(\mathbb E[X\mid\mathcal H]\). Uniqueness gives
+
+$$
+Y=\mathbb E[X\mid\mathcal H]
+\quad\text{a.s.}
+$$
+
+## Answer 16
+
+Let
+
+$$
+m=\mathbb E[X\mid\mathcal G].
+$$
+
+Write
+
+$$
+X-\mathbb E[X]
+=
+(X-m)+(m-\mathbb E[X]).
+$$
+
+Then
+
+$$
+\begin{aligned}
+\operatorname{Var}(X)
+&=
+\mathbb E[(X-m)^2]
++
+\mathbb E[(m-\mathbb E[X])^2]\\
+&\quad+
+2\mathbb E[(X-m)(m-\mathbb E[X])].
+\end{aligned}
+$$
+
+The cross term is zero because \(m-\mathbb E[X]\) is \(\mathcal G\)-measurable:
+
+$$
+\begin{aligned}
+\mathbb E[(X-m)(m-\mathbb E[X])]
+&=
+\mathbb E[
+\mathbb E[(X-m)(m-\mathbb E[X])\mid\mathcal G]
+]\\
+&=
+\mathbb E[
+(m-\mathbb E[X])
+\mathbb E[X-m\mid\mathcal G]
+]\\
+&=0.
+\end{aligned}
+$$
+
+Also,
+
+$$
+\mathbb E[(X-m)^2]
+=
+\mathbb E[\operatorname{Var}(X\mid\mathcal G)],
+$$
+
+and
+
+$$
+\mathbb E[(m-\mathbb E[X])^2]
+=
+\operatorname{Var}(m).
+$$
+
+## Answer 17
+
+Let
+
+$$
+m=\mathbb E[Z\mid\mathcal G],
+\qquad
+\mu=\mathbb E[Z].
+$$
+
+Use
+
+$$
+Z-\mu=(Z-m)+(m-\mu)
+$$
+
+and expand the outer product. The cross terms vanish because
+
+$$
+\mathbb E[Z-m\mid\mathcal G]=0.
+$$
+
+Thus
+
+$$
+\begin{aligned}
+\operatorname{Cov}(Z)
+&=
+\mathbb E[(Z-m)(Z-m)^T]
++
+\mathbb E[(m-\mu)(m-\mu)^T]\\
+&=
+\mathbb E[\operatorname{Cov}(Z\mid\mathcal G)]
++
+\operatorname{Cov}(m).
+\end{aligned}
+$$
+
+Expectation of a random matrix is taken entrywise.
+
+## Answer 18
+
+By definition,
+
+$$
+\operatorname{Cov}(Z\mid\mathcal G)
+=
+\mathbb E[(Z-m)(Z-m)^T\mid\mathcal G].
+$$
+
+Using linearity of trace and conditional expectation,
+
+$$
+\begin{aligned}
+\operatorname{tr}(\operatorname{Cov}(Z\mid\mathcal G))
+&=
+\mathbb E[
+\operatorname{tr}((Z-m)(Z-m)^T)
+\mid\mathcal G
+]\\
+&=
+\mathbb E[\|Z-m\|^2\mid\mathcal G].
+\end{aligned}
+$$
+
+Taking expectations and applying the tower property gives
+
+$$
+\mathbb E[
+\operatorname{tr}(\operatorname{Cov}(Z\mid\mathcal G))
+]
+=
+\mathbb E\|Z-m\|^2.
+$$
+
+## Answer 19
+
+If \(A>0\), then \(Z=A\).
+
+If \(A=0\), then \(Z\in[-1,0]\), and conditionally \(Z\) is uniform on \([-1,0]\). Therefore
+
+$$
+\mathbb E[Z\mid A=0]
+=
+-\frac12,
+$$
+
+and
+
+$$
+\operatorname{Var}(Z\mid A=0)
+=
+\frac{1}{12}.
+$$
+
+Hence
+
+$$
+h(a)
+=
+\begin{cases}
+-\frac12,&a=0,\\
+a,&a>0.
+\end{cases}
+$$
+
+The conditional variance is
+
+$$
+\operatorname{Var}(Z\mid A)
+=
+\begin{cases}
+\frac1{12},&A=0,\\
+0,&A>0.
+\end{cases}
+$$
+
+Since \(\mathbb P(A=0)=1/2\),
+
+$$
+\operatorname{MMSE}
+=
+\frac12\cdot\frac1{12}
+=
+\frac1{24}.
+$$
+
+## Answer 20
+
+If \(A>0\), then \(Z=A\).
+
+If \(A=0\), then \(Z\le0\), so
+
+$$
+\mathbb E[Z\mid A=0]
+=
+-\sqrt{\frac2\pi}.
+$$
+
+Thus
+
+$$
+h(a)
+=
+\begin{cases}
+-\sqrt{\frac2\pi},&a=0,\\
+a,&a>0.
+\end{cases}
+$$
+
+All conditional error occurs on \(A=0\). Therefore
+
+$$
+\operatorname{MMSE}
+=
+\mathbb P(Z\le0)
+\operatorname{Var}(Z\mid Z\le0)
+=
+\frac12\left(1-\frac2\pi\right).
+$$
+
+## Answer 21
+
+For continuously distributed \(A\),
+
+$$
+\mathbb P(A=a)=0
+$$
+
+for each fixed \(a\), so the elementary ratio divides by zero.
+
+The primary object is instead
+
+$$
+\mathbb E[Z\mid\sigma(A)],
+$$
+
+defined by measurability and integral identities. Under standard regularity conditions it has a version
+
+$$
+h(A),
+$$
+
+and one may use \(h(a)\) as a version of \(\mathbb E[Z\mid A=a]\). Values of \(h\) on sets of \(A\)-measure zero are arbitrary.
+
+## Answer 22
+
+Since \(Z\ge0\) almost surely,
+
+$$
+A=\operatorname{ReLU}(Z)=Z
+\qquad\text{a.s.}
+$$
+
+Therefore
+
+$$
+\mathbb E[Z\mid A]
+=
+A
+=
+Z
+\qquad\text{a.s.}
+$$
+
+and the MMSE is zero.
+
+# Part III — \(L^2\) geometry and MMSE
+
+## Answer 23
+
+$$
+L^2(\Omega,\mathcal F,\mathbb P)
+=
+\{X:\Omega\to\mathbb R:
+X\text{ measurable and }\mathbb E[X^2]<\infty\}/\!\sim
+$$
+
+where
+
+$$
+X\sim Y
+\iff
+X=Y\quad\text{a.s.}
+$$
+
+The inner product and norm are
+
+$$
+\langle X,Y\rangle
+=
+\mathbb E[XY],
+$$
+
+$$
+\|X\|_{L^2}
+=
+\sqrt{\mathbb E[X^2]}.
+$$
+
+If \(X=Y\) a.s., then
+
+$$
+\|X-Y\|_{L^2}=0.
+$$
+
+A normed space must identify zero-distance objects.
+
+## Answer 24
+
+$$
+L^2(\Omega,\mathcal G,\mathbb P)
+$$
+
+is the set of square-integrable \(\mathcal G\)-measurable random variables modulo a.s. equality.
+
+If \(X,Y\) are \(\mathcal G\)-measurable, then
+
+$$
+aX+bY
+$$
+
+is \(\mathcal G\)-measurable for \(a,b\in\mathbb R\), and remains square-integrable. Hence it is a linear subspace.
+
+The projection theorem requires the subspace to be **closed**. This subspace is indeed closed in \(L^2\).
+
+## Answer 25
+
+Let \(M\) be a nonempty closed linear subspace of a Hilbert space \(H\). For each \(x\in H\), there is a unique \(m\in M\) such that
+
+$$
+\|x-m\|
+=
+\inf_{v\in M}\|x-v\|.
+$$
+
+This \(m=P_Mx\) is equivalently characterized by
+
+$$
+x-m\perp M,
+$$
+
+meaning
+
+$$
+\langle x-m,v\rangle=0
+\qquad
+\forall v\in M.
+$$
+
+## Answer 26
+
+Let
+
+$$
+m=\mathbb E[X\mid\mathcal G].
+$$
+
+For \(V=1_G\), \(G\in\mathcal G\), the defining property gives
+
+$$
+\mathbb E[(X-m)1_G]=0.
+$$
+
+By linearity, this holds for every \(\mathcal G\)-measurable simple function \(V\).
+
+For general \(V\in L^2(\mathcal G)\), choose simple \(V_n\to V\) in \(L^2\). Since \(X-m\in L^2\), Cauchy–Schwarz gives
+
+$$
+|\mathbb E[(X-m)(V-V_n)]|
+\le
+\|X-m\|_2\|V-V_n\|_2
+\to0.
+$$
+
+Since each
+
+$$
+\mathbb E[(X-m)V_n]=0,
+$$
+
+the limit is zero.
+
+## Answer 27
+
+Write
+
+$$
+Z-T=(Z-m)+(m-T).
+$$
+
+Therefore
+
+$$
+\begin{aligned}
+\|Z-T\|^2
+&=
+\|Z-m\|^2+\|m-T\|^2\\
+&\quad+2(Z-m)^T(m-T).
+\end{aligned}
+$$
+
+Taking expectations, the cross term is
+
+$$
+\mathbb E[(Z-m)^T(m-T)].
+$$
+
+The vector \(m-T\) is \(\mathcal G\)-measurable, while
+
+$$
+\mathbb E[Z-m\mid\mathcal G]=0.
+$$
+
+Hence
+
+$$
+\begin{aligned}
+\mathbb E[(Z-m)^T(m-T)]
+&=
+\mathbb E[
+\mathbb E[(Z-m)^T(m-T)\mid\mathcal G]
+]\\
+&=
+\mathbb E[
+\mathbb E[Z-m\mid\mathcal G]^T(m-T)
+]\\
+&=0.
+\end{aligned}
+$$
+
+The decomposition follows.
+
+## Answer 28
+
+Let
+
+$$
+\mathcal G=\sigma(A).
+$$
+
+Every admissible estimator using only \(A\) is a square-integrable \(\mathcal G\)-measurable random vector and therefore has the form \(g(A)\), up to a.s. equality.
+
+Set
+
+$$
+m=\mathbb E[Z\mid A].
+$$
+
+Question 27 gives
+
+$$
+\mathbb E\|Z-g(A)\|^2
+=
+\mathbb E\|Z-m\|^2
++
+\mathbb E\|m-g(A)\|^2.
+$$
+
+The second term is nonnegative and is zero for \(g(A)=m\). Therefore
+
+$$
+\inf_g
+\mathbb E\|Z-g(A)\|^2
+=
+\mathbb E\|Z-m\|^2.
+$$
+
+The minimizer is unique as an element of \(L^2\), hence unique up to almost-sure equality.
+
+If a candidate \(g(A)\) is not square-integrable, its squared risk is infinite or not an admissible finite-risk competitor.
+
+## Answer 29
+
+Let
+
+$$
+m=\mathbb E[Z\mid A].
+$$
+
+Then
+
+$$
+\begin{aligned}
+L(Q)
+&=
+\mathbb E\|Z-m\|^2\\
+&=
+\mathbb E[
+\mathbb E[\|Z-m\|^2\mid A]
+]\\
+&=
+\mathbb E[
+\operatorname{tr}(
+\mathbb E[(Z-m)(Z-m)^T\mid A]
+)
+]\\
+&=
+\mathbb E[
+\operatorname{tr}(\operatorname{Cov}(Z\mid A))
+].
+\end{aligned}
+$$
+
+The second equality is the tower property. The third uses
+
+$$
+\|x\|^2=\operatorname{tr}(xx^T).
+$$
+
+## Answer 30
+
+Since
+
+$$
+L(Q)
+=
+\mathbb E\|Z-\mathbb E[Z\mid A]\|^2,
+$$
+
+we have \(L(Q)=0\) iff
+
+$$
+Z=\mathbb E[Z\mid A]
+\qquad\text{a.s.}
+$$
+
+The right-hand side is \(\sigma(A)\)-measurable, so this is equivalent to \(Z\) being \(\sigma(A)\)-measurable up to a.s. equality.
+
+By the factorization theorem, this is equivalent to the existence of measurable \(g\) with
+
+$$
+Z=g(A)
+\qquad\text{a.s.}
+$$
+
+This only requires recovery on a set carrying probability one. The deterministic observation map may fail to be injective elsewhere, including on points or sets that the law of \(Z\) never visits.
+
+## Answer 31
+
+The unrestricted class contains every measurable square-integrable function of \(A\). The affine class contains only
+
+$$
+BA+b.
+$$
+
+The unrestricted optimum is
+
+$$
+\mathbb E[Z\mid A].
+$$
+
+Example: let \(A\sim\mathcal N(0,1)\) and define
+
+$$
+Z=A^2.
+$$
+
+Then \(Z\) is already known from \(A\), so
+
+$$
+\mathbb E[Z\mid A]=A^2
+$$
+
+and the unrestricted MMSE is zero.
+
+No affine function \(bA+c\) equals \(A^2\) almost surely under a nondegenerate Gaussian law. Hence the best affine risk is strictly positive.
+
+## Answer 32
+
+Let
+
+$$
+Y=QZ.
+$$
+
+Since \(Z\sim\mathcal N(0,I_d)\) and \(Q\) is orthogonal,
+
+$$
+Y\sim\mathcal N(0,I_d).
+$$
+
+Also,
+
+$$
+Z=Q^TY
+$$
+
+and
+
+$$
+A=\operatorname{ReLU}(Y).
+$$
+
+For any decoder \(g\), define
+
+$$
+h(a)=Qg(a).
+$$
+
+This is a bijection between measurable decoders \(g\) and measurable decoders \(h\). Since \(Q\) preserves norms,
+
+$$
+\begin{aligned}
+\|Z-g(A)\|
+&=
+\|QZ-Qg(A)\|\\
+&=
+\|Y-h(\operatorname{ReLU}(Y))\|.
+\end{aligned}
+$$
+
+Therefore
+
+$$
+L(Q)
+=
+\inf_h
+\mathbb E\|
+Y-h(\operatorname{ReLU}(Y))
+\|^2.
+$$
+
+The right-hand side depends only on the distribution of \(Y\), which is \(\mathcal N(0,I_d)\) for every \(Q\). Hence \(L(Q)\) is constant.
+
+# Bridge problems
+
+## Bridge 1
+
+If \(Z\ge0\) coordinatewise almost surely, then
+
+$$
+\operatorname{ReLU}(Z)=Z
+$$
+
+almost surely. At \(Q=I\),
+
+$$
+A=Z,
+$$
+
+so \(g(a)=a\) reconstructs \(Z\) exactly. Thus \(L(I)=0\).
+
+Sparsity and the exponential amplitude distribution are irrelevant because only nonnegativity is used.
+
+## Bridge 2
+
+The collision argument is incomplete because:
+
+1. the two points may both have probability zero;
+2. one or both points may lie outside the support of \(Z\);
+3. the collision may occur only on a null subset of latent space;
+4. the conditional law given the shared observation may still be degenerate almost surely;
+5. for continuous distributions, pointwise collisions do not by themselves establish positive conditional variance on a positive-probability set of observations.
+
+The required claim is probabilistic, not merely set-theoretic.
+
+## Bridge 3
+
+Since
+
+$$
+L(Q)
+=
+\mathbb E[
+\operatorname{tr}(\operatorname{Cov}(Z\mid A))
+],
+$$
+
+and the integrand is nonnegative,
+
+$$
+L(Q)>0
+$$
+
+iff
+
+$$
+\operatorname{tr}(\operatorname{Cov}(Z\mid A))>0
+$$
+
+with positive probability.
+
+A concrete sufficient condition is: there exists a measurable set \(B\) in observation space with
+
+$$
+\mathbb P(A\in B)>0
+$$
+
+and a constant \(\varepsilon>0\) such that
+
+$$
+\operatorname{tr}(\operatorname{Cov}(Z\mid A))
+\ge\varepsilon
+$$
+
+almost surely on \(\{A\in B\}\). Then
+
+$$
+L(Q)\ge
+\varepsilon\,\mathbb P(A\in B)>0.
+$$
+
+The uniform lower bound can be weakened; it is enough that the nonnegative conditional trace be positive on a set of positive probability.
+
+## Bridge 4
+
+Here
+
+$$
+QZ
+=
+\frac1{\sqrt2}
+\begin{bmatrix}
+Z_1-Z_2\\
+Z_1+Z_2
+\end{bmatrix}.
+$$
+
+Since \(Z_1,Z_2\ge0\),
+
+$$
+A_2=\frac{Z_1+Z_2}{\sqrt2}.
+$$
+
+Also,
+
+$$
+A_1
+=
+\frac{(Z_1-Z_2)_+}{\sqrt2}.
+$$
+
+On the region
+
+$$
+0<Z_1<Z_2,
+$$
+
+we observe
+
+$$
+A_1=0,
+\qquad
+A_2=\frac{Z_1+Z_2}{\sqrt2}.
+$$
+
+Thus the observation reveals the sum but not the split.
+
+A rigorous positivity proof can proceed by:
+
+1. restricting to the event that both coordinates are active;
+2. identifying the joint density on \(0<z_1<z_2\);
+3. changing variables to
+   $$
+   s=z_1+z_2,
+   \qquad
+   u=z_1;
+   $$
+4. showing that, conditional on a nontrivial interval of sums \(s\), the variable \(u\) has a nondegenerate conditional density on
+   $$
+   0<u<s/2;
+   $$
+5. concluding that
+   $$
+   \operatorname{Var}(Z_1\mid A)>0
+   $$
+   on a positive-probability set of observations;
+6. hence
+   $$
+   \operatorname{tr}(\operatorname{Cov}(Z\mid A))>0
+   $$
+   there and \(L(Q)>0\).
+
+The main technical issue is that conditioning on an exact continuous value of the sum requires a regular conditional distribution or a density calculation. Merely drawing the fibre is not enough.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

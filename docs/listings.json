@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/privileged-basis/answer.html",
+      "/posts/privileged-basis/index.html",
       "/posts/multivariable-statistics/index.html",
       "/posts/gemma/index.html",
       "/posts/part-whole-training/index.html",

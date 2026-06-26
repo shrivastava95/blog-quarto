@@ -22,16 +22,11 @@ This document records:
 
 # Question 1 — Covariance and second moments
 
-Let $X \in \mathbb{R}^d$ be a random vector with mean $\mu=\mathbb{E}[X]$. We know that, the covariance of (not necessarily independent) two random variables $A, B \in \mathbb{R}$ is expressed as: 
-
+- Let $X \in \mathbb{R}^d$ be a random vector with mean $\mu=\mathbb{E}[X]$. We know that, the covariance of (not necessarily independent) two random variables $A, B \in \mathbb{R}$ is expressed as: 
 $$\operatorname{Cov}(A, B) = \mathbb{E}[(A - \mathbb{E}[A])(B - \mathbb{E}[B])]$$. 
-
 We can use this notion of covariance of two random variables to construct the notion of <u>**covariance of a vector**</u> with itself: 
-
 $$\operatorname{Cov}(X)_{ij} = \mathbb{E}[(X_i - \mathbb{E}[X])(X_j - \mathbb{E}[X])],$$ 
-
 or, in matrix form, equivalently: 
-
 $$\operatorname{Cov}(X) = \mathbb{E}[(X - \mathbb{E}[X])(X - \mathbb{E}[X])^T]$$
 
 - The diagonal entries are called the <u>**coordinate variances**</u> $\operatorname{Cov}(X)_{ii} = \mathbb E[(X_i-\mu_i)^2] = \operatorname{Var}(X_i)$

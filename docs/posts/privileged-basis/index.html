@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ishaan Shrivastava">
+
+<title>Prerequisite Study Guide: ReLU Privileged-Basis Reconstruction – Ishaan’s Blog</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-1be0ecead31c5c96873a485463f2f345.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Ishaan’s Blog</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../credentials/"> 
+<span class="menu-text">Credentials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/shrivastava95"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/avatsavirhs"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Prerequisite Study Guide: ReLU Privileged-Basis Reconstruction</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Ishaan Shrivastava </p>
+            </div>
+    </div>
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose"><span class="header-section-number">1</span> Purpose</a></li>
+  <li><a href="#primary-reading" id="toc-primary-reading" class="nav-link" data-scroll-target="#primary-reading"><span class="header-section-number">2</span> Primary reading</a>
+  <ul class="collapse">
+  <li><a href="#level-1-information-and-measurability" id="toc-level-1-information-and-measurability" class="nav-link" data-scroll-target="#level-1-information-and-measurability"><span class="header-section-number">2.1</span> Level 1 — Information and measurability</a></li>
+  <li><a href="#level-2-conditional-expectation" id="toc-level-2-conditional-expectation" class="nav-link" data-scroll-target="#level-2-conditional-expectation"><span class="header-section-number">2.2</span> Level 2 — Conditional expectation</a></li>
+  <li><a href="#level-3-l2-geometry-and-mmse" id="toc-level-3-l2-geometry-and-mmse" class="nav-link" data-scroll-target="#level-3-l2-geometry-and-mmse"><span class="header-section-number">2.3</span> Level 3 — (L^2) geometry and MMSE</a></li>
+  </ul></li>
+  <li><a href="#optional-terse-reference" id="toc-optional-terse-reference" class="nav-link" data-scroll-target="#optional-terse-reference"><span class="header-section-number">3</span> Optional terse reference</a></li>
+  <li><a href="#how-to-use-the-quiz" id="toc-how-to-use-the-quiz" class="nav-link" data-scroll-target="#how-to-use-the-quiz"><span class="header-section-number">4</span> How to use the quiz</a></li>
+  <li><a href="#quiz" id="toc-quiz" class="nav-link" data-scroll-target="#quiz"><span class="header-section-number">5</span> Quiz</a></li>
+  <li><a href="#part-i-measurability-and-information" id="toc-part-i-measurability-and-information" class="nav-link" data-scroll-target="#part-i-measurability-and-information"><span class="header-section-number">6</span> Part I — Measurability and information</a>
+  <ul class="collapse">
+  <li><a href="#question-1-sigma-algebra" id="toc-question-1-sigma-algebra" class="nav-link" data-scroll-target="#question-1-sigma-algebra"><span class="header-section-number">6.1</span> Question 1 ★ — Sigma-algebra</a></li>
+  <li><a href="#question-2-finite-examples" id="toc-question-2-finite-examples" class="nav-link" data-scroll-target="#question-2-finite-examples"><span class="header-section-number">6.2</span> Question 2 — Finite examples</a></li>
+  <li><a href="#question-3-measurable-map" id="toc-question-3-measurable-map" class="nav-link" data-scroll-target="#question-3-measurable-map"><span class="header-section-number">6.3</span> Question 3 ★ — Measurable map</a></li>
+  <li><a href="#question-4-composition" id="toc-question-4-composition" class="nav-link" data-scroll-target="#question-4-composition"><span class="header-section-number">6.4</span> Question 4 — Composition</a></li>
+  <li><a href="#question-5-generated-sigma-algebra" id="toc-question-5-generated-sigma-algebra" class="nav-link" data-scroll-target="#question-5-generated-sigma-algebra"><span class="header-section-number">6.5</span> Question 5 ★ — Generated sigma-algebra</a></li>
+  <li><a href="#question-6-law-or-pushforward-distribution" id="toc-question-6-law-or-pushforward-distribution" class="nav-link" data-scroll-target="#question-6-law-or-pushforward-distribution"><span class="header-section-number">6.6</span> Question 6 — Law or pushforward distribution</a></li>
+  <li><a href="#question-7-factorization-through-the-observation" id="toc-question-7-factorization-through-the-observation" class="nav-link" data-scroll-target="#question-7-factorization-through-the-observation"><span class="header-section-number">6.7</span> Question 7 ★ — Factorization through the observation</a></li>
+  <li><a href="#question-8-type-checking" id="toc-question-8-type-checking" class="nav-link" data-scroll-target="#question-8-type-checking"><span class="header-section-number">6.8</span> Question 8 — Type checking</a></li>
+  <li><a href="#question-9-measurability-of-the-relu-observation" id="toc-question-9-measurability-of-the-relu-observation" class="nav-link" data-scroll-target="#question-9-measurability-of-the-relu-observation"><span class="header-section-number">6.9</span> Question 9 ★ — Measurability of the ReLU observation</a></li>
+  </ul></li>
+  <li><a href="#part-ii-conditional-expectation" id="toc-part-ii-conditional-expectation" class="nav-link" data-scroll-target="#part-ii-conditional-expectation"><span class="header-section-number">7</span> Part II — Conditional expectation</a>
+  <ul class="collapse">
+  <li><a href="#question-10-definition" id="toc-question-10-definition" class="nav-link" data-scroll-target="#question-10-definition"><span class="header-section-number">7.1</span> Question 10 ★ — Definition</a></li>
+  <li><a href="#question-11-finite-partition-calculation" id="toc-question-11-finite-partition-calculation" class="nav-link" data-scroll-target="#question-11-finite-partition-calculation"><span class="header-section-number">7.2</span> Question 11 — Finite partition calculation</a></li>
+  <li><a href="#question-12-verify-from-the-definition" id="toc-question-12-verify-from-the-definition" class="nav-link" data-scroll-target="#question-12-verify-from-the-definition"><span class="header-section-number">7.3</span> Question 12 ★ — Verify from the definition</a></li>
+  <li><a href="#question-13-already-known-information" id="toc-question-13-already-known-information" class="nav-link" data-scroll-target="#question-13-already-known-information"><span class="header-section-number">7.4</span> Question 13 — Already known information</a></li>
+  <li><a href="#question-14-irrelevant-information" id="toc-question-14-irrelevant-information" class="nav-link" data-scroll-target="#question-14-irrelevant-information"><span class="header-section-number">7.5</span> Question 14 — Irrelevant information</a></li>
+  <li><a href="#question-15-tower-property" id="toc-question-15-tower-property" class="nav-link" data-scroll-target="#question-15-tower-property"><span class="header-section-number">7.6</span> Question 15 ★ — Tower property</a></li>
+  <li><a href="#question-16-law-of-total-variance" id="toc-question-16-law-of-total-variance" class="nav-link" data-scroll-target="#question-16-law-of-total-variance"><span class="header-section-number">7.7</span> Question 16 ★ — Law of total variance</a></li>
+  <li><a href="#question-17-vector-version" id="toc-question-17-vector-version" class="nav-link" data-scroll-target="#question-17-vector-version"><span class="header-section-number">7.8</span> Question 17 — Vector version</a></li>
+  <li><a href="#question-18-trace-of-conditional-covariance" id="toc-question-18-trace-of-conditional-covariance" class="nav-link" data-scroll-target="#question-18-trace-of-conditional-covariance"><span class="header-section-number">7.9</span> Question 18 ★ — Trace of conditional covariance</a></li>
+  <li><a href="#question-19-scalar-relu-with-a-uniform-latent" id="toc-question-19-scalar-relu-with-a-uniform-latent" class="nav-link" data-scroll-target="#question-19-scalar-relu-with-a-uniform-latent"><span class="header-section-number">7.10</span> Question 19 — Scalar ReLU with a uniform latent</a></li>
+  <li><a href="#question-20-scalar-gaussian-relu" id="toc-question-20-scalar-gaussian-relu" class="nav-link" data-scroll-target="#question-20-scalar-gaussian-relu"><span class="header-section-number">7.11</span> Question 20 — Scalar Gaussian ReLU</a></li>
+  <li><a href="#question-21-conditioning-on-a-continuously-distributed-observation" id="toc-question-21-conditioning-on-a-continuously-distributed-observation" class="nav-link" data-scroll-target="#question-21-conditioning-on-a-continuously-distributed-observation"><span class="header-section-number">7.12</span> Question 21 — Conditioning on a continuously distributed observation</a></li>
+  <li><a href="#question-22-sparse-nonnegative-scalar" id="toc-question-22-sparse-nonnegative-scalar" class="nav-link" data-scroll-target="#question-22-sparse-nonnegative-scalar"><span class="header-section-number">7.13</span> Question 22 — Sparse nonnegative scalar</a></li>
+  </ul></li>
+  <li><a href="#part-iii-l2-geometry-and-mmse" id="toc-part-iii-l2-geometry-and-mmse" class="nav-link" data-scroll-target="#part-iii-l2-geometry-and-mmse"><span class="header-section-number">8</span> Part III — (L^2) geometry and MMSE</a>
+  <ul class="collapse">
+  <li><a href="#question-23-l2-as-an-inner-product-space" id="toc-question-23-l2-as-an-inner-product-space" class="nav-link" data-scroll-target="#question-23-l2-as-an-inner-product-space"><span class="header-section-number">8.1</span> Question 23 ★ — (L^2) as an inner-product space</a></li>
+  <li><a href="#question-24-the-observable-subspace" id="toc-question-24-the-observable-subspace" class="nav-link" data-scroll-target="#question-24-the-observable-subspace"><span class="header-section-number">8.2</span> Question 24 — The observable subspace</a></li>
+  <li><a href="#question-25-projection-theorem" id="toc-question-25-projection-theorem" class="nav-link" data-scroll-target="#question-25-projection-theorem"><span class="header-section-number">8.3</span> Question 25 ★ — Projection theorem</a></li>
+  <li><a href="#question-26-conditional-expectation-is-the-projection" id="toc-question-26-conditional-expectation-is-the-projection" class="nav-link" data-scroll-target="#question-26-conditional-expectation-is-the-projection"><span class="header-section-number">8.4</span> Question 26 ★ — Conditional expectation is the projection</a></li>
+  <li><a href="#question-27-pythagorean-risk-decomposition" id="toc-question-27-pythagorean-risk-decomposition" class="nav-link" data-scroll-target="#question-27-pythagorean-risk-decomposition"><span class="header-section-number">8.5</span> Question 27 ★ — Pythagorean risk decomposition</a></li>
+  <li><a href="#question-28-mmse-decoder" id="toc-question-28-mmse-decoder" class="nav-link" data-scroll-target="#question-28-mmse-decoder"><span class="header-section-number">8.6</span> Question 28 ★ — MMSE decoder</a></li>
+  <li><a href="#question-29-conditional-covariance-formula-for-lq" id="toc-question-29-conditional-covariance-formula-for-lq" class="nav-link" data-scroll-target="#question-29-conditional-covariance-formula-for-lq"><span class="header-section-number">8.7</span> Question 29 ★ — Conditional covariance formula for (L(Q))</a></li>
+  <li><a href="#question-30-exact-recoverability" id="toc-question-30-exact-recoverability" class="nav-link" data-scroll-target="#question-30-exact-recoverability"><span class="header-section-number">8.8</span> Question 30 ★ — Exact recoverability</a></li>
+  <li><a href="#question-31-arbitrary-decoder-versus-linear-decoder" id="toc-question-31-arbitrary-decoder-versus-linear-decoder" class="nav-link" data-scroll-target="#question-31-arbitrary-decoder-versus-linear-decoder"><span class="header-section-number">8.9</span> Question 31 ★ — Arbitrary decoder versus linear decoder</a></li>
+  <li><a href="#question-32-gaussian-rotational-invariance" id="toc-question-32-gaussian-rotational-invariance" class="nav-link" data-scroll-target="#question-32-gaussian-rotational-invariance"><span class="header-section-number">8.10</span> Question 32 ★ — Gaussian rotational invariance</a></li>
+  </ul></li>
+  <li><a href="#bridge-problems-toward-the-privileged-basis-proof" id="toc-bridge-problems-toward-the-privileged-basis-proof" class="nav-link" data-scroll-target="#bridge-problems-toward-the-privileged-basis-proof"><span class="header-section-number">9</span> Bridge problems toward the privileged-basis proof</a>
+  <ul class="collapse">
+  <li><a href="#bridge-1-identity-basis-for-nonnegative-latents" id="toc-bridge-1-identity-basis-for-nonnegative-latents" class="nav-link" data-scroll-target="#bridge-1-identity-basis-for-nonnegative-latents"><span class="header-section-number">9.1</span> Bridge 1 — Identity basis for nonnegative latents</a></li>
+  <li><a href="#bridge-2-why-one-collision-is-insufficient" id="toc-bridge-2-why-one-collision-is-insufficient" class="nav-link" data-scroll-target="#bridge-2-why-one-collision-is-insufficient"><span class="header-section-number">9.2</span> Bridge 2 — Why one collision is insufficient</a></li>
+  <li><a href="#bridge-3-correct-positivity-criterion" id="toc-bridge-3-correct-positivity-criterion" class="nav-link" data-scroll-target="#bridge-3-correct-positivity-criterion"><span class="header-section-number">9.3</span> Bridge 3 — Correct positivity criterion</a></li>
+  <li><a href="#bridge-4-forty-five-degree-sparse-case" id="toc-bridge-4-forty-five-degree-sparse-case" class="nav-link" data-scroll-target="#bridge-4-forty-five-degree-sparse-case"><span class="header-section-number">9.4</span> Bridge 4 — Forty-five-degree sparse case</a></li>
+  </ul></li>
+  <li><a href="#readiness-criterion" id="toc-readiness-criterion" class="nav-link" data-scroll-target="#readiness-criterion"><span class="header-section-number">10</span> Readiness criterion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="purpose" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Purpose</h1>
+<p>The target object is</p>
+<p><span class="math display">\[
+L(Q)
+=
+\inf_g
+\mathbb E\!\left[
+\left\|Z-g(\operatorname{ReLU}(QZ))\right\|^2
+\right].
+\]</span></p>
+<p>Your existing notes already cover the algebraic prerequisites:</p>
+<ul>
+<li>expectation,</li>
+<li>covariance,</li>
+<li>independence,</li>
+<li>finite second moments,</li>
+<li>norms, traces, and outer products.</li>
+</ul>
+<p>This guide covers only the remaining load-bearing material:</p>
+<ol type="1">
+<li>measurable spaces, measurable maps, generated sigma-algebras, and laws;</li>
+<li>conditional expectation, tower property, and conditional variance;</li>
+<li>conditional expectation as an orthogonal projection in (L^2), hence the MMSE theorem.</li>
+</ol>
+</section>
+<section id="primary-reading" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Primary reading</h1>
+<p>Use:</p>
+<p><strong>Nima Moshayedi, <em>Lectures on Probability Theory</em>, University of Zurich</strong></p>
+<p><a href="https://arxiv.org/pdf/2010.16280" class="uri">https://arxiv.org/pdf/2010.16280</a></p>
+<p>The page numbers below refer to the printed page numbers in the notes.</p>
+<section id="level-1-information-and-measurability" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="level-1-information-and-measurability"><span class="header-section-number">2.1</span> Level 1 — Information and measurability</h2>
+<p>Read only:</p>
+<ul>
+<li>Appendix A, §1, <strong>Measurable Spaces</strong>, pp.&nbsp;143–144.</li>
+<li>Appendix A, §3, <strong>Borel Sets</strong>, pp.&nbsp;146–147.</li>
+<li>Appendix A, §5, <strong>Measurable Maps</strong>, pp.&nbsp;151–152.</li>
+<li>Chapter 2, §1 and §1.1, <strong>General Definitions</strong> and <strong>Law of a Random Variable</strong>, pp.&nbsp;25–28.</li>
+<li>Chapter 2, §2.4 and Proposition 2.2, <strong>Sigma-algebras generated by a random variable</strong>, pp.&nbsp;33–34.</li>
+</ul>
+<p>You should leave this level knowing precisely:</p>
+<p><span class="math display">\[
+X:(\Omega,\mathcal F)\to(E,\mathcal E)
+\]</span></p>
+<p>is measurable iff</p>
+<p><span class="math display">\[
+X^{-1}(B)\in\mathcal F
+\qquad
+\text{for every }B\in\mathcal E,
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\sigma(X)
+=
+\{X^{-1}(B):B\in\mathcal E\}.
+\]</span></p>
+<p>The crucial factorization theorem is:</p>
+<p><span class="math display">\[
+Y\text{ is }\sigma(X)\text{-measurable}
+\iff
+Y=f(X)
+\]</span></p>
+<p>for some measurable (f), in the setting used here.</p>
+</section>
+<section id="level-2-conditional-expectation" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="level-2-conditional-expectation"><span class="header-section-number">2.2</span> Level 2 — Conditional expectation</h2>
+<p>Read only:</p>
+<ul>
+<li>Chapter 3, §2.2, <strong>Discrete construction</strong>, pp.&nbsp;80–82.</li>
+<li>Chapter 3, §2.3 through Theorem 2.18, <strong>General construction and basic properties</strong>, pp.&nbsp;82–84.</li>
+<li>Theorem 2.29, <strong>Tower property</strong>, p.&nbsp;86.</li>
+</ul>
+<p>Skip on the first pass:</p>
+<ul>
+<li>the Radon–Nikodym construction;</li>
+<li>transition kernels;</li>
+<li>martingales.</li>
+</ul>
+<p>You should leave this level knowing that</p>
+<p><span class="math display">\[
+\mathbb E[X\mid\mathcal G]
+\]</span></p>
+<p>is a (G)-measurable random variable satisfying</p>
+<p><span class="math display">\[
+\mathbb E[X1_G]
+=
+\mathbb E[\mathbb E[X\mid\mathcal G]1_G]
+\qquad
+\text{for every }G\in\mathcal G,
+\]</span></p>
+<p>and that, for (HG),</p>
+<p><span class="math display">\[
+\mathbb E[\mathbb E[X\mid\mathcal G]\mid\mathcal H]
+=
+\mathbb E[X\mid\mathcal H].
+\]</span></p>
+</section>
+<section id="level-3-l2-geometry-and-mmse" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="level-3-l2-geometry-and-mmse"><span class="header-section-number">2.3</span> Level 3 — (L^2) geometry and MMSE</h2>
+<p>Read only:</p>
+<ul>
+<li>Chapter 3, §1, <strong>(L^2(,F,P)) as a Hilbert space</strong>, pp.&nbsp;73–75.</li>
+<li>Chapter 3, §1.2, <strong>Orthogonal projection</strong>, pp.&nbsp;78–79.</li>
+<li>Definitions 2.12 and 2.15 and Remarks 2.13–2.14, pp.&nbsp;82–83.</li>
+<li>The first two paragraphs of §4.1.2, pp.&nbsp;90–91, emphasizing the distinction between:
+<ul>
+<li>projection onto all ((A))-measurable functions;</li>
+<li>projection onto the much smaller linear span of the observed variables.</li>
+</ul></li>
+</ul>
+<p>You should leave this level able to prove</p>
+<p><span class="math display">\[
+\mathbb E\|Z-g(A)\|^2
+=
+\mathbb E\|Z-\mathbb E[Z\mid A]\|^2
++
+\mathbb E\|\mathbb E[Z\mid A]-g(A)\|^2.
+\]</span></p>
+<p>This identity is the actual reason conditional expectation is the MMSE decoder.</p>
+</section>
+</section>
+<section id="optional-terse-reference" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Optional terse reference</h1>
+<p>For a compact formal reference:</p>
+<p><strong>Matija Vidmar, <em>Probability with Measure</em></strong></p>
+<p><a href="https://arxiv.org/pdf/2604.01685" class="uri">https://arxiv.org/pdf/2604.01685</a></p>
+<p>Relevant sections:</p>
+<ul>
+<li>§1.1, measurable sets;</li>
+<li>§1.3, measurable maps and generated sigma-fields;</li>
+<li>§3.3, conditioning.</li>
+</ul>
+<p>Do not use this as the first exposition unless you prefer definition-dense notes.</p>
+</section>
+<section id="how-to-use-the-quiz" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> How to use the quiz</h1>
+<p>Do three passes.</p>
+<ol type="1">
+<li><strong>Closed-notes pass:</strong> attempt every question without reading the answer key.</li>
+<li><strong>Open-notes repair pass:</strong> repair incomplete definitions and proofs.</li>
+<li><strong>Compression pass:</strong> rewrite each starred proof in at most ten lines without omitting assumptions.</li>
+</ol>
+<p>Each ordinary question is worth (2) points:</p>
+<ul>
+<li>(0): absent, materially false, or circular;</li>
+<li>(1): right idea but missing a required definition, assumption, or proof step;</li>
+<li>(2): correct and explicit.</li>
+</ul>
+<p>A starred question is load-bearing. A zero on any starred question means the corresponding level is not yet secure, regardless of total score.</p>
+</section>
+<section id="quiz" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Quiz</h1>
+</section>
+<section id="part-i-measurability-and-information" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Part I — Measurability and information</h1>
+<section id="question-1-sigma-algebra" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="question-1-sigma-algebra"><span class="header-section-number">6.1</span> Question 1 ★ — Sigma-algebra</h2>
+<p>State the definition of a sigma-algebra (F) on a set ().</p>
+<p>Then state the definition of a probability space</p>
+<p><span class="math display">\[
+(\Omega,\mathcal F,\mathbb P).
+\]</span></p>
+<p>Do not explain by analogy. Give the axioms.</p>
+</section>
+<section id="question-2-finite-examples" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="question-2-finite-examples"><span class="header-section-number">6.2</span> Question 2 — Finite examples</h2>
+<p>Let</p>
+<p><span class="math display">\[
+\Omega=\{1,2,3,4\}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\mathcal G
+=
+\{\varnothing,\Omega,\{1,2\},\{3,4\}\}.
+\]</span></p>
+<ol type="1">
+<li>Prove that (G) is a sigma-algebra.</li>
+<li>Let <span class="math display">\[
+\mathcal H
+=
+\mathcal G\cup\{\{1,3\},\{2,4\}\}.
+\]</span> Is (H) a sigma-algebra? Prove your answer.</li>
+</ol>
+</section>
+<section id="question-3-measurable-map" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="question-3-measurable-map"><span class="header-section-number">6.3</span> Question 3 ★ — Measurable map</h2>
+<p>Let ((,F)) and ((E,E)) be measurable spaces.</p>
+<p>State precisely what it means for</p>
+<p><span class="math display">\[
+X:\Omega\to E
+\]</span></p>
+<p>to be measurable.</p>
+<p>Why is the definition written using <strong>preimages</strong>, not images?</p>
+</section>
+<section id="question-4-composition" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="question-4-composition"><span class="header-section-number">6.4</span> Question 4 — Composition</h2>
+<p>Let</p>
+<p><span class="math display">\[
+X:(\Omega,\mathcal F)\to(E,\mathcal E)
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+f:(E,\mathcal E)\to(S,\mathcal S)
+\]</span></p>
+<p>be measurable.</p>
+<p>Prove directly from the definition that (fX) is measurable.</p>
+</section>
+<section id="question-5-generated-sigma-algebra" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="question-5-generated-sigma-algebra"><span class="header-section-number">6.5</span> Question 5 ★ — Generated sigma-algebra</h2>
+<p>Let</p>
+<p><span class="math display">\[
+\Omega=\{\omega_1,\omega_2,\omega_3,\omega_4\}
+\]</span></p>
+<p>and define</p>
+<p><span class="math display">\[
+X(\omega_1)=0,\qquad
+X(\omega_2)=0,\qquad
+X(\omega_3)=1,\qquad
+X(\omega_4)=2.
+\]</span></p>
+<p>Assume the codomain has the full power-set sigma-algebra.</p>
+<p>List every element of ((X)).</p>
+<p>Interpret ((X)) as the information revealed by observing (X).</p>
+</section>
+<section id="question-6-law-or-pushforward-distribution" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="question-6-law-or-pushforward-distribution"><span class="header-section-number">6.6</span> Question 6 — Law or pushforward distribution</h2>
+<p>Suppose</p>
+<p><span class="math display">\[
+\mathbb P(\{\omega_1\})=0.1,\quad
+\mathbb P(\{\omega_2\})=0.2,\quad
+\mathbb P(\{\omega_3\})=0.3,\quad
+\mathbb P(\{\omega_4\})=0.4.
+\]</span></p>
+<p>Using the (X) from Question 5, compute the law</p>
+<p><span class="math display">\[
+\mathbb P_X
+=
+\mathbb P\circ X^{-1}.
+\]</span></p>
+<p>Give its value on every subset of ({0,1,2}).</p>
+</section>
+<section id="question-7-factorization-through-the-observation" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="question-7-factorization-through-the-observation"><span class="header-section-number">6.7</span> Question 7 ★ — Factorization through the observation</h2>
+<p>State the factorization theorem relating these two statements:</p>
+<ol type="1">
+<li>(Y) is ((X))-measurable.</li>
+<li>(Y=f(X)) for some measurable function (f).</li>
+</ol>
+<p>Use it to explain rigorously why an estimator that is allowed to use only (A) has the form</p>
+<p><span class="math display">\[
+g(A).
+\]</span></p>
+</section>
+<section id="question-8-type-checking" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="question-8-type-checking"><span class="header-section-number">6.8</span> Question 8 — Type checking</h2>
+<p>For a random vector (A:R^d), distinguish the types of:</p>
+<ol type="1">
+<li>(A);</li>
+<li>(aR^d);</li>
+<li>((A));</li>
+<li>({AB}), where (BB(R^d));</li>
+<li>(E[ZA]).</li>
+</ol>
+</section>
+<section id="question-9-measurability-of-the-relu-observation" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="question-9-measurability-of-the-relu-observation"><span class="header-section-number">6.9</span> Question 9 ★ — Measurability of the ReLU observation</h2>
+<p>Assume</p>
+<p><span class="math display">\[
+Z:(\Omega,\mathcal F)\to(\mathbb R^d,\mathcal B(\mathbb R^d))
+\]</span></p>
+<p>is measurable and (QR^{dd}) is fixed.</p>
+<p>Prove that</p>
+<p><span class="math display">\[
+A=\operatorname{ReLU}(QZ)
+\]</span></p>
+<p>is measurable.</p>
+<p>State every closure fact you use.</p>
+</section>
+</section>
+<section id="part-ii-conditional-expectation" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Part II — Conditional expectation</h1>
+<section id="question-10-definition" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="question-10-definition"><span class="header-section-number">7.1</span> Question 10 ★ — Definition</h2>
+<p>Let (XL^1) and let (GF) be a sub-sigma-algebra.</p>
+<p>State the defining properties of</p>
+<p><span class="math display">\[
+Y=\mathbb E[X\mid\mathcal G].
+\]</span></p>
+<p>Include the sense in which (Y) is unique.</p>
+</section>
+<section id="question-11-finite-partition-calculation" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="question-11-finite-partition-calculation"><span class="header-section-number">7.2</span> Question 11 — Finite partition calculation</h2>
+<p>Let</p>
+<p><span class="math display">\[
+\Omega=\{1,2,3,4\},
+\]</span></p>
+<p>with probabilities</p>
+<p><span class="math display">\[
+(0.1,0.2,0.3,0.4),
+\]</span></p>
+<p>and let</p>
+<p><span class="math display">\[
+X=(2,-1,4,0)
+\]</span></p>
+<p>on these four outcomes.</p>
+<p>Let</p>
+<p><span class="math display">\[
+\mathcal G
+=
+\sigma(\{1,2\},\{3,4\}).
+\]</span></p>
+<p>Compute (E[XG]) as a random variable on ().</p>
+</section>
+<section id="question-12-verify-from-the-definition" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="question-12-verify-from-the-definition"><span class="header-section-number">7.3</span> Question 12 ★ — Verify from the definition</h2>
+<p>For your answer to Question 11, verify explicitly that</p>
+<p><span class="math display">\[
+\mathbb E[X1_G]
+=
+\mathbb E[\mathbb E[X\mid\mathcal G]1_G]
+\]</span></p>
+<p>for every (GG).</p>
+</section>
+<section id="question-13-already-known-information" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="question-13-already-known-information"><span class="header-section-number">7.4</span> Question 13 — Already known information</h2>
+<p>Prove:</p>
+<p>If (X) is (G)-measurable and integrable, then</p>
+<p><span class="math display">\[
+\mathbb E[X\mid\mathcal G]=X
+\qquad\text{a.s.}
+\]</span></p>
+</section>
+<section id="question-14-irrelevant-information" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="question-14-irrelevant-information"><span class="header-section-number">7.5</span> Question 14 — Irrelevant information</h2>
+<p>Prove:</p>
+<p>If (X) is integrable and independent of (G), then</p>
+<p><span class="math display">\[
+\mathbb E[X\mid\mathcal G]
+=
+\mathbb E[X]
+\qquad\text{a.s.}
+\]</span></p>
+</section>
+<section id="question-15-tower-property" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="question-15-tower-property"><span class="header-section-number">7.6</span> Question 15 ★ — Tower property</h2>
+<p>Let</p>
+<p><span class="math display">\[
+\mathcal H\subseteq\mathcal G\subseteq\mathcal F
+\]</span></p>
+<p>and (XL^1).</p>
+<p>State and prove</p>
+<p><span class="math display">\[
+\mathbb E[\mathbb E[X\mid\mathcal G]\mid\mathcal H]
+=
+\mathbb E[X\mid\mathcal H].
+\]</span></p>
+<p>Use the defining property of conditional expectation, not an informal averaging argument.</p>
+</section>
+<section id="question-16-law-of-total-variance" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="question-16-law-of-total-variance"><span class="header-section-number">7.7</span> Question 16 ★ — Law of total variance</h2>
+<p>For (XL^2), prove</p>
+<p><span class="math display">\[
+\operatorname{Var}(X)
+=
+\mathbb E[\operatorname{Var}(X\mid\mathcal G)]
++
+\operatorname{Var}(\mathbb E[X\mid\mathcal G]).
+\]</span></p>
+<p>Define</p>
+<p><span class="math display">\[
+\operatorname{Var}(X\mid\mathcal G)
+=
+\mathbb E[(X-\mathbb E[X\mid\mathcal G])^2\mid\mathcal G].
+\]</span></p>
+<p>Identify exactly where the cross term vanishes.</p>
+</section>
+<section id="question-17-vector-version" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="question-17-vector-version"><span class="header-section-number">7.8</span> Question 17 — Vector version</h2>
+<p>For (ZL^2(;R^d)), prove</p>
+<p><span class="math display">\[
+\operatorname{Cov}(Z)
+=
+\mathbb E[\operatorname{Cov}(Z\mid\mathcal G)]
++
+\operatorname{Cov}(\mathbb E[Z\mid\mathcal G]).
+\]</span></p>
+<p>All quantities are matrices. State what expectation of a random matrix means.</p>
+</section>
+<section id="question-18-trace-of-conditional-covariance" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="question-18-trace-of-conditional-covariance"><span class="header-section-number">7.9</span> Question 18 ★ — Trace of conditional covariance</h2>
+<p>Let</p>
+<p><span class="math display">\[
+m=\mathbb E[Z\mid\mathcal G].
+\]</span></p>
+<p>Prove</p>
+<p><span class="math display">\[
+\operatorname{tr}(\operatorname{Cov}(Z\mid\mathcal G))
+=
+\mathbb E[\|Z-m\|^2\mid\mathcal G].
+\]</span></p>
+<p>Then prove</p>
+<p><span class="math display">\[
+\mathbb E[
+\operatorname{tr}(\operatorname{Cov}(Z\mid\mathcal G))
+]
+=
+\mathbb E\|Z-m\|^2.
+\]</span></p>
+<p>Do not remove the conditional expectation in the first identity.</p>
+</section>
+<section id="question-19-scalar-relu-with-a-uniform-latent" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="question-19-scalar-relu-with-a-uniform-latent"><span class="header-section-number">7.10</span> Question 19 — Scalar ReLU with a uniform latent</h2>
+<p>Let</p>
+<p><span class="math display">\[
+Z\sim\operatorname{Unif}[-1,1],
+\qquad
+A=\operatorname{ReLU}(Z).
+\]</span></p>
+<p>Compute explicitly:</p>
+<ol type="1">
+<li>(E[ZA]) as a function (h(A));</li>
+<li>((ZA));</li>
+<li>the MMSE <span class="math display">\[
+\mathbb E[(Z-\mathbb E[Z\mid A])^2].
+\]</span></li>
+</ol>
+</section>
+<section id="question-20-scalar-gaussian-relu" class="level2" data-number="7.11">
+<h2 data-number="7.11" class="anchored" data-anchor-id="question-20-scalar-gaussian-relu"><span class="header-section-number">7.11</span> Question 20 — Scalar Gaussian ReLU</h2>
+<p>Let</p>
+<p><span class="math display">\[
+Z\sim\mathcal N(0,1),
+\qquad
+A=\operatorname{ReLU}(Z).
+\]</span></p>
+<p>You may use</p>
+<p><span class="math display">\[
+\mathbb E[Z\mid Z\le 0]
+=
+-\sqrt{\frac{2}{\pi}},
+\qquad
+\operatorname{Var}(Z\mid Z\le 0)
+=
+1-\frac{2}{\pi}.
+\]</span></p>
+<p>Compute (E[ZA]) and the MMSE.</p>
+</section>
+<section id="question-21-conditioning-on-a-continuously-distributed-observation" class="level2" data-number="7.12">
+<h2 data-number="7.12" class="anchored" data-anchor-id="question-21-conditioning-on-a-continuously-distributed-observation"><span class="header-section-number">7.12</span> Question 21 — Conditioning on a continuously distributed observation</h2>
+<p>Explain why the notation</p>
+<p><span class="math display">\[
+\mathbb E[Z\mid A=a]
+\]</span></p>
+<p>cannot generally be defined by the elementary formula</p>
+<p><span class="math display">\[
+\frac{\mathbb E[Z1_{\{A=a\}}]}{\mathbb P(A=a)}
+\]</span></p>
+<p>when (A) is continuous.</p>
+<p>Explain why</p>
+<p><span class="math display">\[
+\mathbb E[Z\mid A]
+=
+\mathbb E[Z\mid\sigma(A)]
+\]</span></p>
+<p>remains well-defined.</p>
+</section>
+<section id="question-22-sparse-nonnegative-scalar" class="level2" data-number="7.13">
+<h2 data-number="7.13" class="anchored" data-anchor-id="question-22-sparse-nonnegative-scalar"><span class="header-section-number">7.13</span> Question 22 — Sparse nonnegative scalar</h2>
+<p>Let</p>
+<p><span class="math display">\[
+Z=
+\begin{cases}
+0,&amp;\text{with probability }1-p,\\
+X,&amp;\text{with probability }p,
+\end{cases}
+\qquad
+X\sim\operatorname{Exp}(1),
+\]</span></p>
+<p>and let (A=(Z)).</p>
+<p>Compute (E[ZA]) and the MMSE.</p>
+</section>
+</section>
+<section id="part-iii-l2-geometry-and-mmse" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Part III — (L^2) geometry and MMSE</h1>
+<section id="question-23-l2-as-an-inner-product-space" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="question-23-l2-as-an-inner-product-space"><span class="header-section-number">8.1</span> Question 23 ★ — (L^2) as an inner-product space</h2>
+<p>Define</p>
+<p><span class="math display">\[
+L^2(\Omega,\mathcal F,\mathbb P)
+\]</span></p>
+<p>and its inner product and norm.</p>
+<p>Why are random variables that are equal almost surely treated as the same element of (L^2)?</p>
+</section>
+<section id="question-24-the-observable-subspace" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="question-24-the-observable-subspace"><span class="header-section-number">8.2</span> Question 24 — The observable subspace</h2>
+<p>For a sub-sigma-algebra (G), define</p>
+<p><span class="math display">\[
+L^2(\Omega,\mathcal G,\mathbb P).
+\]</span></p>
+<p>Prove it is a linear subspace of (L^2(,F,P)).</p>
+<p>State the additional property needed before the orthogonal projection theorem applies.</p>
+</section>
+<section id="question-25-projection-theorem" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="question-25-projection-theorem"><span class="header-section-number">8.3</span> Question 25 ★ — Projection theorem</h2>
+<p>State the orthogonal projection theorem for a closed linear subspace (M) of a Hilbert space (H).</p>
+<p>Give both equivalent characterizations of the projection (P_Mx):</p>
+<ol type="1">
+<li>closest point;</li>
+<li>orthogonality of the residual.</li>
+</ol>
+</section>
+<section id="question-26-conditional-expectation-is-the-projection" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="question-26-conditional-expectation-is-the-projection"><span class="header-section-number">8.4</span> Question 26 ★ — Conditional expectation is the projection</h2>
+<p>Let (XL^2).</p>
+<p>Prove that</p>
+<p><span class="math display">\[
+m=\mathbb E[X\mid\mathcal G]
+\]</span></p>
+<p>satisfies</p>
+<p><span class="math display">\[
+\mathbb E[(X-m)V]=0
+\]</span></p>
+<p>for every (VL^2(,G,P)).</p>
+<p>First prove it for indicator functions, then simple functions, then general (V).</p>
+</section>
+<section id="question-27-pythagorean-risk-decomposition" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="question-27-pythagorean-risk-decomposition"><span class="header-section-number">8.5</span> Question 27 ★ — Pythagorean risk decomposition</h2>
+<p>Let</p>
+<p><span class="math display">\[
+Z\in L^2(\Omega;\mathbb R^d),
+\qquad
+m=\mathbb E[Z\mid\mathcal G],
+\]</span></p>
+<p>and let (T) be any square-integrable (G)-measurable random vector.</p>
+<p>Prove</p>
+<p><span class="math display">\[
+\mathbb E\|Z-T\|^2
+=
+\mathbb E\|Z-m\|^2
++
+\mathbb E\|m-T\|^2.
+\]</span></p>
+<p>Expand the square and prove that the cross term is exactly zero.</p>
+</section>
+<section id="question-28-mmse-decoder" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="question-28-mmse-decoder"><span class="header-section-number">8.6</span> Question 28 ★ — MMSE decoder</h2>
+<p>Set</p>
+<p><span class="math display">\[
+A=\operatorname{ReLU}(QZ).
+\]</span></p>
+<p>Using Questions 7 and 27, prove</p>
+<p><span class="math display">\[
+\inf_g
+\mathbb E\|Z-g(A)\|^2
+=
+\mathbb E\|Z-\mathbb E[Z\mid A]\|^2.
+\]</span></p>
+<p>State:</p>
+<ol type="1">
+<li>the admissible class of (g);</li>
+<li>the integrability condition;</li>
+<li>the sense in which the minimizer is unique.</li>
+</ol>
+</section>
+<section id="question-29-conditional-covariance-formula-for-lq" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="question-29-conditional-covariance-formula-for-lq"><span class="header-section-number">8.7</span> Question 29 ★ — Conditional covariance formula for (L(Q))</h2>
+<p>Prove</p>
+<p><span class="math display">\[
+L(Q)
+=
+\mathbb E[
+\operatorname{tr}(\operatorname{Cov}(Z\mid A))
+],
+\qquad
+A=\operatorname{ReLU}(QZ).
+\]</span></p>
+<p>Your proof should be a chain of explicit equalities.</p>
+</section>
+<section id="question-30-exact-recoverability" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="question-30-exact-recoverability"><span class="header-section-number">8.8</span> Question 30 ★ — Exact recoverability</h2>
+<p>Prove the equivalence</p>
+<p><span class="math display">\[
+L(Q)=0
+\]</span></p>
+<p>if and only if</p>
+<p><span class="math display">\[
+Z\text{ is }\sigma(A)\text{-measurable},
+\]</span></p>
+<p>if and only if there exists a measurable (g) such that</p>
+<p><span class="math display">\[
+Z=g(A)
+\qquad\text{a.s.}
+\]</span></p>
+<p>Explain why this is an <strong>almost-sure recoverability</strong> statement, not necessarily a statement that the deterministic map</p>
+<p><span class="math display">\[
+z\mapsto\operatorname{ReLU}(Qz)
+\]</span></p>
+<p>is globally injective on all of (R^d).</p>
+</section>
+<section id="question-31-arbitrary-decoder-versus-linear-decoder" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="question-31-arbitrary-decoder-versus-linear-decoder"><span class="header-section-number">8.9</span> Question 31 ★ — Arbitrary decoder versus linear decoder</h2>
+<p>Explain the difference between minimizing over:</p>
+<p><span class="math display">\[
+g(A)\quad\text{for every measurable }g
+\]</span></p>
+<p>and minimizing over:</p>
+<p><span class="math display">\[
+BA+b.
+\]</span></p>
+<p>Give a concrete example in which the MMSE decoder is nonlinear and therefore cannot be represented by an affine decoder.</p>
+</section>
+<section id="question-32-gaussian-rotational-invariance" class="level2" data-number="8.10">
+<h2 data-number="8.10" class="anchored" data-anchor-id="question-32-gaussian-rotational-invariance"><span class="header-section-number">8.10</span> Question 32 ★ — Gaussian rotational invariance</h2>
+<p>Assume</p>
+<p><span class="math display">\[
+Z\sim\mathcal N(0,I_d)
+\]</span></p>
+<p>and (QO(d)).</p>
+<p>Prove that (L(Q)) is independent of (Q).</p>
+<p>Your proof must use:</p>
+<ol type="1">
+<li>(Y=QZN(0,I_d));</li>
+<li>preservation of Euclidean norm by (Q);</li>
+<li>a bijection between decoders for (Z) and decoders for (Y).</li>
+</ol>
+</section>
+</section>
+<section id="bridge-problems-toward-the-privileged-basis-proof" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Bridge problems toward the privileged-basis proof</h1>
+<p>These are not prerequisites. They test whether you can now begin the actual problem.</p>
+<section id="bridge-1-identity-basis-for-nonnegative-latents" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="bridge-1-identity-basis-for-nonnegative-latents"><span class="header-section-number">9.1</span> Bridge 1 — Identity basis for nonnegative latents</h2>
+<p>Assume</p>
+<p><span class="math display">\[
+Z\in[0,\infty)^d
+\qquad\text{a.s.}
+\]</span></p>
+<p>Prove</p>
+<p><span class="math display">\[
+L(I)=0.
+\]</span></p>
+<p>The sparsity and exponential assumptions are irrelevant for this step. Explain why.</p>
+</section>
+<section id="bridge-2-why-one-collision-is-insufficient" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="bridge-2-why-one-collision-is-insufficient"><span class="header-section-number">9.2</span> Bridge 2 — Why one collision is insufficient</h2>
+<p>Someone argues:</p>
+<blockquote class="blockquote">
+<p>I found (zz’) such that [ (Qz) = (Qz’). ] Therefore (L(Q)&gt;0).</p>
+</blockquote>
+<p>Give at least three reasons this argument is incomplete.</p>
+</section>
+<section id="bridge-3-correct-positivity-criterion" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="bridge-3-correct-positivity-criterion"><span class="header-section-number">9.3</span> Bridge 3 — Correct positivity criterion</h2>
+<p>State a rigorous condition, in terms of conditional covariance, sufficient and necessary for</p>
+<p><span class="math display">\[
+L(Q)&gt;0.
+\]</span></p>
+<p>Then state a more concrete sufficient condition involving a positive-probability set of observations.</p>
+</section>
+<section id="bridge-4-forty-five-degree-sparse-case" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="bridge-4-forty-five-degree-sparse-case"><span class="header-section-number">9.4</span> Bridge 4 — Forty-five-degree sparse case</h2>
+<p>Let (d=2) and</p>
+<p><span class="math display">\[
+Q
+=
+\frac{1}{\sqrt 2}
+\begin{bmatrix}
+1&amp;-1\\
+1&amp;1
+\end{bmatrix}.
+\]</span></p>
+<p>Let (Z_1,Z_2) be independent sparse nonnegative exponential variables.</p>
+<p>Write</p>
+<p><span class="math display">\[
+A=\operatorname{ReLU}(QZ)
+\]</span></p>
+<p>coordinatewise.</p>
+<p>Identify a region of latent space on which one ReLU coordinate is zero and the other reveals only (Z_1+Z_2).</p>
+<p>Formulate a rigorous route to proving that the conditional distribution of (Z) on this region has nonzero variance. You do not need to complete all measure-theoretic details, but you must identify exactly what must be proved.</p>
+</section>
+</section>
+<section id="readiness-criterion" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Readiness criterion</h1>
+<p>There are (32) main questions, for (64) points.</p>
+<p>You are ready to begin the privileged-basis proof when:</p>
+<ul>
+<li>total score is at least (52/64);</li>
+<li>no starred question receives (0);</li>
+<li>Questions 27–30 can be reproduced without notes;</li>
+<li>you can explain in one paragraph why the problem is fundamentally about the conditional spread of ReLU fibres under the law of (Z).</li>
+</ul>
+<p>The answer key is a separate file. Do not open it until completing the closed-notes pass.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/shrivastava95\.github\.io\/blog-quarto\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

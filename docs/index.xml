@@ -37,29 +37,24 @@
 </section>
 <section id="question-1-covariance-and-second-moments" class="level1">
 <h1>Question 1 — Covariance and second moments</h1>
-<p>Let <img src="https://latex.codecogs.com/png.latex?X%20%5Cin%20%5Cmathbb%7BR%7D%5Ed"> be a random vector with mean <img src="https://latex.codecogs.com/png.latex?%5Cmu=%5Cmathbb%7BE%7D%5BX%5D">. We know that, the covariance of (not necessarily independent) two random variables <img src="https://latex.codecogs.com/png.latex?A,%20B%20%5Cin%20%5Cmathbb%7BR%7D"> is expressed as:</p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7BCov%7D(A,%20B)%20=%20%5Cmathbb%7BE%7D%5B(A%20-%20%5Cmathbb%7BE%7D%5BA%5D)(B%20-%20%5Cmathbb%7BE%7D%5BB%5D)%5D">.</p>
-<p>We can use this notion of covariance of two random variables to construct the notion of <u><strong>covariance of a vector</strong></u> with itself:</p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7BCov%7D(X)_%7Bij%7D%20=%20%5Cmathbb%7BE%7D%5B(X_i%20-%20%5Cmathbb%7BE%7D%5BX%5D)(X_j%20-%20%5Cmathbb%7BE%7D%5BX%5D)%5D,"></p>
-<p>or, in matrix form, equivalently:</p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7BCov%7D(X)%20=%20%5Cmathbb%7BE%7D%5B(X%20-%20%5Cmathbb%7BE%7D%5BX%5D)(X%20-%20%5Cmathbb%7BE%7D%5BX%5D)%5ET%5D"></p>
 <ul>
-<li>The diagonal entries are called the <u><strong>coordinate variances</strong></u> <img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7BCov%7D(X)_%7Bii%7D%20=%20%5Cmathbb%20E%5B(X_i-%5Cmu_i)%5E2%5D%20=%20%5Coperatorname%7BVar%7D(X_i)"></li>
-<li>The <u><strong>Euclidean norm</strong></u> is expressed as <img src="https://latex.codecogs.com/png.latex?%7Cx%7C%20=%20%5Csqrt%7B%5Csum_%7Bi=1%7D%5Ed%20x_i%5E2%7D"></li>
-<li>Trivial Identity: <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%20E%7CX-%5Cmu%7C%5E2%20=%20%5Coperatorname%7Btr%7D(%5Coperatorname%7BCov%7D(X))"></li>
-<li>Inner and Outer producs: For vectors <img src="https://latex.codecogs.com/png.latex?a,b%5Cin%5Cmathbb%7BR%7D%5Ed%20,">
+<li><p>Let <img src="https://latex.codecogs.com/png.latex?X%20%5Cin%20%5Cmathbb%7BR%7D%5Ed"> be a random vector with mean <img src="https://latex.codecogs.com/png.latex?%5Cmu=%5Cmathbb%7BE%7D%5BX%5D">. We know that, the covariance of (not necessarily independent) two random variables <img src="https://latex.codecogs.com/png.latex?A,%20B%20%5Cin%20%5Cmathbb%7BR%7D"> is expressed as: <img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7BCov%7D(A,%20B)%20=%20%5Cmathbb%7BE%7D%5B(A%20-%20%5Cmathbb%7BE%7D%5BA%5D)(B%20-%20%5Cmathbb%7BE%7D%5BB%5D)%5D">. We can use this notion of covariance of two random variables to construct the notion of <u><strong>covariance of a vector</strong></u> with itself: <img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7BCov%7D(X)_%7Bij%7D%20=%20%5Cmathbb%7BE%7D%5B(X_i%20-%20%5Cmathbb%7BE%7D%5BX%5D)(X_j%20-%20%5Cmathbb%7BE%7D%5BX%5D)%5D,"> or, in matrix form, equivalently: <img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7BCov%7D(X)%20=%20%5Cmathbb%7BE%7D%5B(X%20-%20%5Cmathbb%7BE%7D%5BX%5D)(X%20-%20%5Cmathbb%7BE%7D%5BX%5D)%5ET%5D"></p></li>
+<li><p>The diagonal entries are called the <u><strong>coordinate variances</strong></u> <img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7BCov%7D(X)_%7Bii%7D%20=%20%5Cmathbb%20E%5B(X_i-%5Cmu_i)%5E2%5D%20=%20%5Coperatorname%7BVar%7D(X_i)"></p></li>
+<li><p>The <u><strong>Euclidean norm</strong></u> is expressed as <img src="https://latex.codecogs.com/png.latex?%7Cx%7C%20=%20%5Csqrt%7B%5Csum_%7Bi=1%7D%5Ed%20x_i%5E2%7D"></p></li>
+<li><p>Trivial Identity: <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%20E%7CX-%5Cmu%7C%5E2%20=%20%5Coperatorname%7Btr%7D(%5Coperatorname%7BCov%7D(X))"></p></li>
+<li><p>Inner and Outer producs: For vectors <img src="https://latex.codecogs.com/png.latex?a,b%5Cin%5Cmathbb%7BR%7D%5Ed%20,"></p>
 <ul>
 <li>The standard <u><strong>Euclidean inner product</strong></u> is <img src="https://latex.codecogs.com/png.latex?%5Clangle%20a,b%5Crangle%20=%20%5Csum_%7Bi=1%7D%5Ed%20a_i%20b_i,"> equivalently expressed as <img src="https://latex.codecogs.com/png.latex?a%5ETb">.</li>
 <li>The <u><strong>Outer product</strong></u> is <img src="https://latex.codecogs.com/png.latex?ab%5ET%20%5Cin%20%5Cmathbb%7BR%7D%5E%7Bd%20%5Ctimes%20d%7D"></li>
 </ul></li>
-<li><img src="https://latex.codecogs.com/png.latex?%7C(a%20+%20b)%7C%5E2%20=%20%7Ca%7C%5E2%20+%20%7Cb%7C%5E2%20+%202a%5ETb"> for vectors <img src="https://latex.codecogs.com/png.latex?a,b%5Cin%5Cmathbb%7BR%7D%5Ed"></li>
-<li>Using the above trivial identity, one can derive another useful identity - <img src="https://latex.codecogs.com/png.latex?%7B%5Cmathbb%20E%7CX%7C%5E2%20=%20%5Coperatorname%7Btr%7D(%5Coperatorname%7BCov%7D(X))%20+%20%7C%5Cmathbb%20E%5BX%5D%7C%5E2%7D"></li>
-<li>Useful - <img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7Btr%7D(xy%5ET)%20=%20x%5ETy"></li>
-<li><u><strong>Linearity of Expectation</strong></u> - For integrable random variables <img src="https://latex.codecogs.com/png.latex?X,Y"> and constants <img src="https://latex.codecogs.com/png.latex?a,b%5Cin%5Cmathbb%7BR%7D,"> <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BE%7D%5BaX+bY%5D%20=%20a%5Cmathbb%20E%5BX%5D+b%5Cmathbb%20E%5BY%5D"></li>
-<li>If <img src="https://latex.codecogs.com/png.latex?X"> and <img src="https://latex.codecogs.com/png.latex?Y"> are independent and the relevant expectations exist, then <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%20E%5BXY%5D%20=%20%5Cmathbb%20E%5BX%5D%5Cmathbb%20E%5BY%5D">. Independence is sufficient, but not necessary.</li>
-<li>The second <u><strong>moment</strong></u> of a random variable is simply the expectation <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BE%7D%5BX%5E2%5D"></li>
-<li>For two random variables <img src="https://latex.codecogs.com/png.latex?A,%20B"> it is simple to see that <img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7BCov%7D(X,%20Y)%20=%20%5Cmathbb%20E%5BXY%5D%20-%20%5Cmathbb%7BE%7D%5BX%5D%5Cmathbb%7BE%7D%5BY%5D"></li>
-<li>Using the above, it can be seen that independence implies zero covariance - just expand the terms inside <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%20E%5BXY%5D"> and write them elementwise for the entire probability space (use summation or integrals)</li>
+<li><p><img src="https://latex.codecogs.com/png.latex?%7C(a%20+%20b)%7C%5E2%20=%20%7Ca%7C%5E2%20+%20%7Cb%7C%5E2%20+%202a%5ETb"> for vectors <img src="https://latex.codecogs.com/png.latex?a,b%5Cin%5Cmathbb%7BR%7D%5Ed"></p></li>
+<li><p>Using the above trivial identity, one can derive another useful identity - <img src="https://latex.codecogs.com/png.latex?%7B%5Cmathbb%20E%7CX%7C%5E2%20=%20%5Coperatorname%7Btr%7D(%5Coperatorname%7BCov%7D(X))%20+%20%7C%5Cmathbb%20E%5BX%5D%7C%5E2%7D"></p></li>
+<li><p>Useful - <img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7Btr%7D(xy%5ET)%20=%20x%5ETy"></p></li>
+<li><p><u><strong>Linearity of Expectation</strong></u> - For integrable random variables <img src="https://latex.codecogs.com/png.latex?X,Y"> and constants <img src="https://latex.codecogs.com/png.latex?a,b%5Cin%5Cmathbb%7BR%7D,"> <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BE%7D%5BaX+bY%5D%20=%20a%5Cmathbb%20E%5BX%5D+b%5Cmathbb%20E%5BY%5D"></p></li>
+<li><p>If <img src="https://latex.codecogs.com/png.latex?X"> and <img src="https://latex.codecogs.com/png.latex?Y"> are independent and the relevant expectations exist, then <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%20E%5BXY%5D%20=%20%5Cmathbb%20E%5BX%5D%5Cmathbb%20E%5BY%5D">. Independence is sufficient, but not necessary.</p></li>
+<li><p>The second <u><strong>moment</strong></u> of a random variable is simply the expectation <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%7BE%7D%5BX%5E2%5D"></p></li>
+<li><p>For two random variables <img src="https://latex.codecogs.com/png.latex?A,%20B"> it is simple to see that <img src="https://latex.codecogs.com/png.latex?%5Coperatorname%7BCov%7D(X,%20Y)%20=%20%5Cmathbb%20E%5BXY%5D%20-%20%5Cmathbb%7BE%7D%5BX%5D%5Cmathbb%7BE%7D%5BY%5D"></p></li>
+<li><p>Using the above, it can be seen that independence implies zero covariance - just expand the terms inside <img src="https://latex.codecogs.com/png.latex?%5Cmathbb%20E%5BXY%5D"> and write them elementwise for the entire probability space (use summation or integrals)</p></li>
 </ul>
 
 
@@ -548,6 +543,944 @@ draft_cache_position = draft_cache_position[-1:] + 1 # add one more position for
  ]]></description>
   <guid>https://shrivastava95.github.io/blog-quarto/posts/measure-theory/</guid>
   <pubDate>Thu, 30 Jan 2025 08:31:10 GMT</pubDate>
+</item>
+<item>
+  <title>ANSWER KEY TO PRIVILEGED BASIS AND RELU QUIZ</title>
+  <link>https://shrivastava95.github.io/blog-quarto/posts/privileged-basis/answer.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="answer-sheet" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> answer sheet</h1>
+<p><a href="../../posts/privileged-basis/index.html">Here is the answer sheet - index.qmd</a></p>
+</section>
+<section id="grading-rule" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Grading rule</h1>
+<p>Each main question is worth (2) points.</p>
+<ul>
+<li>(0): absent, materially false, circular, or confuses object types;</li>
+<li>(1): correct central idea with a missing definition, assumption, or proof step;</li>
+<li>(2): correct, explicit, and type-consistent.</li>
+</ul>
+<p>Equivalent formulations are acceptable.</p>
+</section>
+<section id="part-i-measurability-and-information" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Part I — Measurability and information</h1>
+<section id="answer-1" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="answer-1"><span class="header-section-number">3.1</span> Answer 1</h2>
+<p>A sigma-algebra (F^) satisfies:</p>
+<ol type="1">
+<li>(F);</li>
+<li>(EFE^cF);</li>
+<li>(E_nF) for all (n_{n=1}^E_nF).</li>
+</ol>
+<p>A probability space is a triple</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A(%5COmega,%5Cmathcal%20F,%5Cmathbb%20P)%0A"></p>
+<p>where (F) is a sigma-algebra and</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20P:%5Cmathcal%20F%5Cto%5B0,1%5D%0A"></p>
+<p>satisfies</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20P(%5COmega)=1%0A"></p>
+<p>and countable additivity on pairwise disjoint events.</p>
+</section>
+<section id="answer-2" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="answer-2"><span class="header-section-number">3.2</span> Answer 2</h2>
+<p>For (G):</p>
+<ul>
+<li>(,G);</li>
+<li>complements swap ({1,2}) and ({3,4});</li>
+<li>every countable union reduces to one of the four listed sets.</li>
+</ul>
+<p>Thus (G) is a sigma-algebra.</p>
+<p>For (H), note</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5C%7B1,2%5C%7D%5Ccup%5C%7B1,3%5C%7D%0A=%0A%5C%7B1,2,3%5C%7D%5Cnotin%5Cmathcal%20H.%0A"></p>
+<p>Therefore (H) is not closed under unions and is not a sigma-algebra.</p>
+</section>
+<section id="answer-3" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="answer-3"><span class="header-section-number">3.3</span> Answer 3</h2>
+<p>(X) is measurable iff</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AX%5E%7B-1%7D(B)%5Cin%5Cmathcal%20F%0A%5Cqquad%0A%5Cforall%20B%5Cin%5Cmathcal%20E.%0A"></p>
+<p>Preimages are used because they preserve complements and arbitrary unions:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AX%5E%7B-1%7D(B%5Ec)%0A=%0A(X%5E%7B-1%7D(B))%5Ec,%0A"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AX%5E%7B-1%7D%5Cleft(%5Cbigcup_n%20B_n%5Cright)%0A=%0A%5Cbigcup_nX%5E%7B-1%7D(B_n).%0A"></p>
+<p>Images do not generally preserve complements or intersections in the required way.</p>
+</section>
+<section id="answer-4" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="answer-4"><span class="header-section-number">3.4</span> Answer 4</h2>
+<p>For any (CS),</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A(f%5Ccirc%20X)%5E%7B-1%7D(C)%0A=%0AX%5E%7B-1%7D(f%5E%7B-1%7D(C)).%0A"></p>
+<p>Since (f) is measurable,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Af%5E%7B-1%7D(C)%5Cin%5Cmathcal%20E.%0A"></p>
+<p>Since (X) is measurable,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AX%5E%7B-1%7D(f%5E%7B-1%7D(C))%5Cin%5Cmathcal%20F.%0A"></p>
+<p>Hence (fX) is measurable.</p>
+</section>
+<section id="answer-5" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="answer-5"><span class="header-section-number">3.5</span> Answer 5</h2>
+<p>The fibres of (X) are</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AF_0=%5C%7B%5Comega_1,%5Comega_2%5C%7D,%0A%5Cqquad%0AF_1=%5C%7B%5Comega_3%5C%7D,%0A%5Cqquad%0AF_2=%5C%7B%5Comega_4%5C%7D.%0A"></p>
+<p>Therefore ((X)) consists of every union of these fibres:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Csigma(X)=%5C%7B&amp;%0A%5Cvarnothing,%5COmega,%0AF_0,F_1,F_2,%5C%5C%0A&amp;F_0%5Ccup%20F_1,%0AF_0%5Ccup%20F_2,%0AF_1%5Ccup%20F_2%0A%5C%7D.%0A%5Cend%7Baligned%7D%0A"></p>
+<p>Observing (X) distinguishes the three fibres but cannot distinguish (_1) from (_2).</p>
+</section>
+<section id="answer-6" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="answer-6"><span class="header-section-number">3.6</span> Answer 6</h2>
+<p>The atomic masses are</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20P_X(%5C%7B0%5C%7D)%0A=%0A0.1+0.2%0A=%0A0.3,%0A"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20P_X(%5C%7B1%5C%7D)%0A=%0A0.3,%0A"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20P_X(%5C%7B2%5C%7D)%0A=%0A0.4.%0A"></p>
+<p>Therefore:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Barray%7D%7Bc%7Cc%7D%0AB&amp;%5Cmathbb%20P_X(B)%5C%5C%0A%5Chline%0A%5Cvarnothing&amp;0%5C%5C%0A%5C%7B0%5C%7D&amp;0.3%5C%5C%0A%5C%7B1%5C%7D&amp;0.3%5C%5C%0A%5C%7B2%5C%7D&amp;0.4%5C%5C%0A%5C%7B0,1%5C%7D&amp;0.6%5C%5C%0A%5C%7B0,2%5C%7D&amp;0.7%5C%5C%0A%5C%7B1,2%5C%7D&amp;0.7%5C%5C%0A%5C%7B0,1,2%5C%7D&amp;1%0A%5Cend%7Barray%7D%0A"></p>
+</section>
+<section id="answer-7" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="answer-7"><span class="header-section-number">3.7</span> Answer 7</h2>
+<p>In the real- or Euclidean-valued setting used here:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AY%5Ctext%7B%20is%20%7D%5Csigma(X)%5Ctext%7B-measurable%7D%0A%5Ciff%0A%5Cexists%5Ctext%7B%20measurable%20%7Df%5Ctext%7B%20such%20that%20%7DY=f(X).%0A"></p>
+<p>An estimator that uses only the information contained in (A) must be ((A))-measurable. The theorem then gives</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cwidehat%20Z=g(A)%0A"></p>
+<p>for some measurable (g). Conversely, every measurable (g(A)) is ((A))-measurable.</p>
+</section>
+<section id="answer-8" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="answer-8"><span class="header-section-number">3.8</span> Answer 8</h2>
+<ol type="1">
+<li>(A) is a measurable map (R^d).</li>
+<li>(a) is a deterministic vector in (R^d).</li>
+<li>((A)) is a collection of subsets of (), specifically a sub-sigma-algebra of (F).</li>
+<li>({AB}=A^{-1}(B)) is an event in (F).</li>
+<li>(E[ZA]) is a random vector, defined up to almost-sure equality, and is ((A))-measurable.</li>
+</ol>
+</section>
+<section id="answer-9" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="answer-9"><span class="header-section-number">3.9</span> Answer 9</h2>
+<p>The map</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Az%5Cmapsto%20Qz%0A"></p>
+<p>is linear and continuous, hence Borel measurable.</p>
+<p>Coordinatewise ReLU</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Ar(y)_i=%5Cmax(0,y_i)%0A"></p>
+<p>is continuous, hence Borel measurable.</p>
+<p>Since (Z) is measurable and compositions of measurable maps are measurable,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA=r%5Ccirc%20Q%5Ccirc%20Z%0A"></p>
+<p>is measurable.</p>
+</section>
+</section>
+<section id="part-ii-conditional-expectation" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Part II — Conditional expectation</h1>
+<section id="answer-10" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="answer-10"><span class="header-section-number">4.1</span> Answer 10</h2>
+<p>A conditional expectation (Y=E[XG]) satisfies:</p>
+<ol type="1">
+<li>(Y) is (G)-measurable;</li>
+<li>(YL^1);</li>
+<li>for every (GG), <img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BX1_G%5D%0A=%0A%5Cmathbb%20E%5BY1_G%5D.%0A"></li>
+</ol>
+<p>It is unique up to almost-sure equality.</p>
+</section>
+<section id="answer-11" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="answer-11"><span class="header-section-number">4.2</span> Answer 11</h2>
+<p>The two atoms of (G) are</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AG_1=%5C%7B1,2%5C%7D,%0A%5Cqquad%0AG_2=%5C%7B3,4%5C%7D.%0A"></p>
+<p>On (G_1),</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BX%5Cmid%20G_1%5D%0A=%0A%5Cfrac%7B0.1(2)+0.2(-1)%7D%7B0.1+0.2%7D%0A=%0A0.%0A"></p>
+<p>On (G_2),</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BX%5Cmid%20G_2%5D%0A=%0A%5Cfrac%7B0.3(4)+0.4(0)%7D%7B0.3+0.4%7D%0A=%0A%5Cfrac%7B12%7D%7B7%7D.%0A"></p>
+<p>Hence</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D%0A=%0A%5Cleft(0,0,%5Cfrac%7B12%7D%7B7%7D,%5Cfrac%7B12%7D%7B7%7D%5Cright).%0A"></p>
+</section>
+<section id="answer-12" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="answer-12"><span class="header-section-number">4.3</span> Answer 12</h2>
+<p>The events in (G) are</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cvarnothing,%5COmega,G_1,G_2.%0A"></p>
+<p>For (), both sides are zero.</p>
+<p>For (G_1),</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BX1_%7BG_1%7D%5D%0A=%0A0.1(2)+0.2(-1)%0A=%0A0,%0A"></p>
+<p>while</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5B%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D1_%7BG_1%7D%5D%0A=%0A0.%0A"></p>
+<p>For (G_2),</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BX1_%7BG_2%7D%5D%0A=%0A1.2,%0A"></p>
+<p>while</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5B%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D1_%7BG_2%7D%5D%0A=%0A(0.3+0.4)%5Cfrac%7B12%7D%7B7%7D%0A=%0A1.2.%0A"></p>
+<p>For (), add the two block identities.</p>
+</section>
+<section id="answer-13" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="answer-13"><span class="header-section-number">4.4</span> Answer 13</h2>
+<p>(X) itself is (G)-measurable and integrable. For every (GG),</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BX1_G%5D%0A=%0A%5Cmathbb%20E%5BX1_G%5D.%0A"></p>
+<p>Thus (X) satisfies the defining properties of (E[XG]). By almost-sure uniqueness,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D=X%0A%5Cquad%5Ctext%7Ba.s.%7D%0A"></p>
+</section>
+<section id="answer-14" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="answer-14"><span class="header-section-number">4.5</span> Answer 14</h2>
+<p>The constant (E[X]) is (G)-measurable. For (GG), independence gives</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BX1_G%5D%0A=%0A%5Cmathbb%20E%5BX%5D%5Cmathbb%20E%5B1_G%5D%0A=%0A%5Cmathbb%20E%5BX%5D%5Cmathbb%20P(G).%0A"></p>
+<p>Also,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5B%5Cmathbb%20E%5BX%5D1_G%5D%0A=%0A%5Cmathbb%20E%5BX%5D%5Cmathbb%20P(G).%0A"></p>
+<p>Hence the constant (E[X]) satisfies the defining property.</p>
+</section>
+<section id="answer-15" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="answer-15"><span class="header-section-number">4.6</span> Answer 15</h2>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AY=%5Cmathbb%20E%5B%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D%5Cmid%5Cmathcal%20H%5D.%0A"></p>
+<p>Then (Y) is (H)-measurable.</p>
+<p>For every (HH), since (HG),</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Cmathbb%20E%5BY1_H%5D%0A&amp;=%0A%5Cmathbb%20E%5B%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D1_H%5D%5C%5C%0A&amp;=%0A%5Cmathbb%20E%5BX1_H%5D.%0A%5Cend%7Baligned%7D%0A"></p>
+<p>Thus (Y) satisfies the defining property of (E[XH]). Uniqueness gives</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AY=%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20H%5D%0A%5Cquad%5Ctext%7Ba.s.%7D%0A"></p>
+</section>
+<section id="answer-16" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="answer-16"><span class="header-section-number">4.7</span> Answer 16</h2>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Am=%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D.%0A"></p>
+<p>Write</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AX-%5Cmathbb%20E%5BX%5D%0A=%0A(X-m)+(m-%5Cmathbb%20E%5BX%5D).%0A"></p>
+<p>Then</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Coperatorname%7BVar%7D(X)%0A&amp;=%0A%5Cmathbb%20E%5B(X-m)%5E2%5D%0A+%0A%5Cmathbb%20E%5B(m-%5Cmathbb%20E%5BX%5D)%5E2%5D%5C%5C%0A&amp;%5Cquad+%0A2%5Cmathbb%20E%5B(X-m)(m-%5Cmathbb%20E%5BX%5D)%5D.%0A%5Cend%7Baligned%7D%0A"></p>
+<p>The cross term is zero because (m-E[X]) is (G)-measurable:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Cmathbb%20E%5B(X-m)(m-%5Cmathbb%20E%5BX%5D)%5D%0A&amp;=%0A%5Cmathbb%20E%5B%0A%5Cmathbb%20E%5B(X-m)(m-%5Cmathbb%20E%5BX%5D)%5Cmid%5Cmathcal%20G%5D%0A%5D%5C%5C%0A&amp;=%0A%5Cmathbb%20E%5B%0A(m-%5Cmathbb%20E%5BX%5D)%0A%5Cmathbb%20E%5BX-m%5Cmid%5Cmathcal%20G%5D%0A%5D%5C%5C%0A&amp;=0.%0A%5Cend%7Baligned%7D%0A"></p>
+<p>Also,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5B(X-m)%5E2%5D%0A=%0A%5Cmathbb%20E%5B%5Coperatorname%7BVar%7D(X%5Cmid%5Cmathcal%20G)%5D,%0A"></p>
+<p>and</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5B(m-%5Cmathbb%20E%5BX%5D)%5E2%5D%0A=%0A%5Coperatorname%7BVar%7D(m).%0A"></p>
+</section>
+<section id="answer-17" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="answer-17"><span class="header-section-number">4.8</span> Answer 17</h2>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Am=%5Cmathbb%20E%5BZ%5Cmid%5Cmathcal%20G%5D,%0A%5Cqquad%0A%5Cmu=%5Cmathbb%20E%5BZ%5D.%0A"></p>
+<p>Use</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AZ-%5Cmu=(Z-m)+(m-%5Cmu)%0A"></p>
+<p>and expand the outer product. The cross terms vanish because</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BZ-m%5Cmid%5Cmathcal%20G%5D=0.%0A"></p>
+<p>Thus</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Coperatorname%7BCov%7D(Z)%0A&amp;=%0A%5Cmathbb%20E%5B(Z-m)(Z-m)%5ET%5D%0A+%0A%5Cmathbb%20E%5B(m-%5Cmu)(m-%5Cmu)%5ET%5D%5C%5C%0A&amp;=%0A%5Cmathbb%20E%5B%5Coperatorname%7BCov%7D(Z%5Cmid%5Cmathcal%20G)%5D%0A+%0A%5Coperatorname%7BCov%7D(m).%0A%5Cend%7Baligned%7D%0A"></p>
+<p>Expectation of a random matrix is taken entrywise.</p>
+</section>
+<section id="answer-18" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="answer-18"><span class="header-section-number">4.9</span> Answer 18</h2>
+<p>By definition,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Coperatorname%7BCov%7D(Z%5Cmid%5Cmathcal%20G)%0A=%0A%5Cmathbb%20E%5B(Z-m)(Z-m)%5ET%5Cmid%5Cmathcal%20G%5D.%0A"></p>
+<p>Using linearity of trace and conditional expectation,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Coperatorname%7Btr%7D(%5Coperatorname%7BCov%7D(Z%5Cmid%5Cmathcal%20G))%0A&amp;=%0A%5Cmathbb%20E%5B%0A%5Coperatorname%7Btr%7D((Z-m)(Z-m)%5ET)%0A%5Cmid%5Cmathcal%20G%0A%5D%5C%5C%0A&amp;=%0A%5Cmathbb%20E%5B%5C%7CZ-m%5C%7C%5E2%5Cmid%5Cmathcal%20G%5D.%0A%5Cend%7Baligned%7D%0A"></p>
+<p>Taking expectations and applying the tower property gives</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5B%0A%5Coperatorname%7Btr%7D(%5Coperatorname%7BCov%7D(Z%5Cmid%5Cmathcal%20G))%0A%5D%0A=%0A%5Cmathbb%20E%5C%7CZ-m%5C%7C%5E2.%0A"></p>
+</section>
+<section id="answer-19" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="answer-19"><span class="header-section-number">4.10</span> Answer 19</h2>
+<p>If (A&gt;0), then (Z=A).</p>
+<p>If (A=0), then (Z), and conditionally (Z) is uniform on ([-1,0]). Therefore</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BZ%5Cmid%20A=0%5D%0A=%0A-%5Cfrac12,%0A"></p>
+<p>and</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Coperatorname%7BVar%7D(Z%5Cmid%20A=0)%0A=%0A%5Cfrac%7B1%7D%7B12%7D.%0A"></p>
+<p>Hence</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Ah(a)%0A=%0A%5Cbegin%7Bcases%7D%0A-%5Cfrac12,&amp;a=0,%5C%5C%0Aa,&amp;a%3E0.%0A%5Cend%7Bcases%7D%0A"></p>
+<p>The conditional variance is</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Coperatorname%7BVar%7D(Z%5Cmid%20A)%0A=%0A%5Cbegin%7Bcases%7D%0A%5Cfrac1%7B12%7D,&amp;A=0,%5C%5C%0A0,&amp;A%3E0.%0A%5Cend%7Bcases%7D%0A"></p>
+<p>Since (P(A=0)=1/2),</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Coperatorname%7BMMSE%7D%0A=%0A%5Cfrac12%5Ccdot%5Cfrac1%7B12%7D%0A=%0A%5Cfrac1%7B24%7D.%0A"></p>
+</section>
+<section id="answer-20" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="answer-20"><span class="header-section-number">4.11</span> Answer 20</h2>
+<p>If (A&gt;0), then (Z=A).</p>
+<p>If (A=0), then (Z), so</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BZ%5Cmid%20A=0%5D%0A=%0A-%5Csqrt%7B%5Cfrac2%5Cpi%7D.%0A"></p>
+<p>Thus</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Ah(a)%0A=%0A%5Cbegin%7Bcases%7D%0A-%5Csqrt%7B%5Cfrac2%5Cpi%7D,&amp;a=0,%5C%5C%0Aa,&amp;a%3E0.%0A%5Cend%7Bcases%7D%0A"></p>
+<p>All conditional error occurs on (A=0). Therefore</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Coperatorname%7BMMSE%7D%0A=%0A%5Cmathbb%20P(Z%5Cle0)%0A%5Coperatorname%7BVar%7D(Z%5Cmid%20Z%5Cle0)%0A=%0A%5Cfrac12%5Cleft(1-%5Cfrac2%5Cpi%5Cright).%0A"></p>
+</section>
+<section id="answer-21" class="level2" data-number="4.12">
+<h2 data-number="4.12" class="anchored" data-anchor-id="answer-21"><span class="header-section-number">4.12</span> Answer 21</h2>
+<p>For continuously distributed (A),</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20P(A=a)=0%0A"></p>
+<p>for each fixed (a), so the elementary ratio divides by zero.</p>
+<p>The primary object is instead</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BZ%5Cmid%5Csigma(A)%5D,%0A"></p>
+<p>defined by measurability and integral identities. Under standard regularity conditions it has a version</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Ah(A),%0A"></p>
+<p>and one may use (h(a)) as a version of (E[ZA=a]). Values of (h) on sets of (A)-measure zero are arbitrary.</p>
+</section>
+<section id="answer-22" class="level2" data-number="4.13">
+<h2 data-number="4.13" class="anchored" data-anchor-id="answer-22"><span class="header-section-number">4.13</span> Answer 22</h2>
+<p>Since (Z) almost surely,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA=%5Coperatorname%7BReLU%7D(Z)=Z%0A%5Cqquad%5Ctext%7Ba.s.%7D%0A"></p>
+<p>Therefore</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BZ%5Cmid%20A%5D%0A=%0AA%0A=%0AZ%0A%5Cqquad%5Ctext%7Ba.s.%7D%0A"></p>
+<p>and the MMSE is zero.</p>
+</section>
+</section>
+<section id="part-iii-l2-geometry-and-mmse" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Part III — (L^2) geometry and MMSE</h1>
+<section id="answer-23" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="answer-23"><span class="header-section-number">5.1</span> Answer 23</h2>
+<p><img src="https://latex.codecogs.com/png.latex?%0AL%5E2(%5COmega,%5Cmathcal%20F,%5Cmathbb%20P)%0A=%0A%5C%7BX:%5COmega%5Cto%5Cmathbb%20R:%0AX%5Ctext%7B%20measurable%20and%20%7D%5Cmathbb%20E%5BX%5E2%5D%3C%5Cinfty%5C%7D/%5C!%5Csim%0A"></p>
+<p>where</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AX%5Csim%20Y%0A%5Ciff%0AX=Y%5Cquad%5Ctext%7Ba.s.%7D%0A"></p>
+<p>The inner product and norm are</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Clangle%20X,Y%5Crangle%0A=%0A%5Cmathbb%20E%5BXY%5D,%0A"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5C%7CX%5C%7C_%7BL%5E2%7D%0A=%0A%5Csqrt%7B%5Cmathbb%20E%5BX%5E2%5D%7D.%0A"></p>
+<p>If (X=Y) a.s., then</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5C%7CX-Y%5C%7C_%7BL%5E2%7D=0.%0A"></p>
+<p>A normed space must identify zero-distance objects.</p>
+</section>
+<section id="answer-24" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="answer-24"><span class="header-section-number">5.2</span> Answer 24</h2>
+<p><img src="https://latex.codecogs.com/png.latex?%0AL%5E2(%5COmega,%5Cmathcal%20G,%5Cmathbb%20P)%0A"></p>
+<p>is the set of square-integrable (G)-measurable random variables modulo a.s. equality.</p>
+<p>If (X,Y) are (G)-measurable, then</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AaX+bY%0A"></p>
+<p>is (G)-measurable for (a,bR), and remains square-integrable. Hence it is a linear subspace.</p>
+<p>The projection theorem requires the subspace to be <strong>closed</strong>. This subspace is indeed closed in (L^2).</p>
+</section>
+<section id="answer-25" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="answer-25"><span class="header-section-number">5.3</span> Answer 25</h2>
+<p>Let (M) be a nonempty closed linear subspace of a Hilbert space (H). For each (xH), there is a unique (mM) such that</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5C%7Cx-m%5C%7C%0A=%0A%5Cinf_%7Bv%5Cin%20M%7D%5C%7Cx-v%5C%7C.%0A"></p>
+<p>This (m=P_Mx) is equivalently characterized by</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Ax-m%5Cperp%20M,%0A"></p>
+<p>meaning</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Clangle%20x-m,v%5Crangle=0%0A%5Cqquad%0A%5Cforall%20v%5Cin%20M.%0A"></p>
+</section>
+<section id="answer-26" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="answer-26"><span class="header-section-number">5.4</span> Answer 26</h2>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Am=%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D.%0A"></p>
+<p>For (V=1_G), (GG), the defining property gives</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5B(X-m)1_G%5D=0.%0A"></p>
+<p>By linearity, this holds for every (G)-measurable simple function (V).</p>
+<p>For general (VL^2(G)), choose simple (V_nV) in (L^2). Since (X-mL^2), Cauchy–Schwarz gives</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%7C%5Cmathbb%20E%5B(X-m)(V-V_n)%5D%7C%0A%5Cle%0A%5C%7CX-m%5C%7C_2%5C%7CV-V_n%5C%7C_2%0A%5Cto0.%0A"></p>
+<p>Since each</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5B(X-m)V_n%5D=0,%0A"></p>
+<p>the limit is zero.</p>
+</section>
+<section id="answer-27" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="answer-27"><span class="header-section-number">5.5</span> Answer 27</h2>
+<p>Write</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AZ-T=(Z-m)+(m-T).%0A"></p>
+<p>Therefore</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5C%7CZ-T%5C%7C%5E2%0A&amp;=%0A%5C%7CZ-m%5C%7C%5E2+%5C%7Cm-T%5C%7C%5E2%5C%5C%0A&amp;%5Cquad+2(Z-m)%5ET(m-T).%0A%5Cend%7Baligned%7D%0A"></p>
+<p>Taking expectations, the cross term is</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5B(Z-m)%5ET(m-T)%5D.%0A"></p>
+<p>The vector (m-T) is (G)-measurable, while</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BZ-m%5Cmid%5Cmathcal%20G%5D=0.%0A"></p>
+<p>Hence</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5Cmathbb%20E%5B(Z-m)%5ET(m-T)%5D%0A&amp;=%0A%5Cmathbb%20E%5B%0A%5Cmathbb%20E%5B(Z-m)%5ET(m-T)%5Cmid%5Cmathcal%20G%5D%0A%5D%5C%5C%0A&amp;=%0A%5Cmathbb%20E%5B%0A%5Cmathbb%20E%5BZ-m%5Cmid%5Cmathcal%20G%5D%5ET(m-T)%0A%5D%5C%5C%0A&amp;=0.%0A%5Cend%7Baligned%7D%0A"></p>
+<p>The decomposition follows.</p>
+</section>
+<section id="answer-28" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="answer-28"><span class="header-section-number">5.6</span> Answer 28</h2>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathcal%20G=%5Csigma(A).%0A"></p>
+<p>Every admissible estimator using only (A) is a square-integrable (G)-measurable random vector and therefore has the form (g(A)), up to a.s. equality.</p>
+<p>Set</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Am=%5Cmathbb%20E%5BZ%5Cmid%20A%5D.%0A"></p>
+<p>Question 27 gives</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5C%7CZ-g(A)%5C%7C%5E2%0A=%0A%5Cmathbb%20E%5C%7CZ-m%5C%7C%5E2%0A+%0A%5Cmathbb%20E%5C%7Cm-g(A)%5C%7C%5E2.%0A"></p>
+<p>The second term is nonnegative and is zero for (g(A)=m). Therefore</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cinf_g%0A%5Cmathbb%20E%5C%7CZ-g(A)%5C%7C%5E2%0A=%0A%5Cmathbb%20E%5C%7CZ-m%5C%7C%5E2.%0A"></p>
+<p>The minimizer is unique as an element of (L^2), hence unique up to almost-sure equality.</p>
+<p>If a candidate (g(A)) is not square-integrable, its squared risk is infinite or not an admissible finite-risk competitor.</p>
+</section>
+<section id="answer-29" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="answer-29"><span class="header-section-number">5.7</span> Answer 29</h2>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Am=%5Cmathbb%20E%5BZ%5Cmid%20A%5D.%0A"></p>
+<p>Then</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0AL(Q)%0A&amp;=%0A%5Cmathbb%20E%5C%7CZ-m%5C%7C%5E2%5C%5C%0A&amp;=%0A%5Cmathbb%20E%5B%0A%5Cmathbb%20E%5B%5C%7CZ-m%5C%7C%5E2%5Cmid%20A%5D%0A%5D%5C%5C%0A&amp;=%0A%5Cmathbb%20E%5B%0A%5Coperatorname%7Btr%7D(%0A%5Cmathbb%20E%5B(Z-m)(Z-m)%5ET%5Cmid%20A%5D%0A)%0A%5D%5C%5C%0A&amp;=%0A%5Cmathbb%20E%5B%0A%5Coperatorname%7Btr%7D(%5Coperatorname%7BCov%7D(Z%5Cmid%20A))%0A%5D.%0A%5Cend%7Baligned%7D%0A"></p>
+<p>The second equality is the tower property. The third uses</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5C%7Cx%5C%7C%5E2=%5Coperatorname%7Btr%7D(xx%5ET).%0A"></p>
+</section>
+<section id="answer-30" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="answer-30"><span class="header-section-number">5.8</span> Answer 30</h2>
+<p>Since</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AL(Q)%0A=%0A%5Cmathbb%20E%5C%7CZ-%5Cmathbb%20E%5BZ%5Cmid%20A%5D%5C%7C%5E2,%0A"></p>
+<p>we have (L(Q)=0) iff</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AZ=%5Cmathbb%20E%5BZ%5Cmid%20A%5D%0A%5Cqquad%5Ctext%7Ba.s.%7D%0A"></p>
+<p>The right-hand side is ((A))-measurable, so this is equivalent to (Z) being ((A))-measurable up to a.s. equality.</p>
+<p>By the factorization theorem, this is equivalent to the existence of measurable (g) with</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AZ=g(A)%0A%5Cqquad%5Ctext%7Ba.s.%7D%0A"></p>
+<p>This only requires recovery on a set carrying probability one. The deterministic observation map may fail to be injective elsewhere, including on points or sets that the law of (Z) never visits.</p>
+</section>
+<section id="answer-31" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="answer-31"><span class="header-section-number">5.9</span> Answer 31</h2>
+<p>The unrestricted class contains every measurable square-integrable function of (A). The affine class contains only</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0ABA+b.%0A"></p>
+<p>The unrestricted optimum is</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BZ%5Cmid%20A%5D.%0A"></p>
+<p>Example: let (AN(0,1)) and define</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AZ=A%5E2.%0A"></p>
+<p>Then (Z) is already known from (A), so</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BZ%5Cmid%20A%5D=A%5E2%0A"></p>
+<p>and the unrestricted MMSE is zero.</p>
+<p>No affine function (bA+c) equals (A^2) almost surely under a nondegenerate Gaussian law. Hence the best affine risk is strictly positive.</p>
+</section>
+<section id="answer-32" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="answer-32"><span class="header-section-number">5.10</span> Answer 32</h2>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AY=QZ.%0A"></p>
+<p>Since (ZN(0,I_d)) and (Q) is orthogonal,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AY%5Csim%5Cmathcal%20N(0,I_d).%0A"></p>
+<p>Also,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AZ=Q%5ETY%0A"></p>
+<p>and</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA=%5Coperatorname%7BReLU%7D(Y).%0A"></p>
+<p>For any decoder (g), define</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Ah(a)=Qg(a).%0A"></p>
+<p>This is a bijection between measurable decoders (g) and measurable decoders (h). Since (Q) preserves norms,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0A%5C%7CZ-g(A)%5C%7C%0A&amp;=%0A%5C%7CQZ-Qg(A)%5C%7C%5C%5C%0A&amp;=%0A%5C%7CY-h(%5Coperatorname%7BReLU%7D(Y))%5C%7C.%0A%5Cend%7Baligned%7D%0A"></p>
+<p>Therefore</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AL(Q)%0A=%0A%5Cinf_h%0A%5Cmathbb%20E%5C%7C%0AY-h(%5Coperatorname%7BReLU%7D(Y))%0A%5C%7C%5E2.%0A"></p>
+<p>The right-hand side depends only on the distribution of (Y), which is (N(0,I_d)) for every (Q). Hence (L(Q)) is constant.</p>
+</section>
+</section>
+<section id="bridge-problems" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Bridge problems</h1>
+<section id="bridge-1" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="bridge-1"><span class="header-section-number">6.1</span> Bridge 1</h2>
+<p>If (Z) coordinatewise almost surely, then</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Coperatorname%7BReLU%7D(Z)=Z%0A"></p>
+<p>almost surely. At (Q=I),</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA=Z,%0A"></p>
+<p>so (g(a)=a) reconstructs (Z) exactly. Thus (L(I)=0).</p>
+<p>Sparsity and the exponential amplitude distribution are irrelevant because only nonnegativity is used.</p>
+</section>
+<section id="bridge-2" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="bridge-2"><span class="header-section-number">6.2</span> Bridge 2</h2>
+<p>The collision argument is incomplete because:</p>
+<ol type="1">
+<li>the two points may both have probability zero;</li>
+<li>one or both points may lie outside the support of (Z);</li>
+<li>the collision may occur only on a null subset of latent space;</li>
+<li>the conditional law given the shared observation may still be degenerate almost surely;</li>
+<li>for continuous distributions, pointwise collisions do not by themselves establish positive conditional variance on a positive-probability set of observations.</li>
+</ol>
+<p>The required claim is probabilistic, not merely set-theoretic.</p>
+</section>
+<section id="bridge-3" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="bridge-3"><span class="header-section-number">6.3</span> Bridge 3</h2>
+<p>Since</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AL(Q)%0A=%0A%5Cmathbb%20E%5B%0A%5Coperatorname%7Btr%7D(%5Coperatorname%7BCov%7D(Z%5Cmid%20A))%0A%5D,%0A"></p>
+<p>and the integrand is nonnegative,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AL(Q)%3E0%0A"></p>
+<p>iff</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Coperatorname%7Btr%7D(%5Coperatorname%7BCov%7D(Z%5Cmid%20A))%3E0%0A"></p>
+<p>with positive probability.</p>
+<p>A concrete sufficient condition is: there exists a measurable set (B) in observation space with</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20P(A%5Cin%20B)%3E0%0A"></p>
+<p>and a constant (&gt;0) such that</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Coperatorname%7Btr%7D(%5Coperatorname%7BCov%7D(Z%5Cmid%20A))%0A%5Cge%5Cvarepsilon%0A"></p>
+<p>almost surely on ({AB}). Then</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AL(Q)%5Cge%0A%5Cvarepsilon%5C,%5Cmathbb%20P(A%5Cin%20B)%3E0.%0A"></p>
+<p>The uniform lower bound can be weakened; it is enough that the nonnegative conditional trace be positive on a set of positive probability.</p>
+</section>
+<section id="bridge-4" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="bridge-4"><span class="header-section-number">6.4</span> Bridge 4</h2>
+<p>Here</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AQZ%0A=%0A%5Cfrac1%7B%5Csqrt2%7D%0A%5Cbegin%7Bbmatrix%7D%0AZ_1-Z_2%5C%5C%0AZ_1+Z_2%0A%5Cend%7Bbmatrix%7D.%0A"></p>
+<p>Since (Z_1,Z_2),</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA_2=%5Cfrac%7BZ_1+Z_2%7D%7B%5Csqrt2%7D.%0A"></p>
+<p>Also,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA_1%0A=%0A%5Cfrac%7B(Z_1-Z_2)_+%7D%7B%5Csqrt2%7D.%0A"></p>
+<p>On the region</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A0%3CZ_1%3CZ_2,%0A"></p>
+<p>we observe</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA_1=0,%0A%5Cqquad%0AA_2=%5Cfrac%7BZ_1+Z_2%7D%7B%5Csqrt2%7D.%0A"></p>
+<p>Thus the observation reveals the sum but not the split.</p>
+<p>A rigorous positivity proof can proceed by:</p>
+<ol type="1">
+<li>restricting to the event that both coordinates are active;</li>
+<li>identifying the joint density on (0&lt;z_1&lt;z_2);</li>
+<li>changing variables to <img src="https://latex.codecogs.com/png.latex?%0As=z_1+z_2,%0A%5Cqquad%0Au=z_1;%0A"></li>
+<li>showing that, conditional on a nontrivial interval of sums (s), the variable (u) has a nondegenerate conditional density on <img src="https://latex.codecogs.com/png.latex?%0A0%3Cu%3Cs/2;%0A"></li>
+<li>concluding that <img src="https://latex.codecogs.com/png.latex?%0A%5Coperatorname%7BVar%7D(Z_1%5Cmid%20A)%3E0%0A"> on a positive-probability set of observations;</li>
+<li>hence <img src="https://latex.codecogs.com/png.latex?%0A%5Coperatorname%7Btr%7D(%5Coperatorname%7BCov%7D(Z%5Cmid%20A))%3E0%0A"> there and (L(Q)&gt;0).</li>
+</ol>
+<p>The main technical issue is that conditioning on an exact continuous value of the sum requires a regular conditional distribution or a density calculation. Merely drawing the fibre is not enough.</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <guid>https://shrivastava95.github.io/blog-quarto/posts/privileged-basis/answer.html</guid>
+  <pubDate>Fri, 26 Jun 2026 19:14:02 GMT</pubDate>
+</item>
+<item>
+  <title>Prerequisite Study Guide: ReLU Privileged-Basis Reconstruction</title>
+  <dc:creator>Ishaan Shrivastava</dc:creator>
+  <link>https://shrivastava95.github.io/blog-quarto/posts/privileged-basis/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="purpose" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Purpose</h1>
+<p>The target object is</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AL(Q)%0A=%0A%5Cinf_g%0A%5Cmathbb%20E%5C!%5Cleft%5B%0A%5Cleft%5C%7CZ-g(%5Coperatorname%7BReLU%7D(QZ))%5Cright%5C%7C%5E2%0A%5Cright%5D.%0A"></p>
+<p>Your existing notes already cover the algebraic prerequisites:</p>
+<ul>
+<li>expectation,</li>
+<li>covariance,</li>
+<li>independence,</li>
+<li>finite second moments,</li>
+<li>norms, traces, and outer products.</li>
+</ul>
+<p>This guide covers only the remaining load-bearing material:</p>
+<ol type="1">
+<li>measurable spaces, measurable maps, generated sigma-algebras, and laws;</li>
+<li>conditional expectation, tower property, and conditional variance;</li>
+<li>conditional expectation as an orthogonal projection in (L^2), hence the MMSE theorem.</li>
+</ol>
+</section>
+<section id="primary-reading" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Primary reading</h1>
+<p>Use:</p>
+<p><strong>Nima Moshayedi, <em>Lectures on Probability Theory</em>, University of Zurich</strong></p>
+<p><a href="https://arxiv.org/pdf/2010.16280" class="uri">https://arxiv.org/pdf/2010.16280</a></p>
+<p>The page numbers below refer to the printed page numbers in the notes.</p>
+<section id="level-1-information-and-measurability" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="level-1-information-and-measurability"><span class="header-section-number">2.1</span> Level 1 — Information and measurability</h2>
+<p>Read only:</p>
+<ul>
+<li>Appendix A, §1, <strong>Measurable Spaces</strong>, pp.&nbsp;143–144.</li>
+<li>Appendix A, §3, <strong>Borel Sets</strong>, pp.&nbsp;146–147.</li>
+<li>Appendix A, §5, <strong>Measurable Maps</strong>, pp.&nbsp;151–152.</li>
+<li>Chapter 2, §1 and §1.1, <strong>General Definitions</strong> and <strong>Law of a Random Variable</strong>, pp.&nbsp;25–28.</li>
+<li>Chapter 2, §2.4 and Proposition 2.2, <strong>Sigma-algebras generated by a random variable</strong>, pp.&nbsp;33–34.</li>
+</ul>
+<p>You should leave this level knowing precisely:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AX:(%5COmega,%5Cmathcal%20F)%5Cto(E,%5Cmathcal%20E)%0A"></p>
+<p>is measurable iff</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AX%5E%7B-1%7D(B)%5Cin%5Cmathcal%20F%0A%5Cqquad%0A%5Ctext%7Bfor%20every%20%7DB%5Cin%5Cmathcal%20E,%0A"></p>
+<p>and</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Csigma(X)%0A=%0A%5C%7BX%5E%7B-1%7D(B):B%5Cin%5Cmathcal%20E%5C%7D.%0A"></p>
+<p>The crucial factorization theorem is:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AY%5Ctext%7B%20is%20%7D%5Csigma(X)%5Ctext%7B-measurable%7D%0A%5Ciff%0AY=f(X)%0A"></p>
+<p>for some measurable (f), in the setting used here.</p>
+</section>
+<section id="level-2-conditional-expectation" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="level-2-conditional-expectation"><span class="header-section-number">2.2</span> Level 2 — Conditional expectation</h2>
+<p>Read only:</p>
+<ul>
+<li>Chapter 3, §2.2, <strong>Discrete construction</strong>, pp.&nbsp;80–82.</li>
+<li>Chapter 3, §2.3 through Theorem 2.18, <strong>General construction and basic properties</strong>, pp.&nbsp;82–84.</li>
+<li>Theorem 2.29, <strong>Tower property</strong>, p.&nbsp;86.</li>
+</ul>
+<p>Skip on the first pass:</p>
+<ul>
+<li>the Radon–Nikodym construction;</li>
+<li>transition kernels;</li>
+<li>martingales.</li>
+</ul>
+<p>You should leave this level knowing that</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D%0A"></p>
+<p>is a (G)-measurable random variable satisfying</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BX1_G%5D%0A=%0A%5Cmathbb%20E%5B%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D1_G%5D%0A%5Cqquad%0A%5Ctext%7Bfor%20every%20%7DG%5Cin%5Cmathcal%20G,%0A"></p>
+<p>and that, for (HG),</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5B%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D%5Cmid%5Cmathcal%20H%5D%0A=%0A%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20H%5D.%0A"></p>
+</section>
+<section id="level-3-l2-geometry-and-mmse" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="level-3-l2-geometry-and-mmse"><span class="header-section-number">2.3</span> Level 3 — (L^2) geometry and MMSE</h2>
+<p>Read only:</p>
+<ul>
+<li>Chapter 3, §1, <strong>(L^2(,F,P)) as a Hilbert space</strong>, pp.&nbsp;73–75.</li>
+<li>Chapter 3, §1.2, <strong>Orthogonal projection</strong>, pp.&nbsp;78–79.</li>
+<li>Definitions 2.12 and 2.15 and Remarks 2.13–2.14, pp.&nbsp;82–83.</li>
+<li>The first two paragraphs of §4.1.2, pp.&nbsp;90–91, emphasizing the distinction between:
+<ul>
+<li>projection onto all ((A))-measurable functions;</li>
+<li>projection onto the much smaller linear span of the observed variables.</li>
+</ul></li>
+</ul>
+<p>You should leave this level able to prove</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5C%7CZ-g(A)%5C%7C%5E2%0A=%0A%5Cmathbb%20E%5C%7CZ-%5Cmathbb%20E%5BZ%5Cmid%20A%5D%5C%7C%5E2%0A+%0A%5Cmathbb%20E%5C%7C%5Cmathbb%20E%5BZ%5Cmid%20A%5D-g(A)%5C%7C%5E2.%0A"></p>
+<p>This identity is the actual reason conditional expectation is the MMSE decoder.</p>
+</section>
+</section>
+<section id="optional-terse-reference" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Optional terse reference</h1>
+<p>For a compact formal reference:</p>
+<p><strong>Matija Vidmar, <em>Probability with Measure</em></strong></p>
+<p><a href="https://arxiv.org/pdf/2604.01685" class="uri">https://arxiv.org/pdf/2604.01685</a></p>
+<p>Relevant sections:</p>
+<ul>
+<li>§1.1, measurable sets;</li>
+<li>§1.3, measurable maps and generated sigma-fields;</li>
+<li>§3.3, conditioning.</li>
+</ul>
+<p>Do not use this as the first exposition unless you prefer definition-dense notes.</p>
+</section>
+<section id="how-to-use-the-quiz" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> How to use the quiz</h1>
+<p>Do three passes.</p>
+<ol type="1">
+<li><strong>Closed-notes pass:</strong> attempt every question without reading the answer key.</li>
+<li><strong>Open-notes repair pass:</strong> repair incomplete definitions and proofs.</li>
+<li><strong>Compression pass:</strong> rewrite each starred proof in at most ten lines without omitting assumptions.</li>
+</ol>
+<p>Each ordinary question is worth (2) points:</p>
+<ul>
+<li>(0): absent, materially false, or circular;</li>
+<li>(1): right idea but missing a required definition, assumption, or proof step;</li>
+<li>(2): correct and explicit.</li>
+</ul>
+<p>A starred question is load-bearing. A zero on any starred question means the corresponding level is not yet secure, regardless of total score.</p>
+</section>
+<section id="quiz" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Quiz</h1>
+</section>
+<section id="part-i-measurability-and-information" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Part I — Measurability and information</h1>
+<section id="question-1-sigma-algebra" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="question-1-sigma-algebra"><span class="header-section-number">6.1</span> Question 1 ★ — Sigma-algebra</h2>
+<p>State the definition of a sigma-algebra (F) on a set ().</p>
+<p>Then state the definition of a probability space</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A(%5COmega,%5Cmathcal%20F,%5Cmathbb%20P).%0A"></p>
+<p>Do not explain by analogy. Give the axioms.</p>
+</section>
+<section id="question-2-finite-examples" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="question-2-finite-examples"><span class="header-section-number">6.2</span> Question 2 — Finite examples</h2>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5COmega=%5C%7B1,2,3,4%5C%7D%0A"></p>
+<p>and</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathcal%20G%0A=%0A%5C%7B%5Cvarnothing,%5COmega,%5C%7B1,2%5C%7D,%5C%7B3,4%5C%7D%5C%7D.%0A"></p>
+<ol type="1">
+<li>Prove that (G) is a sigma-algebra.</li>
+<li>Let <img src="https://latex.codecogs.com/png.latex?%0A%5Cmathcal%20H%0A=%0A%5Cmathcal%20G%5Ccup%5C%7B%5C%7B1,3%5C%7D,%5C%7B2,4%5C%7D%5C%7D.%0A"> Is (H) a sigma-algebra? Prove your answer.</li>
+</ol>
+</section>
+<section id="question-3-measurable-map" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="question-3-measurable-map"><span class="header-section-number">6.3</span> Question 3 ★ — Measurable map</h2>
+<p>Let ((,F)) and ((E,E)) be measurable spaces.</p>
+<p>State precisely what it means for</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AX:%5COmega%5Cto%20E%0A"></p>
+<p>to be measurable.</p>
+<p>Why is the definition written using <strong>preimages</strong>, not images?</p>
+</section>
+<section id="question-4-composition" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="question-4-composition"><span class="header-section-number">6.4</span> Question 4 — Composition</h2>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AX:(%5COmega,%5Cmathcal%20F)%5Cto(E,%5Cmathcal%20E)%0A"></p>
+<p>and</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Af:(E,%5Cmathcal%20E)%5Cto(S,%5Cmathcal%20S)%0A"></p>
+<p>be measurable.</p>
+<p>Prove directly from the definition that (fX) is measurable.</p>
+</section>
+<section id="question-5-generated-sigma-algebra" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="question-5-generated-sigma-algebra"><span class="header-section-number">6.5</span> Question 5 ★ — Generated sigma-algebra</h2>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5COmega=%5C%7B%5Comega_1,%5Comega_2,%5Comega_3,%5Comega_4%5C%7D%0A"></p>
+<p>and define</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AX(%5Comega_1)=0,%5Cqquad%0AX(%5Comega_2)=0,%5Cqquad%0AX(%5Comega_3)=1,%5Cqquad%0AX(%5Comega_4)=2.%0A"></p>
+<p>Assume the codomain has the full power-set sigma-algebra.</p>
+<p>List every element of ((X)).</p>
+<p>Interpret ((X)) as the information revealed by observing (X).</p>
+</section>
+<section id="question-6-law-or-pushforward-distribution" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="question-6-law-or-pushforward-distribution"><span class="header-section-number">6.6</span> Question 6 — Law or pushforward distribution</h2>
+<p>Suppose</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20P(%5C%7B%5Comega_1%5C%7D)=0.1,%5Cquad%0A%5Cmathbb%20P(%5C%7B%5Comega_2%5C%7D)=0.2,%5Cquad%0A%5Cmathbb%20P(%5C%7B%5Comega_3%5C%7D)=0.3,%5Cquad%0A%5Cmathbb%20P(%5C%7B%5Comega_4%5C%7D)=0.4.%0A"></p>
+<p>Using the (X) from Question 5, compute the law</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20P_X%0A=%0A%5Cmathbb%20P%5Ccirc%20X%5E%7B-1%7D.%0A"></p>
+<p>Give its value on every subset of ({0,1,2}).</p>
+</section>
+<section id="question-7-factorization-through-the-observation" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="question-7-factorization-through-the-observation"><span class="header-section-number">6.7</span> Question 7 ★ — Factorization through the observation</h2>
+<p>State the factorization theorem relating these two statements:</p>
+<ol type="1">
+<li>(Y) is ((X))-measurable.</li>
+<li>(Y=f(X)) for some measurable function (f).</li>
+</ol>
+<p>Use it to explain rigorously why an estimator that is allowed to use only (A) has the form</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Ag(A).%0A"></p>
+</section>
+<section id="question-8-type-checking" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="question-8-type-checking"><span class="header-section-number">6.8</span> Question 8 — Type checking</h2>
+<p>For a random vector (A:R^d), distinguish the types of:</p>
+<ol type="1">
+<li>(A);</li>
+<li>(aR^d);</li>
+<li>((A));</li>
+<li>({AB}), where (BB(R^d));</li>
+<li>(E[ZA]).</li>
+</ol>
+</section>
+<section id="question-9-measurability-of-the-relu-observation" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="question-9-measurability-of-the-relu-observation"><span class="header-section-number">6.9</span> Question 9 ★ — Measurability of the ReLU observation</h2>
+<p>Assume</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AZ:(%5COmega,%5Cmathcal%20F)%5Cto(%5Cmathbb%20R%5Ed,%5Cmathcal%20B(%5Cmathbb%20R%5Ed))%0A"></p>
+<p>is measurable and (QR^{dd}) is fixed.</p>
+<p>Prove that</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA=%5Coperatorname%7BReLU%7D(QZ)%0A"></p>
+<p>is measurable.</p>
+<p>State every closure fact you use.</p>
+</section>
+</section>
+<section id="part-ii-conditional-expectation" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Part II — Conditional expectation</h1>
+<section id="question-10-definition" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="question-10-definition"><span class="header-section-number">7.1</span> Question 10 ★ — Definition</h2>
+<p>Let (XL^1) and let (GF) be a sub-sigma-algebra.</p>
+<p>State the defining properties of</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AY=%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D.%0A"></p>
+<p>Include the sense in which (Y) is unique.</p>
+</section>
+<section id="question-11-finite-partition-calculation" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="question-11-finite-partition-calculation"><span class="header-section-number">7.2</span> Question 11 — Finite partition calculation</h2>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5COmega=%5C%7B1,2,3,4%5C%7D,%0A"></p>
+<p>with probabilities</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A(0.1,0.2,0.3,0.4),%0A"></p>
+<p>and let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AX=(2,-1,4,0)%0A"></p>
+<p>on these four outcomes.</p>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathcal%20G%0A=%0A%5Csigma(%5C%7B1,2%5C%7D,%5C%7B3,4%5C%7D).%0A"></p>
+<p>Compute (E[XG]) as a random variable on ().</p>
+</section>
+<section id="question-12-verify-from-the-definition" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="question-12-verify-from-the-definition"><span class="header-section-number">7.3</span> Question 12 ★ — Verify from the definition</h2>
+<p>For your answer to Question 11, verify explicitly that</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BX1_G%5D%0A=%0A%5Cmathbb%20E%5B%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D1_G%5D%0A"></p>
+<p>for every (GG).</p>
+</section>
+<section id="question-13-already-known-information" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="question-13-already-known-information"><span class="header-section-number">7.4</span> Question 13 — Already known information</h2>
+<p>Prove:</p>
+<p>If (X) is (G)-measurable and integrable, then</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D=X%0A%5Cqquad%5Ctext%7Ba.s.%7D%0A"></p>
+</section>
+<section id="question-14-irrelevant-information" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="question-14-irrelevant-information"><span class="header-section-number">7.5</span> Question 14 — Irrelevant information</h2>
+<p>Prove:</p>
+<p>If (X) is integrable and independent of (G), then</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D%0A=%0A%5Cmathbb%20E%5BX%5D%0A%5Cqquad%5Ctext%7Ba.s.%7D%0A"></p>
+</section>
+<section id="question-15-tower-property" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="question-15-tower-property"><span class="header-section-number">7.6</span> Question 15 ★ — Tower property</h2>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathcal%20H%5Csubseteq%5Cmathcal%20G%5Csubseteq%5Cmathcal%20F%0A"></p>
+<p>and (XL^1).</p>
+<p>State and prove</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5B%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D%5Cmid%5Cmathcal%20H%5D%0A=%0A%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20H%5D.%0A"></p>
+<p>Use the defining property of conditional expectation, not an informal averaging argument.</p>
+</section>
+<section id="question-16-law-of-total-variance" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="question-16-law-of-total-variance"><span class="header-section-number">7.7</span> Question 16 ★ — Law of total variance</h2>
+<p>For (XL^2), prove</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Coperatorname%7BVar%7D(X)%0A=%0A%5Cmathbb%20E%5B%5Coperatorname%7BVar%7D(X%5Cmid%5Cmathcal%20G)%5D%0A+%0A%5Coperatorname%7BVar%7D(%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D).%0A"></p>
+<p>Define</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Coperatorname%7BVar%7D(X%5Cmid%5Cmathcal%20G)%0A=%0A%5Cmathbb%20E%5B(X-%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D)%5E2%5Cmid%5Cmathcal%20G%5D.%0A"></p>
+<p>Identify exactly where the cross term vanishes.</p>
+</section>
+<section id="question-17-vector-version" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="question-17-vector-version"><span class="header-section-number">7.8</span> Question 17 — Vector version</h2>
+<p>For (ZL^2(;R^d)), prove</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Coperatorname%7BCov%7D(Z)%0A=%0A%5Cmathbb%20E%5B%5Coperatorname%7BCov%7D(Z%5Cmid%5Cmathcal%20G)%5D%0A+%0A%5Coperatorname%7BCov%7D(%5Cmathbb%20E%5BZ%5Cmid%5Cmathcal%20G%5D).%0A"></p>
+<p>All quantities are matrices. State what expectation of a random matrix means.</p>
+</section>
+<section id="question-18-trace-of-conditional-covariance" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="question-18-trace-of-conditional-covariance"><span class="header-section-number">7.9</span> Question 18 ★ — Trace of conditional covariance</h2>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Am=%5Cmathbb%20E%5BZ%5Cmid%5Cmathcal%20G%5D.%0A"></p>
+<p>Prove</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Coperatorname%7Btr%7D(%5Coperatorname%7BCov%7D(Z%5Cmid%5Cmathcal%20G))%0A=%0A%5Cmathbb%20E%5B%5C%7CZ-m%5C%7C%5E2%5Cmid%5Cmathcal%20G%5D.%0A"></p>
+<p>Then prove</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5B%0A%5Coperatorname%7Btr%7D(%5Coperatorname%7BCov%7D(Z%5Cmid%5Cmathcal%20G))%0A%5D%0A=%0A%5Cmathbb%20E%5C%7CZ-m%5C%7C%5E2.%0A"></p>
+<p>Do not remove the conditional expectation in the first identity.</p>
+</section>
+<section id="question-19-scalar-relu-with-a-uniform-latent" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="question-19-scalar-relu-with-a-uniform-latent"><span class="header-section-number">7.10</span> Question 19 — Scalar ReLU with a uniform latent</h2>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AZ%5Csim%5Coperatorname%7BUnif%7D%5B-1,1%5D,%0A%5Cqquad%0AA=%5Coperatorname%7BReLU%7D(Z).%0A"></p>
+<p>Compute explicitly:</p>
+<ol type="1">
+<li>(E[ZA]) as a function (h(A));</li>
+<li>((ZA));</li>
+<li>the MMSE <img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5B(Z-%5Cmathbb%20E%5BZ%5Cmid%20A%5D)%5E2%5D.%0A"></li>
+</ol>
+</section>
+<section id="question-20-scalar-gaussian-relu" class="level2" data-number="7.11">
+<h2 data-number="7.11" class="anchored" data-anchor-id="question-20-scalar-gaussian-relu"><span class="header-section-number">7.11</span> Question 20 — Scalar Gaussian ReLU</h2>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AZ%5Csim%5Cmathcal%20N(0,1),%0A%5Cqquad%0AA=%5Coperatorname%7BReLU%7D(Z).%0A"></p>
+<p>You may use</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BZ%5Cmid%20Z%5Cle%200%5D%0A=%0A-%5Csqrt%7B%5Cfrac%7B2%7D%7B%5Cpi%7D%7D,%0A%5Cqquad%0A%5Coperatorname%7BVar%7D(Z%5Cmid%20Z%5Cle%200)%0A=%0A1-%5Cfrac%7B2%7D%7B%5Cpi%7D.%0A"></p>
+<p>Compute (E[ZA]) and the MMSE.</p>
+</section>
+<section id="question-21-conditioning-on-a-continuously-distributed-observation" class="level2" data-number="7.12">
+<h2 data-number="7.12" class="anchored" data-anchor-id="question-21-conditioning-on-a-continuously-distributed-observation"><span class="header-section-number">7.12</span> Question 21 — Conditioning on a continuously distributed observation</h2>
+<p>Explain why the notation</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BZ%5Cmid%20A=a%5D%0A"></p>
+<p>cannot generally be defined by the elementary formula</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cfrac%7B%5Cmathbb%20E%5BZ1_%7B%5C%7BA=a%5C%7D%7D%5D%7D%7B%5Cmathbb%20P(A=a)%7D%0A"></p>
+<p>when (A) is continuous.</p>
+<p>Explain why</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5BZ%5Cmid%20A%5D%0A=%0A%5Cmathbb%20E%5BZ%5Cmid%5Csigma(A)%5D%0A"></p>
+<p>remains well-defined.</p>
+</section>
+<section id="question-22-sparse-nonnegative-scalar" class="level2" data-number="7.13">
+<h2 data-number="7.13" class="anchored" data-anchor-id="question-22-sparse-nonnegative-scalar"><span class="header-section-number">7.13</span> Question 22 — Sparse nonnegative scalar</h2>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AZ=%0A%5Cbegin%7Bcases%7D%0A0,&amp;%5Ctext%7Bwith%20probability%20%7D1-p,%5C%5C%0AX,&amp;%5Ctext%7Bwith%20probability%20%7Dp,%0A%5Cend%7Bcases%7D%0A%5Cqquad%0AX%5Csim%5Coperatorname%7BExp%7D(1),%0A"></p>
+<p>and let (A=(Z)).</p>
+<p>Compute (E[ZA]) and the MMSE.</p>
+</section>
+</section>
+<section id="part-iii-l2-geometry-and-mmse" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Part III — (L^2) geometry and MMSE</h1>
+<section id="question-23-l2-as-an-inner-product-space" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="question-23-l2-as-an-inner-product-space"><span class="header-section-number">8.1</span> Question 23 ★ — (L^2) as an inner-product space</h2>
+<p>Define</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AL%5E2(%5COmega,%5Cmathcal%20F,%5Cmathbb%20P)%0A"></p>
+<p>and its inner product and norm.</p>
+<p>Why are random variables that are equal almost surely treated as the same element of (L^2)?</p>
+</section>
+<section id="question-24-the-observable-subspace" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="question-24-the-observable-subspace"><span class="header-section-number">8.2</span> Question 24 — The observable subspace</h2>
+<p>For a sub-sigma-algebra (G), define</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AL%5E2(%5COmega,%5Cmathcal%20G,%5Cmathbb%20P).%0A"></p>
+<p>Prove it is a linear subspace of (L^2(,F,P)).</p>
+<p>State the additional property needed before the orthogonal projection theorem applies.</p>
+</section>
+<section id="question-25-projection-theorem" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="question-25-projection-theorem"><span class="header-section-number">8.3</span> Question 25 ★ — Projection theorem</h2>
+<p>State the orthogonal projection theorem for a closed linear subspace (M) of a Hilbert space (H).</p>
+<p>Give both equivalent characterizations of the projection (P_Mx):</p>
+<ol type="1">
+<li>closest point;</li>
+<li>orthogonality of the residual.</li>
+</ol>
+</section>
+<section id="question-26-conditional-expectation-is-the-projection" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="question-26-conditional-expectation-is-the-projection"><span class="header-section-number">8.4</span> Question 26 ★ — Conditional expectation is the projection</h2>
+<p>Let (XL^2).</p>
+<p>Prove that</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Am=%5Cmathbb%20E%5BX%5Cmid%5Cmathcal%20G%5D%0A"></p>
+<p>satisfies</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5B(X-m)V%5D=0%0A"></p>
+<p>for every (VL^2(,G,P)).</p>
+<p>First prove it for indicator functions, then simple functions, then general (V).</p>
+</section>
+<section id="question-27-pythagorean-risk-decomposition" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="question-27-pythagorean-risk-decomposition"><span class="header-section-number">8.5</span> Question 27 ★ — Pythagorean risk decomposition</h2>
+<p>Let</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AZ%5Cin%20L%5E2(%5COmega;%5Cmathbb%20R%5Ed),%0A%5Cqquad%0Am=%5Cmathbb%20E%5BZ%5Cmid%5Cmathcal%20G%5D,%0A"></p>
+<p>and let (T) be any square-integrable (G)-measurable random vector.</p>
+<p>Prove</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbb%20E%5C%7CZ-T%5C%7C%5E2%0A=%0A%5Cmathbb%20E%5C%7CZ-m%5C%7C%5E2%0A+%0A%5Cmathbb%20E%5C%7Cm-T%5C%7C%5E2.%0A"></p>
+<p>Expand the square and prove that the cross term is exactly zero.</p>
+</section>
+<section id="question-28-mmse-decoder" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="question-28-mmse-decoder"><span class="header-section-number">8.6</span> Question 28 ★ — MMSE decoder</h2>
+<p>Set</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA=%5Coperatorname%7BReLU%7D(QZ).%0A"></p>
+<p>Using Questions 7 and 27, prove</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cinf_g%0A%5Cmathbb%20E%5C%7CZ-g(A)%5C%7C%5E2%0A=%0A%5Cmathbb%20E%5C%7CZ-%5Cmathbb%20E%5BZ%5Cmid%20A%5D%5C%7C%5E2.%0A"></p>
+<p>State:</p>
+<ol type="1">
+<li>the admissible class of (g);</li>
+<li>the integrability condition;</li>
+<li>the sense in which the minimizer is unique.</li>
+</ol>
+</section>
+<section id="question-29-conditional-covariance-formula-for-lq" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="question-29-conditional-covariance-formula-for-lq"><span class="header-section-number">8.7</span> Question 29 ★ — Conditional covariance formula for (L(Q))</h2>
+<p>Prove</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AL(Q)%0A=%0A%5Cmathbb%20E%5B%0A%5Coperatorname%7Btr%7D(%5Coperatorname%7BCov%7D(Z%5Cmid%20A))%0A%5D,%0A%5Cqquad%0AA=%5Coperatorname%7BReLU%7D(QZ).%0A"></p>
+<p>Your proof should be a chain of explicit equalities.</p>
+</section>
+<section id="question-30-exact-recoverability" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="question-30-exact-recoverability"><span class="header-section-number">8.8</span> Question 30 ★ — Exact recoverability</h2>
+<p>Prove the equivalence</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AL(Q)=0%0A"></p>
+<p>if and only if</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AZ%5Ctext%7B%20is%20%7D%5Csigma(A)%5Ctext%7B-measurable%7D,%0A"></p>
+<p>if and only if there exists a measurable (g) such that</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AZ=g(A)%0A%5Cqquad%5Ctext%7Ba.s.%7D%0A"></p>
+<p>Explain why this is an <strong>almost-sure recoverability</strong> statement, not necessarily a statement that the deterministic map</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Az%5Cmapsto%5Coperatorname%7BReLU%7D(Qz)%0A"></p>
+<p>is globally injective on all of (R^d).</p>
+</section>
+<section id="question-31-arbitrary-decoder-versus-linear-decoder" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="question-31-arbitrary-decoder-versus-linear-decoder"><span class="header-section-number">8.9</span> Question 31 ★ — Arbitrary decoder versus linear decoder</h2>
+<p>Explain the difference between minimizing over:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Ag(A)%5Cquad%5Ctext%7Bfor%20every%20measurable%20%7Dg%0A"></p>
+<p>and minimizing over:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0ABA+b.%0A"></p>
+<p>Give a concrete example in which the MMSE decoder is nonlinear and therefore cannot be represented by an affine decoder.</p>
+</section>
+<section id="question-32-gaussian-rotational-invariance" class="level2" data-number="8.10">
+<h2 data-number="8.10" class="anchored" data-anchor-id="question-32-gaussian-rotational-invariance"><span class="header-section-number">8.10</span> Question 32 ★ — Gaussian rotational invariance</h2>
+<p>Assume</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AZ%5Csim%5Cmathcal%20N(0,I_d)%0A"></p>
+<p>and (QO(d)).</p>
+<p>Prove that (L(Q)) is independent of (Q).</p>
+<p>Your proof must use:</p>
+<ol type="1">
+<li>(Y=QZN(0,I_d));</li>
+<li>preservation of Euclidean norm by (Q);</li>
+<li>a bijection between decoders for (Z) and decoders for (Y).</li>
+</ol>
+</section>
+</section>
+<section id="bridge-problems-toward-the-privileged-basis-proof" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Bridge problems toward the privileged-basis proof</h1>
+<p>These are not prerequisites. They test whether you can now begin the actual problem.</p>
+<section id="bridge-1-identity-basis-for-nonnegative-latents" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="bridge-1-identity-basis-for-nonnegative-latents"><span class="header-section-number">9.1</span> Bridge 1 — Identity basis for nonnegative latents</h2>
+<p>Assume</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AZ%5Cin%5B0,%5Cinfty)%5Ed%0A%5Cqquad%5Ctext%7Ba.s.%7D%0A"></p>
+<p>Prove</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AL(I)=0.%0A"></p>
+<p>The sparsity and exponential assumptions are irrelevant for this step. Explain why.</p>
+</section>
+<section id="bridge-2-why-one-collision-is-insufficient" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="bridge-2-why-one-collision-is-insufficient"><span class="header-section-number">9.2</span> Bridge 2 — Why one collision is insufficient</h2>
+<p>Someone argues:</p>
+<blockquote class="blockquote">
+<p>I found (zz’) such that [ (Qz) = (Qz’). ] Therefore (L(Q)&gt;0).</p>
+</blockquote>
+<p>Give at least three reasons this argument is incomplete.</p>
+</section>
+<section id="bridge-3-correct-positivity-criterion" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="bridge-3-correct-positivity-criterion"><span class="header-section-number">9.3</span> Bridge 3 — Correct positivity criterion</h2>
+<p>State a rigorous condition, in terms of conditional covariance, sufficient and necessary for</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AL(Q)%3E0.%0A"></p>
+<p>Then state a more concrete sufficient condition involving a positive-probability set of observations.</p>
+</section>
+<section id="bridge-4-forty-five-degree-sparse-case" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="bridge-4-forty-five-degree-sparse-case"><span class="header-section-number">9.4</span> Bridge 4 — Forty-five-degree sparse case</h2>
+<p>Let (d=2) and</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AQ%0A=%0A%5Cfrac%7B1%7D%7B%5Csqrt%202%7D%0A%5Cbegin%7Bbmatrix%7D%0A1&amp;-1%5C%5C%0A1&amp;1%0A%5Cend%7Bbmatrix%7D.%0A"></p>
+<p>Let (Z_1,Z_2) be independent sparse nonnegative exponential variables.</p>
+<p>Write</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA=%5Coperatorname%7BReLU%7D(QZ)%0A"></p>
+<p>coordinatewise.</p>
+<p>Identify a region of latent space on which one ReLU coordinate is zero and the other reveals only (Z_1+Z_2).</p>
+<p>Formulate a rigorous route to proving that the conditional distribution of (Z) on this region has nonzero variance. You do not need to complete all measure-theoretic details, but you must identify exactly what must be proved.</p>
+</section>
+</section>
+<section id="readiness-criterion" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Readiness criterion</h1>
+<p>There are (32) main questions, for (64) points.</p>
+<p>You are ready to begin the privileged-basis proof when:</p>
+<ul>
+<li>total score is at least (52/64);</li>
+<li>no starred question receives (0);</li>
+<li>Questions 27–30 can be reproduced without notes;</li>
+<li>you can explain in one paragraph why the problem is fundamentally about the conditional spread of ReLU fibres under the law of (Z).</li>
+</ul>
+<p>The answer key is a separate file. Do not open it until completing the closed-notes pass.</p>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://shrivastava95.github.io/blog-quarto/posts/privileged-basis/</guid>
+  <pubDate>Fri, 26 Jun 2026 19:14:02 GMT</pubDate>
 </item>
 </channel>
 </rss>
