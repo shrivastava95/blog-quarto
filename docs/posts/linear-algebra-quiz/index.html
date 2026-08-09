@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ishaan Shrivastava">
 
-<title>My Posts – Ishaan’s Blog</title>
+<title>Essential Linear Algebra: A Five-Unit Quiz – Ishaan’s Blog</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,26 +27,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1be0ecead31c5c96873a485463f2f345.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-1be0ecead31c5c96873a485463f2f345.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,35 +72,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -133,8 +103,8 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Ishaan's Blog" href="index.xml" data-external="1"></head>
+<link rel="stylesheet" href="../../styles.css">
+</head>
 
 <body class="nav-fixed quarto-light">
 
@@ -143,7 +113,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Ishaan’s Blog</span>
     </a>
   </div>
@@ -154,11 +124,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./credentials/"> 
+    <a class="nav-link" href="../../credentials/"> 
 <span class="menu-text">Credentials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item compact">
@@ -181,274 +151,242 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
-      <h1 class="title">My Posts</h1>
+    <div class="quarto-title column-body">
+      <h1 class="title">Essential Linear Algebra: A Five-Unit Quiz</h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Ishaan Shrivastava </p>
+            </div>
+    </div>
       
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#how-to-use-this-guide" id="toc-how-to-use-this-guide" class="nav-link active" data-scroll-target="#how-to-use-this-guide"><span class="header-section-number">1</span> How to use this guide</a></li>
+  <li><a href="#unit-1-vectors-combinations-and-bases" id="toc-unit-1-vectors-combinations-and-bases" class="nav-link" data-scroll-target="#unit-1-vectors-combinations-and-bases"><span class="header-section-number">2</span> Unit 1 — Vectors, combinations, and bases</a>
+  <ul class="collapse">
+  <li><a href="#representative-problem" id="toc-representative-problem" class="nav-link" data-scroll-target="#representative-problem"><span class="header-section-number">2.1</span> Representative problem</a></li>
+  </ul></li>
+  <li><a href="#unit-2-linear-transformations-and-matrices" id="toc-unit-2-linear-transformations-and-matrices" class="nav-link" data-scroll-target="#unit-2-linear-transformations-and-matrices"><span class="header-section-number">3</span> Unit 2 — Linear transformations and matrices</a>
+  <ul class="collapse">
+  <li><a href="#representative-problem-1" id="toc-representative-problem-1" class="nav-link" data-scroll-target="#representative-problem-1"><span class="header-section-number">3.1</span> Representative problem</a></li>
+  </ul></li>
+  <li><a href="#unit-3-systems-dot-products-and-cross-products" id="toc-unit-3-systems-dot-products-and-cross-products" class="nav-link" data-scroll-target="#unit-3-systems-dot-products-and-cross-products"><span class="header-section-number">4</span> Unit 3 — Systems, dot products, and cross products</a>
+  <ul class="collapse">
+  <li><a href="#representative-problem-2" id="toc-representative-problem-2" class="nav-link" data-scroll-target="#representative-problem-2"><span class="header-section-number">4.1</span> Representative problem</a></li>
+  </ul></li>
+  <li><a href="#unit-4-determinants-basis-changes-and-eigenvalues" id="toc-unit-4-determinants-basis-changes-and-eigenvalues" class="nav-link" data-scroll-target="#unit-4-determinants-basis-changes-and-eigenvalues"><span class="header-section-number">5</span> Unit 4 — Determinants, basis changes, and eigenvalues</a>
+  <ul class="collapse">
+  <li><a href="#representative-problem-3" id="toc-representative-problem-3" class="nav-link" data-scroll-target="#representative-problem-3"><span class="header-section-number">5.1</span> Representative problem</a></li>
+  </ul></li>
+  <li><a href="#unit-5-abstract-vector-spaces" id="toc-unit-5-abstract-vector-spaces" class="nav-link" data-scroll-target="#unit-5-abstract-vector-spaces"><span class="header-section-number">6</span> Unit 5 — Abstract vector spaces</a>
+  <ul class="collapse">
+  <li><a href="#representative-problem-4" id="toc-representative-problem-4" class="nav-link" data-scroll-target="#representative-problem-4"><span class="header-section-number">6.1</span> Representative problem</a></li>
+  </ul></li>
+  <li><a href="#quiz" id="toc-quiz" class="nav-link" data-scroll-target="#quiz"><span class="header-section-number">7</span> Quiz</a>
+  <ul class="collapse">
+  <li><a href="#scoring" id="toc-scoring" class="nav-link" data-scroll-target="#scoring"><span class="header-section-number">7.1</span> Scoring</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<section id="how-to-use-this-guide" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> How to use this guide</h1>
+<p>Study one unit, solve its representative problem, and only then attempt the final quiz. The sequence follows the conceptual dependencies in the 3Blue1Brown <em>Essence of Linear Algebra</em> playlist.</p>
+</section>
+<section id="unit-1-vectors-combinations-and-bases" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Unit 1 — Vectors, combinations, and bases</h1>
+<p>A vector is an ordered list of scalars:</p>
+<p><span class="math display">\[
+\mathbf v=\begin{bmatrix}v_1\\v_2\\\vdots\\v_n\end{bmatrix}.
+\]</span></p>
+<p>The essential operations are</p>
+<p><span class="math display">\[
+\mathbf u+\mathbf v=\begin{bmatrix}u_1+v_1\\u_2+v_2\end{bmatrix},
+\qquad c\mathbf v=\begin{bmatrix}cv_1\\cv_2\end{bmatrix}.
+\]</span></p>
+<p>A linear combination has the form</p>
+<p><span class="math display">\[
+c_1\mathbf v_1+\cdots+c_k\mathbf v_k.
+\]</span></p>
+<p>A basis is a linearly independent spanning set. Coordinates tell us which linear combination of the basis vectors produces a vector.</p>
+<section id="representative-problem" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="representative-problem"><span class="header-section-number">2.1</span> Representative problem</h2>
+<p>Find (a,b) such that</p>
+<p><span class="math display">\[
+a\begin{bmatrix}1\\2\end{bmatrix}+b\begin{bmatrix}2\\-1\end{bmatrix}=\begin{bmatrix}7\\1\end{bmatrix}.
+\]</span></p>
+</section>
+</section>
+<section id="unit-2-linear-transformations-and-matrices" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Unit 2 — Linear transformations and matrices</h1>
+<p>A transformation (T) is linear when</p>
+<p><span class="math display">\[
+T(\mathbf u+\mathbf v)=T(\mathbf u)+T(\mathbf v),
+\qquad T(c\mathbf v)=cT(\mathbf v).
+\]</span></p>
+<p>Every linear transformation can be written as</p>
+<p><span class="math display">\[
+T(\mathbf x)=A\mathbf x.
+\]</span></p>
+<p>The columns of (A) are the images of the standard basis vectors. Matrix multiplication is composition:</p>
+<p><span class="math display">\[
+(AB)\mathbf x=A(B\mathbf x).
+\]</span></p>
+<p>For a (2) matrix,</p>
+<p><span class="math display">\[
+A=\begin{bmatrix}a&amp;b\\c&amp;d\end{bmatrix},
+\qquad \det(A)=ad-bc.
+\]</span></p>
+<p>The matrix is invertible exactly when its determinant is nonzero.</p>
+<section id="representative-problem-1" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="representative-problem-1"><span class="header-section-number">3.1</span> Representative problem</h2>
+<p>For</p>
+<p><span class="math display">\[
+A=\begin{bmatrix}2&amp;1\\0&amp;3\end{bmatrix},
+\]</span></p>
+<p>compute (A[1,2]^T), (det(A)), and decide whether (A) is invertible.</p>
+</section>
+</section>
+<section id="unit-3-systems-dot-products-and-cross-products" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Unit 3 — Systems, dot products, and cross products</h1>
+<p>A linear system is represented by</p>
+<p><span class="math display">\[
+A\mathbf x=\mathbf b.
+\]</span></p>
+<p>The dot product is</p>
+<p><span class="math display">\[
+\mathbf u\cdot\mathbf v=\sum_i u_iv_i=\|\mathbf u\|\|\mathbf v\|\cos\theta.
+\]</span></p>
+<p>Perpendicular vectors have dot product zero.</p>
+<p>In three dimensions,</p>
+<p><span class="math display">\[
+\mathbf u\times\mathbf v=
+\begin{bmatrix}
+u_2v_3-u_3v_2\\
+u_3v_1-u_1v_3\\
+u_1v_2-u_2v_1
+\end{bmatrix}.
+\]</span></p>
+<p>The cross product is perpendicular to both inputs, and</p>
+<p><span class="math display">\[
+\|\mathbf u\times\mathbf v\|=\|\mathbf u\|\|\mathbf v\|\sin\theta.
+\]</span></p>
+<section id="representative-problem-2" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="representative-problem-2"><span class="header-section-number">4.1</span> Representative problem</h2>
+<p>For (mathbf u=[1,2,0]^T) and (mathbf v=[2,-1,1]^T), compute (mathbf uv) and (mathbf uv).</p>
+</section>
+</section>
+<section id="unit-4-determinants-basis-changes-and-eigenvalues" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Unit 4 — Determinants, basis changes, and eigenvalues</h1>
+<p>Important determinant identities are</p>
+<p><span class="math display">\[
+\det(AB)=\det(A)\det(B),
+\qquad \det(A^{-1})=\frac1{\det(A)}.
+\]</span></p>
+<p>Eigenvectors satisfy</p>
+<p><span class="math display">\[
+A\mathbf v=\lambda\mathbf v,
+\qquad \mathbf v\ne\mathbf0.
+\]</span></p>
+<p>Eigenvalues solve the characteristic equation</p>
+<p><span class="math display">\[
+\det(A-\lambda I)=0.
+\]</span></p>
+<p>If (A) has enough independent eigenvectors, then</p>
+<p><span class="math display">\[
+A=PDP^{-1},
+\qquad A^n=PD^nP^{-1}.
+\]</span></p>
+<p>For a (2) matrix,</p>
+<p><span class="math display">\[
+\lambda_1+\lambda_2=\operatorname{tr}(A),
+\qquad \lambda_1\lambda_2=\det(A).
+\]</span></p>
+<section id="representative-problem-3" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="representative-problem-3"><span class="header-section-number">5.1</span> Representative problem</h2>
+<p>Find the eigenvalues and eigenvectors of</p>
+<p><span class="math display">\[
+A=\begin{bmatrix}3&amp;1\\0&amp;2\end{bmatrix}.
+\]</span></p>
+</section>
+</section>
+<section id="unit-5-abstract-vector-spaces" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Unit 5 — Abstract vector spaces</h1>
+<p>Vectors need not be arrows: polynomials, matrices, functions, and sequences can also form vector spaces. For the polynomial basis</p>
+<p><span class="math display">\[
+\mathcal B=\{1,x,x^2\},
+\]</span></p>
+<p>the polynomial (p(x)=4-2x+3x^2) has coordinate vector</p>
+<p><span class="math display">\[
+[p]_{\mathcal B}=\begin{bmatrix}4\\-2\\3\end{bmatrix}.
+\]</span></p>
+<p>The same ideas—span, independence, basis, coordinates, and linear transformations—apply in every vector space.</p>
+<section id="representative-problem-4" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="representative-problem-4"><span class="header-section-number">6.1</span> Representative problem</h2>
+<p>Express (p(x)=2+5x-x^2) in coordinates relative to</p>
+<p><span class="math display">\[
+\mathcal B=\{1+x,x,x^2\}.
+\]</span></p>
+</section>
+</section>
+<section id="quiz" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Quiz</h1>
+<p>Attempt these closed-notes first. Each question is worth 2 points.</p>
+<ol type="1">
+<li>Find (a,b) such that (a[1,2]<sup>T+b[2,-1]</sup>T=[7,1]^T).</li>
+<li>State the two conditions a set must satisfy to be a basis.</li>
+<li>Find the matrix for (T(x,y)=(x+2y,3x-y)).</li>
+<li>Compute <span class="math display">\[
+\begin{bmatrix}1&amp;2\\3&amp;4\end{bmatrix}\begin{bmatrix}2\\1\end{bmatrix}.
+\]</span></li>
+<li>Solve (x+y=5) and (2x-y=1).</li>
+<li>Are ([1,2,3]^T) and ([2,-1,0]^T) perpendicular?</li>
+<li>Compute ([1,0,1]<sup>T</sup>T).</li>
+<li>Find the determinant of ([]).</li>
+<li>Find the eigenvalues of ([]).</li>
+<li>Express (2+5x-x^2) in the basis ({1+x,x,x^2}).</li>
+<li>Explain why matrix multiplication represents composition of transformations.</li>
+<li>Explain why the determinant being zero prevents invertibility.</li>
+</ol>
+<section id="scoring" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="scoring"><span class="header-section-number">7.1</span> Scoring</h2>
+<ul>
+<li>20–24: ready for a cumulative problem set.</li>
+<li>14–19: review the missed units and retry.</li>
+<li>0–13: work through the representative problems slowly, then retake the quiz.</li>
+</ul>
+<p>The <a href="../../posts/linear-algebra-quiz/answer.html">answer key</a> gives worked solutions.</p>
 
 
+</section>
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1786294618512" data-listing-reading-time-sort="1" data-listing-word-count-sort="163">
-<a href="./posts/linear-algebra-quiz/answer.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Answer Key: Essential Linear Algebra Quiz
-</h5>
-<div class="card-text listing-description delink">
-Questions 1–10 are computational and worth 2 points each. Questions 11–12 are conceptual and worth 2 points each. Award 1 point for the correct method with an arithmetic or…
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1786294618504" data-listing-reading-time-sort="3" data-listing-word-count-sort="416">
-<a href="./posts/linear-algebra-quiz/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Essential Linear Algebra: A Five-Unit Quiz
-</h5>
-<div class="card-text listing-description delink">
-Study one unit, solve its representative problem, and only then attempt the final quiz. The sequence follows the conceptual dependencies in the 3Blue1Brown <em>Essence of Linear…</em>
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-Ishaan Shrivastava
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1782501193397" data-listing-reading-time-sort="8" data-listing-word-count-sort="1505">
-<a href="./posts/privileged-basis/answer.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-ANSWER KEY TO PRIVILEGED BASIS AND RELU QUIZ
-</h5>
-<div class="card-text listing-description delink">
-Here is the answer sheet - index.qmd
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1782500858899" data-listing-reading-time-sort="9" data-listing-word-count-sort="1649">
-<a href="./posts/privileged-basis/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Prerequisite Study Guide: ReLU Privileged-Basis Reconstruction
-</h5>
-<div class="card-text listing-description delink">
-The target object is
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-Ishaan Shrivastava
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="4" data-listing-date-sort="1782493450000" data-listing-file-modified-sort="1782499475804" data-listing-date-modified-sort="1782493450000" data-listing-reading-time-sort="2" data-listing-word-count-sort="374">
-<a href="./posts/multivariable-statistics/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Multivariable Statistics
-</h5>
-<div class="card-text listing-description delink">
-While trying to understand what a <code>privileged-basis</code> means, I realised that I am significantly underequipped with the prerequisites. These are my notes for all the problems I…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ishaan Shrivastava
-</div>
-<div class="listing-date">
-Jun 26, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="5" data-listing-date-sort="1782216771000" data-listing-file-modified-sort="1782501476564" data-listing-date-modified-sort="1782216771000" data-listing-reading-time-sort="7" data-listing-word-count-sort="1336">
-<a href="./posts/gemma/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img loading='lazy' src="posts/gemma/gemma-3n-parameters.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-WTF is going on inside Gemma? Thoughts, and some experiments with hybrid post-pre-norm and Per-Layer-Embeddings (PLE)
-</h5>
-<div class="card-text listing-description delink">
-Does anyone have any idea of what Gemma-style Per-Layer-Embeddings actually do? Lets pull up <strong>Gemma 4 E4B</strong> for a closer look.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ishaan Shrivastava
-</div>
-<div class="listing-date">
-Jun 23, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="6" data-listing-date-sort="1779633529000" data-listing-file-modified-sort="1779635874686" data-listing-date-modified-sort="1779633529000" data-listing-reading-time-sort="1" data-listing-word-count-sort="109">
-<a href="./posts/part-whole-training/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Part-Whole training
-</h5>
-<div class="card-text listing-description delink">
-Reference - https://www.sciencedirect.com/science/article/abs/pii/0001691889900073?via%3Dihub
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ishaan Shrivastava
-</div>
-<div class="listing-date">
-May 24, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="7" data-listing-date-sort="1779633479000" data-listing-file-modified-sort="1779635704919" data-listing-date-modified-sort="1779633479000" data-listing-reading-time-sort="4" data-listing-word-count-sort="748">
-<a href="./posts/reproducing-attention-is-all-you-need-from-scratch-pytorch/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img loading='lazy' src="posts/reproducing-attention-is-all-you-need-from-scratch-pytorch/pasted-image-20241011120647.png" alt="Transformer encoder diagram" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Reproducing Attention is All you Need, from scratch - PyTorch
-</h5>
-<div class="card-text listing-description delink">
-Transformers are a sequence modelling and transduction architecture heavily leveraging self-attention in order to eliminate the need for convolutions or gating. Advantages…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ishaan Shrivastava
-</div>
-<div class="listing-date">
-May 24, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="8" data-listing-date-sort="1779633463000" data-listing-file-modified-sort="1779635825734" data-listing-date-modified-sort="1779633463000" data-listing-reading-time-sort="1" data-listing-word-count-sort="195">
-<a href="./posts/rotating-emphasis-manipulation/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Rotating Emphasis Manipulation
-</h5>
-<div class="card-text listing-description delink">
-Reference - https://www.sciencedirect.com/science/article/abs/pii/0001691889900073?via%3Dihub
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ishaan Shrivastava
-</div>
-<div class="listing-date">
-May 24, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="9" data-listing-date-sort="1762799400000" data-listing-file-modified-sort="1779537437231" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1010">
-<a href="./posts/speculative-decoding/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./posts/speculative-decoding/assets/card-speculative-decoding.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-speculative-decoding
-</h5>
-<div class="card-text listing-description delink">
-def remove_last_t_from_kvcache(kvcache, t): for i, (k_layer, v_layer) in enumerate(kvcache): if k_layer is not None: kvcache[i] = ( k_layer[:, :, :-t, :], # remove last…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ishaan Shrivastava
-</div>
-<div class="listing-date">
-Nov 11, 2025
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="10" data-listing-date-sort="1738225870000" data-listing-file-modified-sort="1782501489063" data-listing-date-modified-sort="1738225870000" data-listing-reading-time-sort="2" data-listing-word-count-sort="311">
-<a href="./posts/measure-theory/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img loading='lazy' src="posts/measure-theory/mt01.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Measure Theory
-</h5>
-<div class="card-text listing-description delink">
-A sigma algebra <span class="math inline">\(\mathcal{A}\)</span> on a set <span class="math inline">\(X\)</span> is a nonempty set of subsets of <span class="math inline">\(X\)</span> that is closed under complement, countable union, and countable intersection. In other…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Ishaan Shrivastava
-</div>
-<div class="listing-date">
-Jan 30, 2025
-</div>
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

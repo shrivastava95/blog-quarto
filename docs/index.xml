@@ -545,6 +545,171 @@ draft_cache_position = draft_cache_position[-1:] + 1 # add one more position for
   <pubDate>Thu, 30 Jan 2025 08:31:10 GMT</pubDate>
 </item>
 <item>
+  <title>Answer Key: Essential Linear Algebra Quiz</title>
+  <link>https://shrivastava95.github.io/blog-quarto/posts/linear-algebra-quiz/answer.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="answers" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Answers</h1>
+<ol type="1">
+<li>The equations are (a+2b=7) and (2a-b=1), giving <img src="https://latex.codecogs.com/png.latex?%0A%5Cboxed%7Ba=%5Cfrac95,%5Cquad%20b=%5Cfrac%7B13%7D5%7D.%0A"></li>
+<li>The set must span the space and be linearly independent.</li>
+<li>The columns are (T(1,0)) and (T(0,1)), so <img src="https://latex.codecogs.com/png.latex?%0A%5Cboxed%7BA=%5Cbegin%7Bbmatrix%7D1&amp;2%5C%5C3&amp;-1%5Cend%7Bbmatrix%7D%7D.%0A"></li>
+<li><img src="https://latex.codecogs.com/png.latex?%0A%5Cboxed%7B%5Cbegin%7Bbmatrix%7D4%5C%5C10%5Cend%7Bbmatrix%7D%7D.%0A"></li>
+<li>Adding the equations gives (3x=6), so (oxed{x=2,y=3}).</li>
+<li>Yes, since (1(2)+2(-1)+3(0)=0).</li>
+<li><img src="https://latex.codecogs.com/png.latex?%0A%5Cboxed%7B%5Cbegin%7Bbmatrix%7D-1%5C%5C2%5C%5C1%5Cend%7Bbmatrix%7D%7D.%0A"></li>
+<li>(oxed{10}).</li>
+<li>Since (A) is triangular, the eigenvalues are its diagonal entries: (oxed{4,2}).</li>
+<li>Write (c_1(1+x)+c_2x+c_3x<sup>2=2+5x-x</sup>2). Thus (oxed{[p]_{B}=[2,3,-1]^T}).</li>
+<li>Applying (B) and then (A) gives (A(Bx)=(AB)x), so (AB) represents composition.</li>
+<li>A zero determinant collapses volume into a lower-dimensional set, so distinct inputs can map to the same output; therefore no inverse exists.</li>
+</ol>
+</section>
+<section id="grading" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Grading</h1>
+<p>Questions 1–10 are computational and worth 2 points each. Questions 11–12 are conceptual and worth 2 points each. Award 1 point for the correct method with an arithmetic or notation error, and 2 for a correct, explicit answer.</p>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://shrivastava95.github.io/blog-quarto/posts/linear-algebra-quiz/answer.html</guid>
+  <pubDate>Sun, 09 Aug 2026 16:57:42 GMT</pubDate>
+</item>
+<item>
+  <title>Essential Linear Algebra: A Five-Unit Quiz</title>
+  <dc:creator>Ishaan Shrivastava</dc:creator>
+  <link>https://shrivastava95.github.io/blog-quarto/posts/linear-algebra-quiz/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="how-to-use-this-guide" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> How to use this guide</h1>
+<p>Study one unit, solve its representative problem, and only then attempt the final quiz. The sequence follows the conceptual dependencies in the 3Blue1Brown <em>Essence of Linear Algebra</em> playlist.</p>
+</section>
+<section id="unit-1-vectors-combinations-and-bases" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Unit 1 — Vectors, combinations, and bases</h1>
+<p>A vector is an ordered list of scalars:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbf%20v=%5Cbegin%7Bbmatrix%7Dv_1%5C%5Cv_2%5C%5C%5Cvdots%5C%5Cv_n%5Cend%7Bbmatrix%7D.%0A"></p>
+<p>The essential operations are</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbf%20u+%5Cmathbf%20v=%5Cbegin%7Bbmatrix%7Du_1+v_1%5C%5Cu_2+v_2%5Cend%7Bbmatrix%7D,%0A%5Cqquad%20c%5Cmathbf%20v=%5Cbegin%7Bbmatrix%7Dcv_1%5C%5Ccv_2%5Cend%7Bbmatrix%7D.%0A"></p>
+<p>A linear combination has the form</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Ac_1%5Cmathbf%20v_1+%5Ccdots+c_k%5Cmathbf%20v_k.%0A"></p>
+<p>A basis is a linearly independent spanning set. Coordinates tell us which linear combination of the basis vectors produces a vector.</p>
+<section id="representative-problem" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="representative-problem"><span class="header-section-number">2.1</span> Representative problem</h2>
+<p>Find (a,b) such that</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Aa%5Cbegin%7Bbmatrix%7D1%5C%5C2%5Cend%7Bbmatrix%7D+b%5Cbegin%7Bbmatrix%7D2%5C%5C-1%5Cend%7Bbmatrix%7D=%5Cbegin%7Bbmatrix%7D7%5C%5C1%5Cend%7Bbmatrix%7D.%0A"></p>
+</section>
+</section>
+<section id="unit-2-linear-transformations-and-matrices" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Unit 2 — Linear transformations and matrices</h1>
+<p>A transformation (T) is linear when</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AT(%5Cmathbf%20u+%5Cmathbf%20v)=T(%5Cmathbf%20u)+T(%5Cmathbf%20v),%0A%5Cqquad%20T(c%5Cmathbf%20v)=cT(%5Cmathbf%20v).%0A"></p>
+<p>Every linear transformation can be written as</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AT(%5Cmathbf%20x)=A%5Cmathbf%20x.%0A"></p>
+<p>The columns of (A) are the images of the standard basis vectors. Matrix multiplication is composition:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A(AB)%5Cmathbf%20x=A(B%5Cmathbf%20x).%0A"></p>
+<p>For a (2) matrix,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA=%5Cbegin%7Bbmatrix%7Da&amp;b%5C%5Cc&amp;d%5Cend%7Bbmatrix%7D,%0A%5Cqquad%20%5Cdet(A)=ad-bc.%0A"></p>
+<p>The matrix is invertible exactly when its determinant is nonzero.</p>
+<section id="representative-problem-1" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="representative-problem-1"><span class="header-section-number">3.1</span> Representative problem</h2>
+<p>For</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA=%5Cbegin%7Bbmatrix%7D2&amp;1%5C%5C0&amp;3%5Cend%7Bbmatrix%7D,%0A"></p>
+<p>compute (A[1,2]^T), (det(A)), and decide whether (A) is invertible.</p>
+</section>
+</section>
+<section id="unit-3-systems-dot-products-and-cross-products" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Unit 3 — Systems, dot products, and cross products</h1>
+<p>A linear system is represented by</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA%5Cmathbf%20x=%5Cmathbf%20b.%0A"></p>
+<p>The dot product is</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbf%20u%5Ccdot%5Cmathbf%20v=%5Csum_i%20u_iv_i=%5C%7C%5Cmathbf%20u%5C%7C%5C%7C%5Cmathbf%20v%5C%7C%5Ccos%5Ctheta.%0A"></p>
+<p>Perpendicular vectors have dot product zero.</p>
+<p>In three dimensions,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbf%20u%5Ctimes%5Cmathbf%20v=%0A%5Cbegin%7Bbmatrix%7D%0Au_2v_3-u_3v_2%5C%5C%0Au_3v_1-u_1v_3%5C%5C%0Au_1v_2-u_2v_1%0A%5Cend%7Bbmatrix%7D.%0A"></p>
+<p>The cross product is perpendicular to both inputs, and</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5C%7C%5Cmathbf%20u%5Ctimes%5Cmathbf%20v%5C%7C=%5C%7C%5Cmathbf%20u%5C%7C%5C%7C%5Cmathbf%20v%5C%7C%5Csin%5Ctheta.%0A"></p>
+<section id="representative-problem-2" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="representative-problem-2"><span class="header-section-number">4.1</span> Representative problem</h2>
+<p>For (mathbf u=[1,2,0]^T) and (mathbf v=[2,-1,1]^T), compute (mathbf uv) and (mathbf uv).</p>
+</section>
+</section>
+<section id="unit-4-determinants-basis-changes-and-eigenvalues" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Unit 4 — Determinants, basis changes, and eigenvalues</h1>
+<p>Important determinant identities are</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cdet(AB)=%5Cdet(A)%5Cdet(B),%0A%5Cqquad%20%5Cdet(A%5E%7B-1%7D)=%5Cfrac1%7B%5Cdet(A)%7D.%0A"></p>
+<p>Eigenvectors satisfy</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA%5Cmathbf%20v=%5Clambda%5Cmathbf%20v,%0A%5Cqquad%20%5Cmathbf%20v%5Cne%5Cmathbf0.%0A"></p>
+<p>Eigenvalues solve the characteristic equation</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cdet(A-%5Clambda%20I)=0.%0A"></p>
+<p>If (A) has enough independent eigenvectors, then</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA=PDP%5E%7B-1%7D,%0A%5Cqquad%20A%5En=PD%5EnP%5E%7B-1%7D.%0A"></p>
+<p>For a (2) matrix,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Clambda_1+%5Clambda_2=%5Coperatorname%7Btr%7D(A),%0A%5Cqquad%20%5Clambda_1%5Clambda_2=%5Cdet(A).%0A"></p>
+<section id="representative-problem-3" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="representative-problem-3"><span class="header-section-number">5.1</span> Representative problem</h2>
+<p>Find the eigenvalues and eigenvectors of</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA=%5Cbegin%7Bbmatrix%7D3&amp;1%5C%5C0&amp;2%5Cend%7Bbmatrix%7D.%0A"></p>
+</section>
+</section>
+<section id="unit-5-abstract-vector-spaces" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Unit 5 — Abstract vector spaces</h1>
+<p>Vectors need not be arrows: polynomials, matrices, functions, and sequences can also form vector spaces. For the polynomial basis</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathcal%20B=%5C%7B1,x,x%5E2%5C%7D,%0A"></p>
+<p>the polynomial (p(x)=4-2x+3x^2) has coordinate vector</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Bp%5D_%7B%5Cmathcal%20B%7D=%5Cbegin%7Bbmatrix%7D4%5C%5C-2%5C%5C3%5Cend%7Bbmatrix%7D.%0A"></p>
+<p>The same ideas—span, independence, basis, coordinates, and linear transformations—apply in every vector space.</p>
+<section id="representative-problem-4" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="representative-problem-4"><span class="header-section-number">6.1</span> Representative problem</h2>
+<p>Express (p(x)=2+5x-x^2) in coordinates relative to</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathcal%20B=%5C%7B1+x,x,x%5E2%5C%7D.%0A"></p>
+</section>
+</section>
+<section id="quiz" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Quiz</h1>
+<p>Attempt these closed-notes first. Each question is worth 2 points.</p>
+<ol type="1">
+<li>Find (a,b) such that (a[1,2]<sup>T+b[2,-1]</sup>T=[7,1]^T).</li>
+<li>State the two conditions a set must satisfy to be a basis.</li>
+<li>Find the matrix for (T(x,y)=(x+2y,3x-y)).</li>
+<li>Compute <img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Bbmatrix%7D1&amp;2%5C%5C3&amp;4%5Cend%7Bbmatrix%7D%5Cbegin%7Bbmatrix%7D2%5C%5C1%5Cend%7Bbmatrix%7D.%0A"></li>
+<li>Solve (x+y=5) and (2x-y=1).</li>
+<li>Are ([1,2,3]^T) and ([2,-1,0]^T) perpendicular?</li>
+<li>Compute ([1,0,1]<sup>T</sup>T).</li>
+<li>Find the determinant of ([]).</li>
+<li>Find the eigenvalues of ([]).</li>
+<li>Express (2+5x-x^2) in the basis ({1+x,x,x^2}).</li>
+<li>Explain why matrix multiplication represents composition of transformations.</li>
+<li>Explain why the determinant being zero prevents invertibility.</li>
+</ol>
+<section id="scoring" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="scoring"><span class="header-section-number">7.1</span> Scoring</h2>
+<ul>
+<li>20–24: ready for a cumulative problem set.</li>
+<li>14–19: review the missed units and retry.</li>
+<li>0–13: work through the representative problems slowly, then retake the quiz.</li>
+</ul>
+<p>The <a href="../../posts/linear-algebra-quiz/answer.html">answer key</a> gives worked solutions.</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <guid>https://shrivastava95.github.io/blog-quarto/posts/linear-algebra-quiz/</guid>
+  <pubDate>Sun, 09 Aug 2026 16:57:42 GMT</pubDate>
+</item>
+<item>
   <title>ANSWER KEY TO PRIVILEGED BASIS AND RELU QUIZ</title>
   <link>https://shrivastava95.github.io/blog-quarto/posts/privileged-basis/answer.html</link>
   <description><![CDATA[ 
@@ -1003,7 +1168,7 @@ draft_cache_position = draft_cache_position[-1:] + 1 # add one more position for
 
  ]]></description>
   <guid>https://shrivastava95.github.io/blog-quarto/posts/privileged-basis/answer.html</guid>
-  <pubDate>Fri, 26 Jun 2026 19:18:51 GMT</pubDate>
+  <pubDate>Sun, 09 Aug 2026 16:57:42 GMT</pubDate>
 </item>
 <item>
   <title>Prerequisite Study Guide: ReLU Privileged-Basis Reconstruction</title>
@@ -1480,7 +1645,7 @@ draft_cache_position = draft_cache_position[-1:] + 1 # add one more position for
 
  ]]></description>
   <guid>https://shrivastava95.github.io/blog-quarto/posts/privileged-basis/</guid>
-  <pubDate>Fri, 26 Jun 2026 19:18:51 GMT</pubDate>
+  <pubDate>Sun, 09 Aug 2026 16:57:42 GMT</pubDate>
 </item>
 </channel>
 </rss>

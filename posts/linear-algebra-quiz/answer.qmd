@@ -1,0 +1,38 @@
+---
+title: "Answer Key: Essential Linear Algebra Quiz"
+format:
+  html:
+    toc: true
+    number-sections: true
+---
+
+# Answers
+
+1. The equations are (a+2b=7) and (2a-b=1), giving
+   $$
+   \boxed{a=\frac95,\quad b=\frac{13}5}.
+   $$
+2. The set must span the space and be linearly independent.
+3. The columns are (T(1,0)) and (T(0,1)), so
+   $$
+   \boxed{A=\begin{bmatrix}1&2\\3&-1\end{bmatrix}}.
+   $$
+4. 
+   $$
+   \boxed{\begin{bmatrix}4\\10\end{bmatrix}}.
+   $$
+5. Adding the equations gives (3x=6), so (oxed{x=2,y=3}).
+6. Yes, since (1(2)+2(-1)+3(0)=0).
+7.
+   $$
+   \boxed{\begin{bmatrix}-1\\2\\1\end{bmatrix}}.
+   $$
+8. (oxed{10}).
+9. Since (A) is triangular, the eigenvalues are its diagonal entries: (oxed{4,2}).
+10. Write (c_1(1+x)+c_2x+c_3x^2=2+5x-x^2). Thus (oxed{[p]_{\mathcal B}=[2,3,-1]^T}).
+11. Applying (B) and then (A) gives (A(B\mathbf x)=(AB)\mathbf x), so (AB) represents composition.
+12. A zero determinant collapses volume into a lower-dimensional set, so distinct inputs can map to the same output; therefore no inverse exists.
+
+# Grading
+
+Questions 1–10 are computational and worth 2 points each. Questions 11–12 are conceptual and worth 2 points each. Award 1 point for the correct method with an arithmetic or notation error, and 2 for a correct, explicit answer.

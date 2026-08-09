@@ -319,7 +319,7 @@
     "href": "index.html",
     "title": "My Posts",
     "section": "",
-    "text": "ANSWER KEY TO PRIVILEGED BASIS AND RELU QUIZ\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPrerequisite Study Guide: ReLU Privileged-Basis Reconstruction\n\n\n\n\n\n\nIshaan Shrivastava\n\n\n\n\n\n\n\n\n\n\n\nMultivariable Statistics\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nJun 26, 2026\n\n\n\n\n\n\n\n\n\n\n\nWTF is going on inside Gemma? Thoughts, and some experiments with hybrid post-pre-norm and Per-Layer-Embeddings (PLE)\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nJun 23, 2026\n\n\n\n\n\n\n\n\n\n\n\nPart-Whole training\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nMay 24, 2026\n\n\n\n\n\n\n\n\n\n\n\nReproducing Attention is All you Need, from scratch - PyTorch\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nMay 24, 2026\n\n\n\n\n\n\n\n\n\n\n\nRotating Emphasis Manipulation\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nMay 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nspeculative-decoding\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nNov 11, 2025\n\n\n\n\n\n\n\n\n\n\n\nMeasure Theory\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nJan 30, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "Answer Key: Essential Linear Algebra Quiz\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEssential Linear Algebra: A Five-Unit Quiz\n\n\n\n\n\n\nIshaan Shrivastava\n\n\n\n\n\n\n\n\n\n\n\nANSWER KEY TO PRIVILEGED BASIS AND RELU QUIZ\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPrerequisite Study Guide: ReLU Privileged-Basis Reconstruction\n\n\n\n\n\n\nIshaan Shrivastava\n\n\n\n\n\n\n\n\n\n\n\nMultivariable Statistics\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nJun 26, 2026\n\n\n\n\n\n\n\n\n\n\n\nWTF is going on inside Gemma? Thoughts, and some experiments with hybrid post-pre-norm and Per-Layer-Embeddings (PLE)\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nJun 23, 2026\n\n\n\n\n\n\n\n\n\n\n\nPart-Whole training\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nMay 24, 2026\n\n\n\n\n\n\n\n\n\n\n\nReproducing Attention is All you Need, from scratch - PyTorch\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nMay 24, 2026\n\n\n\n\n\n\n\n\n\n\n\nRotating Emphasis Manipulation\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nMay 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nspeculative-decoding\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nNov 11, 2025\n\n\n\n\n\n\n\n\n\n\n\nMeasure Theory\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nJan 30, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "credentials/index.html",
@@ -733,5 +733,61 @@
     "title": "speculative-decoding",
     "section": "note that this implementation is not batched.",
     "text": "note that this implementation is not batched.\nremove_last_t_from_kvcache(past_key_values_draft, k-n)"
+  },
+  {
+    "objectID": "posts/linear-algebra-quiz/answer.html",
+    "href": "posts/linear-algebra-quiz/answer.html",
+    "title": "Answer Key: Essential Linear Algebra Quiz",
+    "section": "",
+    "text": "1 Answers\n\nThe equations are (a+2b=7) and (2a-b=1), giving \\[\n\\boxed{a=\\frac95,\\quad b=\\frac{13}5}.\n\\]\nThe set must span the space and be linearly independent.\nThe columns are (T(1,0)) and (T(0,1)), so \\[\n\\boxed{A=\\begin{bmatrix}1&2\\\\3&-1\\end{bmatrix}}.\n\\]\n\\[\n\\boxed{\\begin{bmatrix}4\\\\10\\end{bmatrix}}.\n\\]\nAdding the equations gives (3x=6), so (\boxed{x=2,y=3}).\nYes, since (1(2)+2(-1)+3(0)=0).\n\\[\n\\boxed{\\begin{bmatrix}-1\\\\2\\\\1\\end{bmatrix}}.\n\\]\n(\boxed{10}).\nSince (A) is triangular, the eigenvalues are its diagonal entries: (\boxed{4,2}).\nWrite (c_1(1+x)+c_2x+c_3x2=2+5x-x2). Thus (\boxed{[p]_{B}=[2,3,-1]^T}).\nApplying (B) and then (A) gives (A(Bx)=(AB)x), so (AB) represents composition.\nA zero determinant collapses volume into a lower-dimensional set, so distinct inputs can map to the same output; therefore no inverse exists.\n\n\n\n2 Grading\nQuestions 1–10 are computational and worth 2 points each. Questions 11–12 are conceptual and worth 2 points each. Award 1 point for the correct method with an arithmetic or notation error, and 2 for a correct, explicit answer."
+  },
+  {
+    "objectID": "posts/linear-algebra-quiz/index.html",
+    "href": "posts/linear-algebra-quiz/index.html",
+    "title": "Essential Linear Algebra: A Five-Unit Quiz",
+    "section": "",
+    "text": "Study one unit, solve its representative problem, and only then attempt the final quiz. The sequence follows the conceptual dependencies in the 3Blue1Brown Essence of Linear Algebra playlist."
+  },
+  {
+    "objectID": "posts/linear-algebra-quiz/index.html#representative-problem",
+    "href": "posts/linear-algebra-quiz/index.html#representative-problem",
+    "title": "Essential Linear Algebra: A Five-Unit Quiz",
+    "section": "2.1 Representative problem",
+    "text": "2.1 Representative problem\nFind (a,b) such that\n\\[\na\\begin{bmatrix}1\\\\2\\end{bmatrix}+b\\begin{bmatrix}2\\\\-1\\end{bmatrix}=\\begin{bmatrix}7\\\\1\\end{bmatrix}.\n\\]"
+  },
+  {
+    "objectID": "posts/linear-algebra-quiz/index.html#representative-problem-1",
+    "href": "posts/linear-algebra-quiz/index.html#representative-problem-1",
+    "title": "Essential Linear Algebra: A Five-Unit Quiz",
+    "section": "3.1 Representative problem",
+    "text": "3.1 Representative problem\nFor\n\\[\nA=\\begin{bmatrix}2&1\\\\0&3\\end{bmatrix},\n\\]\ncompute (A[1,2]^T), (det(A)), and decide whether (A) is invertible."
+  },
+  {
+    "objectID": "posts/linear-algebra-quiz/index.html#representative-problem-2",
+    "href": "posts/linear-algebra-quiz/index.html#representative-problem-2",
+    "title": "Essential Linear Algebra: A Five-Unit Quiz",
+    "section": "4.1 Representative problem",
+    "text": "4.1 Representative problem\nFor (mathbf u=[1,2,0]^T) and (mathbf v=[2,-1,1]^T), compute (mathbf uv) and (mathbf uv)."
+  },
+  {
+    "objectID": "posts/linear-algebra-quiz/index.html#representative-problem-3",
+    "href": "posts/linear-algebra-quiz/index.html#representative-problem-3",
+    "title": "Essential Linear Algebra: A Five-Unit Quiz",
+    "section": "5.1 Representative problem",
+    "text": "5.1 Representative problem\nFind the eigenvalues and eigenvectors of\n\\[\nA=\\begin{bmatrix}3&1\\\\0&2\\end{bmatrix}.\n\\]"
+  },
+  {
+    "objectID": "posts/linear-algebra-quiz/index.html#representative-problem-4",
+    "href": "posts/linear-algebra-quiz/index.html#representative-problem-4",
+    "title": "Essential Linear Algebra: A Five-Unit Quiz",
+    "section": "6.1 Representative problem",
+    "text": "6.1 Representative problem\nExpress (p(x)=2+5x-x^2) in coordinates relative to\n\\[\n\\mathcal B=\\{1+x,x,x^2\\}.\n\\]"
+  },
+  {
+    "objectID": "posts/linear-algebra-quiz/index.html#scoring",
+    "href": "posts/linear-algebra-quiz/index.html#scoring",
+    "title": "Essential Linear Algebra: A Five-Unit Quiz",
+    "section": "7.1 Scoring",
+    "text": "7.1 Scoring\n\n20–24: ready for a cumulative problem set.\n14–19: review the missed units and retry.\n0–13: work through the representative problems slowly, then retake the quiz.\n\nThe answer key gives worked solutions."
   }
 ]
