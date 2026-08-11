@@ -545,6 +545,198 @@ draft_cache_position = draft_cache_position[-1:] + 1 # add one more position for
   <pubDate>Thu, 30 Jan 2025 08:31:10 GMT</pubDate>
 </item>
 <item>
+  <title>Answer Key: Linear Algebra Course Quiz</title>
+  <link>https://shrivastava95.github.io/blog-quarto/posts/linear-algebra-course-quiz/answer.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="answers" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Answers</h1>
+<ol type="1">
+<li>(r(t)=(1,2)+t(3,-1)=(1+3t,2-t)).</li>
+<li>It contains (0), and if (Au=0) and (Av=0), then (A(au+bv)=aAu+bAv=0).</li>
+<li>The inner product is (2+0-3=-1); the norms are () and ().</li>
+<li>().</li>
+<li>().</li>
+<li>If (A=[a_1&nbsp;&nbsp;a_n]), then (Ax=_i x_ia_i), so the columns encode the images of the standard basis vectors.</li>
+<li>No: ((2,4)=2(1,2)).</li>
+<li>Solve (a(1,1)+b(2,-1)=(5,1)), giving ().</li>
+<li>().</li>
+<li>((V)=(A)+(A)); dimensions split into independent output directions and input directions sent to zero.</li>
+<li>Free variables are parameters; pivot variables are expressed in terms of them, producing infinitely many solutions when at least one free variable remains.</li>
+<li>().</li>
+<li>A square matrix is invertible iff ((A)).</li>
+<li>(p_A()=(3-)(2-)).</li>
+<li>For (), (E_3={(1,0)}); for (), (E_2={(-1,1)}).</li>
+<li>A linear dependence among eigenvectors with distinct eigenvalues, acted on by (A), produces a second relation with distinct scalar factors; subtracting forces all coefficients to vanish.</li>
+</ol>
+</section>
+<section id="grading" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Grading</h1>
+<p>Award 2 points for a correct and explicit answer, 1 for the correct method with a minor error, and 0 for a missing or materially incorrect answer.</p>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://shrivastava95.github.io/blog-quarto/posts/linear-algebra-course-quiz/answer.html</guid>
+  <pubDate>Tue, 11 Aug 2026 12:48:53 GMT</pubDate>
+</item>
+<item>
+  <title>Linear Algebra Course: An Eight-Unit Study Guide and Quiz</title>
+  <dc:creator>Ishaan Shrivastava</dc:creator>
+  <link>https://shrivastava95.github.io/blog-quarto/posts/linear-algebra-course-quiz/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="scope" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Scope</h1>
+<p>This guide follows the public lessons retrieved from the <a href="https://www.youtube.com/playlist?list=PLBh2i93oe2quLc5zaxD0WHzQTGrXMwAI6">Linear Algebra playlist</a>. Members-only and unavailable lessons are excluded.</p>
+</section>
+<section id="unit-1-foundations-of-vector-spaces" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Unit 1 — Foundations of vector spaces</h1>
+<p>Videos: 1, 2, 4, 5.</p>
+<p>Vectors in (R^n) are tuples of scalars. A line through a point (p) with direction (v) is</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AL=%5C%7B%5Cmathbf%20p+t%5Cmathbf%20v:t%5Cin%5Cmathbb%20R%5C%7D.%0A"></p>
+<p>A vector space is closed under vector addition and scalar multiplication and satisfies the vector-space axioms. A subspace (UV) must contain (0) and satisfy</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbf%20u,%5Cmathbf%20v%5Cin%20U,%5C%20a,b%5Cin%5Cmathbb%20R%0A%5Cquad%5CLongrightarrow%5Cquad%0Aa%5Cmathbf%20u+b%5Cmathbf%20v%5Cin%20U.%0A"></p>
+<p>Representative problem: determine whether the solution set of (x+2y-z=0) is a subspace of (R^3), and parameterize it.</p>
+</section>
+<section id="unit-2-subspaces-inner-products-and-geometry" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Unit 2 — Subspaces, inner products, and geometry</h1>
+<p>Videos: 6, 9, 10.</p>
+<p>The Euclidean inner product and norm are</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Clangle%5Cmathbf%20u,%5Cmathbf%20v%5Crangle=%5Csum_i%20u_iv_i,%0A%5Cqquad%0A%5C%7C%5Cmathbf%20v%5C%7C=%5Csqrt%7B%5Clangle%5Cmathbf%20v,%5Cmathbf%20v%5Crangle%7D.%0A"></p>
+<p>The angle relation is</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Clangle%5Cmathbf%20u,%5Cmathbf%20v%5Crangle=%5C%7C%5Cmathbf%20u%5C%7C%5C%7C%5Cmathbf%20v%5C%7C%5Ccos%5Ctheta.%0A"></p>
+<p>In (R^3), (uv) is perpendicular to both inputs and has magnitude equal to the parallelogram area:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5C%7C%5Cmathbf%20u%5Ctimes%5Cmathbf%20v%5C%7C=%5C%7C%5Cmathbf%20u%5C%7C%5C%7C%5Cmathbf%20v%5C%7C%5Csin%5Ctheta.%0A"></p>
+<p>Representative problem: compute the projection of (u) onto nonzero (v):</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Coperatorname%7Bproj%7D_%7B%5Cmathbf%20v%7D(%5Cmathbf%20u)=%0A%5Cfrac%7B%5Clangle%5Cmathbf%20u,%5Cmathbf%20v%5Crangle%7D%7B%5Clangle%5Cmathbf%20v,%5Cmathbf%20v%5Crangle%7D%5Cmathbf%20v.%0A"></p>
+</section>
+<section id="unit-3-matrices-and-linear-maps" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Unit 3 — Matrices and linear maps</h1>
+<p>Videos: 11, 13, 14, 16, 17, 19, 20.</p>
+<p>A linear map satisfies</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AT(a%5Cmathbf%20u+b%5Cmathbf%20v)=aT(%5Cmathbf%20u)+bT(%5Cmathbf%20v).%0A"></p>
+<p>For a matrix (A=[a_1&nbsp;&nbsp;a_n]),</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA%5Cmathbf%20x=x_1%5Cmathbf%20a_1+%5Ccdots+x_n%5Cmathbf%20a_n.%0A"></p>
+<p>Composition is matrix multiplication:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A(AB)%5Cmathbf%20x=A(B%5Cmathbf%20x).%0A"></p>
+<p>The matrix of a linear map is determined by the images of the standard basis vectors. Special matrices include diagonal, triangular, symmetric, and identity matrices.</p>
+<p>Representative problem: find the matrix of (T(x,y)=(2x-y,x+3y)), then compute (T(1,2)).</p>
+</section>
+<section id="unit-4-independence-bases-coordinates-and-dimension" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Unit 4 — Independence, bases, coordinates, and dimension</h1>
+<p>Videos: 22, 23, 25, 26, 28.</p>
+<p>Vectors (v_1,,v_k) are linearly independent when</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Ac_1%5Cmathbf%20v_1+%5Ccdots+c_k%5Cmathbf%20v_k=0%0A%5Cquad%5CLongrightarrow%5Cquad%0Ac_1=%5Ccdots=c_k=0.%0A"></p>
+<p>A basis is an independent spanning set. Coordinates relative to a basis (B=(b_1,,b_n)) satisfy</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cmathbf%20v=%5B%5Cmathbf%20v%5D_B%7B%7D_1%5Cmathbf%20b_1+%5Ccdots+%5B%5Cmathbf%20v%5D_B%7B%7D_n%5Cmathbf%20b_n.%0A"></p>
+<p>The exchange lemma explains why all bases of a finite-dimensional space have the same number of vectors: the dimension.</p>
+<p>Representative problem: express ((5,1)) in the basis ({(1,1),(2,-1)}).</p>
+</section>
+<section id="unit-5-inverses-and-transposes" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Unit 5 — Inverses and transposes</h1>
+<p>Videos: 29, 31, 32.</p>
+<p>An inverse satisfies</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AAA%5E%7B-1%7D=A%5E%7B-1%7DA=I.%0A"></p>
+<p>For a (2) matrix,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Bbmatrix%7Da&amp;b%5C%5Cc&amp;d%5Cend%7Bbmatrix%7D%5E%7B-1%7D%0A=%5Cfrac1%7Bad-bc%7D%5Cbegin%7Bbmatrix%7Dd&amp;-b%5C%5C-c&amp;a%5Cend%7Bbmatrix%7D,%0A%5Cqquad%20ad-bc%5Cne0.%0A"></p>
+<p>The transpose is defined by</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A(A%5ET)_%7Bij%7D=A_%7Bji%7D,%0A%5Cqquad%20(AB)%5ET=B%5ETA%5ET.%0A"></p>
+Representative problem: find the inverse of (
+<img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bbmatrix%7D2&amp;1%5C%5C1&amp;1%5Cend%7Bbmatrix%7D">
+<p>) and verify it by multiplication.</p>
+</section>
+<section id="unit-6-range-kernel-rank-nullity-and-solving-systems" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Unit 6 — Range, kernel, rank-nullity, and solving systems</h1>
+<p>Videos: 34, 35, 37, 38, 40, 42.</p>
+<p>The kernel and range are</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cker(A)=%5C%7B%5Cmathbf%20x:A%5Cmathbf%20x=0%5C%7D,%0A%5Cqquad%0A%5Coperatorname%7Brange%7D(A)=%5C%7BA%5Cmathbf%20x:%5Cmathbf%20x%5Cin%20V%5C%7D.%0A"></p>
+<p>The rank-nullity theorem is</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cdim(V)=%5Coperatorname%7Brank%7D(A)+%5Coperatorname%7Bnullity%7D(A).%0A"></p>
+<p>Row operations preserve the solution set of a system when applied to its augmented matrix. In row-echelon form, pivot variables are determined and free variables parameterize the remaining solutions.</p>
+<p>Representative problem: row-reduce an augmented matrix and state whether the system has no solution, one solution, or infinitely many solutions.</p>
+</section>
+<section id="unit-7-determinants" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Unit 7 — Determinants</h1>
+<p>Videos: 43, 44, 46, 47, 48, 50, 51.</p>
+<p>For a (2) matrix,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cdet%5Cbegin%7Bbmatrix%7Da&amp;b%5C%5Cc&amp;d%5Cend%7Bbmatrix%7D=ad-bc.%0A"></p>
+<p>The determinant is multilinear and alternating, and satisfies</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cdet(AB)=%5Cdet(A)%5Cdet(B).%0A"></p>
+<p>For an (nn) matrix, Laplace expansion along row (i) is</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cdet(A)=%5Csum_j(-1)%5E%7Bi+j%7Da_%7Bij%7D%5Cdet(A_%7Bij%7D).%0A"></p>
+<p>Geometrically, (|(A)|) is volume scaling. A square matrix is invertible exactly when its determinant is nonzero.</p>
+Representative problem: compute the determinant of (
+<img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bbmatrix%7D1&amp;2&amp;3%5C%5C0&amp;4&amp;5%5C%5C1&amp;0&amp;6%5Cend%7Bbmatrix%7D">
+<p>) by expansion or elimination.</p>
+</section>
+<section id="unit-8-eigenvalues-and-eigenvectors" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Unit 8 — Eigenvalues and eigenvectors</h1>
+<p>Videos: 53, 54, 55.</p>
+<p>An eigenvector is a nonzero vector satisfying</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AA%5Cmathbf%20v=%5Clambda%5Cmathbf%20v.%0A"></p>
+<p>Eigenvalues solve the characteristic equation</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Ap_A(%5Clambda)=%5Cdet(A-%5Clambda%20I)=0.%0A"></p>
+<p>The algebraic multiplicity of an eigenvalue is its multiplicity as a root of (p_A). Eigenvectors for () form the eigenspace</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AE_%5Clambda=%5Cker(A-%5Clambda%20I).%0A"></p>
+Representative problem: find the eigenvalues and eigenspaces of (
+<img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bbmatrix%7D3&amp;1%5C%5C0&amp;2%5Cend%7Bbmatrix%7D">
+<p>).</p>
+</section>
+<section id="quiz" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Quiz</h1>
+<p>Attempt this closed-notes. Each question is worth 2 points.</p>
+<ol type="1">
+<li>Parameterize the line through ((1,2)) parallel to ((3,-1)).</li>
+<li>Prove that the solution set of a homogeneous linear system is a subspace.</li>
+<li>Compute ((1,2,-1),(2,0,3)) and both vector norms.</li>
+<li>Compute ((1,2,0)(2,-1,1)).</li>
+<li>Find the matrix of (T(x,y)=(2x-y,x+3y)).</li>
+<li>Explain why the columns of a matrix determine its matrix-vector product.</li>
+<li>Test whether ((1,2)) and ((2,4)) are linearly independent.</li>
+<li>Find the coordinates of ((5,1)) in the basis ({(1,1),(2,-1)}).</li>
+<li>Find the inverse of (
+<img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bbmatrix%7D2&amp;1%5C%5C1&amp;1%5Cend%7Bbmatrix%7D">
+).</li>
+<li>State and interpret the rank-nullity theorem.</li>
+<li>Describe how free variables appear in a row-echelon solution.</li>
+<li>Compute (
+<img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bbmatrix%7D4&amp;1%5C%5C2&amp;3%5Cend%7Bbmatrix%7D">
+).</li>
+<li>State the determinant criterion for invertibility.</li>
+<li>Find the characteristic polynomial of (
+<img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bbmatrix%7D3&amp;1%5C%5C0&amp;2%5Cend%7Bbmatrix%7D">
+).</li>
+<li>Find the eigenspaces of that matrix.</li>
+<li>Explain why eigenvectors belonging to distinct eigenvalues are linearly independent.</li>
+</ol>
+<section id="scoring" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="scoring"><span class="header-section-number">10.1</span> Scoring</h2>
+<ul>
+<li>28–32: ready for proof-heavy linear algebra.</li>
+<li>20–27: review the units containing missed questions.</li>
+<li>Below 20: revisit Units 1, 3, 4, and 6 before continuing.</li>
+</ul>
+<p>See the <a href="../../posts/linear-algebra-course-quiz/answer.html">answer key</a> after attempting the quiz.</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <guid>https://shrivastava95.github.io/blog-quarto/posts/linear-algebra-course-quiz/</guid>
+  <pubDate>Tue, 11 Aug 2026 12:48:53 GMT</pubDate>
+</item>
+<item>
   <title>Answer Key: Essential Linear Algebra Quiz</title>
   <link>https://shrivastava95.github.io/blog-quarto/posts/linear-algebra-quiz/answer.html</link>
   <description><![CDATA[ 
@@ -579,7 +771,7 @@ draft_cache_position = draft_cache_position[-1:] + 1 # add one more position for
 
  ]]></description>
   <guid>https://shrivastava95.github.io/blog-quarto/posts/linear-algebra-quiz/answer.html</guid>
-  <pubDate>Sun, 09 Aug 2026 16:57:42 GMT</pubDate>
+  <pubDate>Tue, 11 Aug 2026 12:48:53 GMT</pubDate>
 </item>
 <item>
   <title>Essential Linear Algebra: A Five-Unit Quiz</title>
@@ -707,7 +899,7 @@ draft_cache_position = draft_cache_position[-1:] + 1 # add one more position for
 
  ]]></description>
   <guid>https://shrivastava95.github.io/blog-quarto/posts/linear-algebra-quiz/</guid>
-  <pubDate>Sun, 09 Aug 2026 16:57:42 GMT</pubDate>
+  <pubDate>Tue, 11 Aug 2026 12:48:53 GMT</pubDate>
 </item>
 <item>
   <title>ANSWER KEY TO PRIVILEGED BASIS AND RELU QUIZ</title>
@@ -1168,7 +1360,7 @@ draft_cache_position = draft_cache_position[-1:] + 1 # add one more position for
 
  ]]></description>
   <guid>https://shrivastava95.github.io/blog-quarto/posts/privileged-basis/answer.html</guid>
-  <pubDate>Sun, 09 Aug 2026 16:57:42 GMT</pubDate>
+  <pubDate>Tue, 11 Aug 2026 12:48:53 GMT</pubDate>
 </item>
 <item>
   <title>Prerequisite Study Guide: ReLU Privileged-Basis Reconstruction</title>
@@ -1645,7 +1837,7 @@ draft_cache_position = draft_cache_position[-1:] + 1 # add one more position for
 
  ]]></description>
   <guid>https://shrivastava95.github.io/blog-quarto/posts/privileged-basis/</guid>
-  <pubDate>Sun, 09 Aug 2026 16:57:42 GMT</pubDate>
+  <pubDate>Tue, 11 Aug 2026 12:48:53 GMT</pubDate>
 </item>
 </channel>
 </rss>

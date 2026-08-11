@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/linear-algebra-course-quiz/answer.html",
+      "/posts/linear-algebra-course-quiz/index.html",
       "/posts/linear-algebra-quiz/answer.html",
       "/posts/linear-algebra-quiz/index.html",
       "/posts/privileged-basis/answer.html",

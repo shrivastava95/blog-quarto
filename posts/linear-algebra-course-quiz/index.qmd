@@ -1,0 +1,239 @@
+---
+title: "Linear Algebra Course: An Eight-Unit Study Guide and Quiz"
+author: "Ishaan Shrivastava"
+format:
+  html:
+    toc: true
+    number-sections: true
+---
+
+# Scope
+
+This guide follows the public lessons retrieved from the [Linear Algebra playlist](https://www.youtube.com/playlist?list=PLBh2i93oe2quLc5zaxD0WHzQTGrXMwAI6). Members-only and unavailable lessons are excluded.
+
+# Unit 1 — Foundations of vector spaces
+
+Videos: 1, 2, 4, 5.
+
+Vectors in \(\mathbb R^n\) are tuples of scalars. A line through a point \(\mathbf p\) with direction \(\mathbf v\) is
+
+$$
+L=\{\mathbf p+t\mathbf v:t\in\mathbb R\}.
+$$
+
+A vector space is closed under vector addition and scalar multiplication and satisfies the vector-space axioms. A subspace \(U\subseteq V\) must contain \(0\) and satisfy
+
+$$
+\mathbf u,\mathbf v\in U,\ a,b\in\mathbb R
+\quad\Longrightarrow\quad
+a\mathbf u+b\mathbf v\in U.
+$$
+
+Representative problem: determine whether the solution set of \(x+2y-z=0\) is a subspace of \(\mathbb R^3\), and parameterize it.
+
+# Unit 2 — Subspaces, inner products, and geometry
+
+Videos: 6, 9, 10.
+
+The Euclidean inner product and norm are
+
+$$
+\langle\mathbf u,\mathbf v\rangle=\sum_i u_iv_i,
+\qquad
+\|\mathbf v\|=\sqrt{\langle\mathbf v,\mathbf v\rangle}.
+$$
+
+The angle relation is
+
+$$
+\langle\mathbf u,\mathbf v\rangle=\|\mathbf u\|\|\mathbf v\|\cos\theta.
+$$
+
+In \(\mathbb R^3\), \(\mathbf u\times\mathbf v\) is perpendicular to both inputs and has magnitude equal to the parallelogram area:
+
+$$
+\|\mathbf u\times\mathbf v\|=\|\mathbf u\|\|\mathbf v\|\sin\theta.
+$$
+
+Representative problem: compute the projection of \(\mathbf u\) onto nonzero \(\mathbf v\):
+
+$$
+\operatorname{proj}_{\mathbf v}(\mathbf u)=
+\frac{\langle\mathbf u,\mathbf v\rangle}{\langle\mathbf v,\mathbf v\rangle}\mathbf v.
+$$
+
+# Unit 3 — Matrices and linear maps
+
+Videos: 11, 13, 14, 16, 17, 19, 20.
+
+A linear map satisfies
+
+$$
+T(a\mathbf u+b\mathbf v)=aT(\mathbf u)+bT(\mathbf v).
+$$
+
+For a matrix \(A=[\mathbf a_1\ \cdots\ \mathbf a_n]\),
+
+$$
+A\mathbf x=x_1\mathbf a_1+\cdots+x_n\mathbf a_n.
+$$
+
+Composition is matrix multiplication:
+
+$$
+(AB)\mathbf x=A(B\mathbf x).
+$$
+
+The matrix of a linear map is determined by the images of the standard basis vectors. Special matrices include diagonal, triangular, symmetric, and identity matrices.
+
+Representative problem: find the matrix of \(T(x,y)=(2x-y,x+3y)\), then compute \(T(1,2)\).
+
+# Unit 4 — Independence, bases, coordinates, and dimension
+
+Videos: 22, 23, 25, 26, 28.
+
+Vectors \(\mathbf v_1,\ldots,\mathbf v_k\) are linearly independent when
+
+$$
+c_1\mathbf v_1+\cdots+c_k\mathbf v_k=0
+\quad\Longrightarrow\quad
+c_1=\cdots=c_k=0.
+$$
+
+A basis is an independent spanning set. Coordinates relative to a basis \(B=(\mathbf b_1,\ldots,\mathbf b_n)\) satisfy
+
+$$
+\mathbf v=[\mathbf v]_B{}_1\mathbf b_1+\cdots+[\mathbf v]_B{}_n\mathbf b_n.
+$$
+
+The exchange lemma explains why all bases of a finite-dimensional space have the same number of vectors: the dimension.
+
+Representative problem: express \((5,1)\) in the basis \(\{(1,1),(2,-1)\}\).
+
+# Unit 5 — Inverses and transposes
+
+Videos: 29, 31, 32.
+
+An inverse satisfies
+
+$$
+AA^{-1}=A^{-1}A=I.
+$$
+
+For a \(2\times2\) matrix,
+
+$$
+\begin{bmatrix}a&b\\c&d\end{bmatrix}^{-1}
+=\frac1{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix},
+\qquad ad-bc\ne0.
+$$
+
+The transpose is defined by
+
+$$
+(A^T)_{ij}=A_{ji},
+\qquad (AB)^T=B^TA^T.
+$$
+
+Representative problem: find the inverse of \(\begin{bmatrix}2&1\\1&1\end{bmatrix}\) and verify it by multiplication.
+
+# Unit 6 — Range, kernel, rank-nullity, and solving systems
+
+Videos: 34, 35, 37, 38, 40, 42.
+
+The kernel and range are
+
+$$
+\ker(A)=\{\mathbf x:A\mathbf x=0\},
+\qquad
+\operatorname{range}(A)=\{A\mathbf x:\mathbf x\in V\}.
+$$
+
+The rank-nullity theorem is
+
+$$
+\dim(V)=\operatorname{rank}(A)+\operatorname{nullity}(A).
+$$
+
+Row operations preserve the solution set of a system when applied to its augmented matrix. In row-echelon form, pivot variables are determined and free variables parameterize the remaining solutions.
+
+Representative problem: row-reduce an augmented matrix and state whether the system has no solution, one solution, or infinitely many solutions.
+
+# Unit 7 — Determinants
+
+Videos: 43, 44, 46, 47, 48, 50, 51.
+
+For a \(2\times2\) matrix,
+
+$$
+\det\begin{bmatrix}a&b\\c&d\end{bmatrix}=ad-bc.
+$$
+
+The determinant is multilinear and alternating, and satisfies
+
+$$
+\det(AB)=\det(A)\det(B).
+$$
+
+For an \(n\times n\) matrix, Laplace expansion along row \(i\) is
+
+$$
+\det(A)=\sum_j(-1)^{i+j}a_{ij}\det(A_{ij}).
+$$
+
+Geometrically, \(|\det(A)|\) is volume scaling. A square matrix is invertible exactly when its determinant is nonzero.
+
+Representative problem: compute the determinant of \(\begin{bmatrix}1&2&3\\0&4&5\\1&0&6\end{bmatrix}\) by expansion or elimination.
+
+# Unit 8 — Eigenvalues and eigenvectors
+
+Videos: 53, 54, 55.
+
+An eigenvector is a nonzero vector satisfying
+
+$$
+A\mathbf v=\lambda\mathbf v.
+$$
+
+Eigenvalues solve the characteristic equation
+
+$$
+p_A(\lambda)=\det(A-\lambda I)=0.
+$$
+
+The algebraic multiplicity of an eigenvalue is its multiplicity as a root of \(p_A\). Eigenvectors for \(\lambda\) form the eigenspace
+
+$$
+E_\lambda=\ker(A-\lambda I).
+$$
+
+Representative problem: find the eigenvalues and eigenspaces of \(\begin{bmatrix}3&1\\0&2\end{bmatrix}\).
+
+# Quiz
+
+Attempt this closed-notes. Each question is worth 2 points.
+
+1. Parameterize the line through \((1,2)\) parallel to \((3,-1)\).
+2. Prove that the solution set of a homogeneous linear system is a subspace.
+3. Compute \(\langle(1,2,-1),(2,0,3)\rangle\) and both vector norms.
+4. Compute \((1,2,0)\times(2,-1,1)\).
+5. Find the matrix of \(T(x,y)=(2x-y,x+3y)\).
+6. Explain why the columns of a matrix determine its matrix-vector product.
+7. Test whether \((1,2)\) and \((2,4)\) are linearly independent.
+8. Find the coordinates of \((5,1)\) in the basis \(\{(1,1),(2,-1)\}\).
+9. Find the inverse of \(\begin{bmatrix}2&1\\1&1\end{bmatrix}\).
+10. State and interpret the rank-nullity theorem.
+11. Describe how free variables appear in a row-echelon solution.
+12. Compute \(\det\begin{bmatrix}4&1\\2&3\end{bmatrix}\).
+13. State the determinant criterion for invertibility.
+14. Find the characteristic polynomial of \(\begin{bmatrix}3&1\\0&2\end{bmatrix}\).
+15. Find the eigenspaces of that matrix.
+16. Explain why eigenvectors belonging to distinct eigenvalues are linearly independent.
+
+## Scoring
+
+- 28–32: ready for proof-heavy linear algebra.
+- 20–27: review the units containing missed questions.
+- Below 20: revisit Units 1, 3, 4, and 6 before continuing.
+
+See the [answer key](answer.qmd) after attempting the quiz.

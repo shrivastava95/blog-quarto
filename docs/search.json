@@ -319,7 +319,7 @@
     "href": "index.html",
     "title": "My Posts",
     "section": "",
-    "text": "Answer Key: Essential Linear Algebra Quiz\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEssential Linear Algebra: A Five-Unit Quiz\n\n\n\n\n\n\nIshaan Shrivastava\n\n\n\n\n\n\n\n\n\n\n\nANSWER KEY TO PRIVILEGED BASIS AND RELU QUIZ\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPrerequisite Study Guide: ReLU Privileged-Basis Reconstruction\n\n\n\n\n\n\nIshaan Shrivastava\n\n\n\n\n\n\n\n\n\n\n\nMultivariable Statistics\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nJun 26, 2026\n\n\n\n\n\n\n\n\n\n\n\nWTF is going on inside Gemma? Thoughts, and some experiments with hybrid post-pre-norm and Per-Layer-Embeddings (PLE)\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nJun 23, 2026\n\n\n\n\n\n\n\n\n\n\n\nPart-Whole training\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nMay 24, 2026\n\n\n\n\n\n\n\n\n\n\n\nReproducing Attention is All you Need, from scratch - PyTorch\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nMay 24, 2026\n\n\n\n\n\n\n\n\n\n\n\nRotating Emphasis Manipulation\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nMay 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nspeculative-decoding\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nNov 11, 2025\n\n\n\n\n\n\n\n\n\n\n\nMeasure Theory\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nJan 30, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "Answer Key: Linear Algebra Course Quiz\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLinear Algebra Course: An Eight-Unit Study Guide and Quiz\n\n\n\n\n\n\nIshaan Shrivastava\n\n\n\n\n\n\n\n\n\n\n\nAnswer Key: Essential Linear Algebra Quiz\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEssential Linear Algebra: A Five-Unit Quiz\n\n\n\n\n\n\nIshaan Shrivastava\n\n\n\n\n\n\n\n\n\n\n\nANSWER KEY TO PRIVILEGED BASIS AND RELU QUIZ\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPrerequisite Study Guide: ReLU Privileged-Basis Reconstruction\n\n\n\n\n\n\nIshaan Shrivastava\n\n\n\n\n\n\n\n\n\n\n\nMultivariable Statistics\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nJun 26, 2026\n\n\n\n\n\n\n\n\n\n\n\nWTF is going on inside Gemma? Thoughts, and some experiments with hybrid post-pre-norm and Per-Layer-Embeddings (PLE)\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nJun 23, 2026\n\n\n\n\n\n\n\n\n\n\n\nPart-Whole training\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nMay 24, 2026\n\n\n\n\n\n\n\n\n\n\n\nReproducing Attention is All you Need, from scratch - PyTorch\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nMay 24, 2026\n\n\n\n\n\n\n\n\n\n\n\nRotating Emphasis Manipulation\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nMay 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nspeculative-decoding\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nNov 11, 2025\n\n\n\n\n\n\n\n\n\n\n\nMeasure Theory\n\n\n\n\n\n\nIshaan Shrivastava\n\n\nJan 30, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "credentials/index.html",
@@ -789,5 +789,26 @@
     "title": "Essential Linear Algebra: A Five-Unit Quiz",
     "section": "7.1 Scoring",
     "text": "7.1 Scoring\n\n20–24: ready for a cumulative problem set.\n14–19: review the missed units and retry.\n0–13: work through the representative problems slowly, then retake the quiz.\n\nThe answer key gives worked solutions."
+  },
+  {
+    "objectID": "posts/linear-algebra-course-quiz/answer.html",
+    "href": "posts/linear-algebra-course-quiz/answer.html",
+    "title": "Answer Key: Linear Algebra Course Quiz",
+    "section": "",
+    "text": "1 Answers\n\n(r(t)=(1,2)+t(3,-1)=(1+3t,2-t)).\nIt contains (0), and if (Au=0) and (Av=0), then (A(au+bv)=aAu+bAv=0).\nThe inner product is (2+0-3=-1); the norms are () and ().\n().\n().\nIf (A=[a_1  a_n]), then (Ax=_i x_ia_i), so the columns encode the images of the standard basis vectors.\nNo: ((2,4)=2(1,2)).\nSolve (a(1,1)+b(2,-1)=(5,1)), giving ().\n().\n((V)=(A)+(A)); dimensions split into independent output directions and input directions sent to zero.\nFree variables are parameters; pivot variables are expressed in terms of them, producing infinitely many solutions when at least one free variable remains.\n().\nA square matrix is invertible iff ((A)).\n(p_A()=(3-)(2-)).\nFor (), (E_3={(1,0)}); for (), (E_2={(-1,1)}).\nA linear dependence among eigenvectors with distinct eigenvalues, acted on by (A), produces a second relation with distinct scalar factors; subtracting forces all coefficients to vanish.\n\n\n\n2 Grading\nAward 2 points for a correct and explicit answer, 1 for the correct method with a minor error, and 0 for a missing or materially incorrect answer."
+  },
+  {
+    "objectID": "posts/linear-algebra-course-quiz/index.html",
+    "href": "posts/linear-algebra-course-quiz/index.html",
+    "title": "Linear Algebra Course: An Eight-Unit Study Guide and Quiz",
+    "section": "",
+    "text": "This guide follows the public lessons retrieved from the Linear Algebra playlist. Members-only and unavailable lessons are excluded."
+  },
+  {
+    "objectID": "posts/linear-algebra-course-quiz/index.html#scoring",
+    "href": "posts/linear-algebra-course-quiz/index.html#scoring",
+    "title": "Linear Algebra Course: An Eight-Unit Study Guide and Quiz",
+    "section": "10.1 Scoring",
+    "text": "10.1 Scoring\n\n28–32: ready for proof-heavy linear algebra.\n20–27: review the units containing missed questions.\nBelow 20: revisit Units 1, 3, 4, and 6 before continuing.\n\nSee the answer key after attempting the quiz."
   }
 ]
