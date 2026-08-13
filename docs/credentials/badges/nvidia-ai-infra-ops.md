@@ -1,23 +1,19 @@
-# Credential: AI Infrastructure & Operations Fundamentals
+# Credential: NVIDIA-Certified Associate: AI Infrastructure and Operations
 
-Issuer: NVIDIA / Credly  
-Holder: Ishaan Shrivastava  
-Issue date: 2025-05-24  
-Verification: https://www.credly.com/badges/48cd3a80-fe99-438c-8924-2877e5fc6b8c/public_url
+- Issuer: NVIDIA / Credly
+- Holder: Ishaan Shrivastava
+- Issue date: 2026-05-24
+- Verification: https://www.credly.com/badges/48cd3a80-fe99-438c-8924-2877e5fc6b8c/public_url
 
 ## Summary
 
-This credential verifies foundational knowledge of AI infrastructure and operations, including GPU compute, scale-up vs scale-out design, networking, containerized ML workloads, inference serving, monitoring, and operational tooling.
+This credential verifies knowledge of the NVIDIA software stack, AI and deep-learning fundamentals, GPU and CPU architectures, AI infrastructure, cluster and job scheduling, and accelerated infrastructure virtualization.
 
-## Relevant Skills
+## Relevant skills
 
+- NVIDIA software stack
+- AI and deep-learning fundamentals
+- GPU and CPU architectures
 - AI infrastructure
-- GPU clusters
-- NVIDIA NGC
-- Docker
-- NVIDIA Container Toolkit
-- Triton Inference Server
-- Prometheus
-- Grafana
-- In-band and out-of-band management networks
-- Compute, storage, and data networks
+- Cluster and job scheduling
+- Accelerated infrastructure virtualization

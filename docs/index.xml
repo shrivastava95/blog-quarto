@@ -583,7 +583,7 @@ draft_cache_position = draft_cache_position[-1:] + 1 # add one more position for
 
  ]]></description>
   <guid>https://shrivastava95.github.io/blog-quarto/posts/linear-algebra-course-quiz/answer.html</guid>
-  <pubDate>Tue, 11 Aug 2026 12:48:53 GMT</pubDate>
+  <pubDate>Thu, 13 Aug 2026 22:14:11 GMT</pubDate>
 </item>
 <item>
   <title>Linear Algebra Course: An Eight-Unit Study Guide and Quiz</title>
@@ -734,7 +734,7 @@ Representative problem: find the eigenvalues and eigenspaces of (
 
  ]]></description>
   <guid>https://shrivastava95.github.io/blog-quarto/posts/linear-algebra-course-quiz/</guid>
-  <pubDate>Tue, 11 Aug 2026 12:48:53 GMT</pubDate>
+  <pubDate>Thu, 13 Aug 2026 22:14:11 GMT</pubDate>
 </item>
 <item>
   <title>Answer Key: Essential Linear Algebra Quiz</title>
@@ -771,7 +771,7 @@ Representative problem: find the eigenvalues and eigenspaces of (
 
  ]]></description>
   <guid>https://shrivastava95.github.io/blog-quarto/posts/linear-algebra-quiz/answer.html</guid>
-  <pubDate>Tue, 11 Aug 2026 12:48:53 GMT</pubDate>
+  <pubDate>Thu, 13 Aug 2026 22:14:11 GMT</pubDate>
 </item>
 <item>
   <title>Essential Linear Algebra: A Five-Unit Quiz</title>
@@ -899,7 +899,7 @@ Representative problem: find the eigenvalues and eigenspaces of (
 
  ]]></description>
   <guid>https://shrivastava95.github.io/blog-quarto/posts/linear-algebra-quiz/</guid>
-  <pubDate>Tue, 11 Aug 2026 12:48:53 GMT</pubDate>
+  <pubDate>Thu, 13 Aug 2026 22:14:11 GMT</pubDate>
 </item>
 <item>
   <title>ANSWER KEY TO PRIVILEGED BASIS AND RELU QUIZ</title>
@@ -1360,7 +1360,7 @@ Representative problem: find the eigenvalues and eigenspaces of (
 
  ]]></description>
   <guid>https://shrivastava95.github.io/blog-quarto/posts/privileged-basis/answer.html</guid>
-  <pubDate>Tue, 11 Aug 2026 12:48:53 GMT</pubDate>
+  <pubDate>Thu, 13 Aug 2026 22:14:11 GMT</pubDate>
 </item>
 <item>
   <title>Prerequisite Study Guide: ReLU Privileged-Basis Reconstruction</title>
@@ -1837,7 +1837,7 @@ Representative problem: find the eigenvalues and eigenspaces of (
 
  ]]></description>
   <guid>https://shrivastava95.github.io/blog-quarto/posts/privileged-basis/</guid>
-  <pubDate>Tue, 11 Aug 2026 12:48:53 GMT</pubDate>
+  <pubDate>Thu, 13 Aug 2026 22:14:11 GMT</pubDate>
 </item>
 </channel>
 </rss>
