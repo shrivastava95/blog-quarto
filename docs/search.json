@@ -389,14 +389,21 @@
     "href": "credentials/index.html",
     "title": "Credentials",
     "section": "",
-    "text": "Issuer: BlueDot Impact\nHolder: Ishaan Shrivastava\nIssue date: 2026-08-05\nVerification: BlueDot certificate\n\nThis credential certifies completion of BlueDot Impact’s Future of AI course, covering today’s AI systems, possible paths toward AGI, and the societal implications of advanced AI."
+    "text": "Issuer: DeepLearning.AI / Coursera\nHolder: Ishaan Shrivastava\nIssue date: 2022-06-07\nVerification: Coursera certificate\n\nThis course credential covers practical techniques for improving deep neural networks, including hyperparameter tuning, regularization, optimization, and systematic error analysis."
+  },
+  {
+    "objectID": "credentials/index.html#improving-deep-neural-networks-hyperparameter-tuning-regularization-and-optimization",
+    "href": "credentials/index.html#improving-deep-neural-networks-hyperparameter-tuning-regularization-and-optimization",
+    "title": "Credentials",
+    "section": "",
+    "text": "Issuer: DeepLearning.AI / Coursera\nHolder: Ishaan Shrivastava\nIssue date: 2022-06-07\nVerification: Coursera certificate\n\nThis course credential covers practical techniques for improving deep neural networks, including hyperparameter tuning, regularization, optimization, and systematic error analysis."
   },
   {
     "objectID": "credentials/index.html#future-of-ai",
     "href": "credentials/index.html#future-of-ai",
     "title": "Credentials",
-    "section": "",
-    "text": "Issuer: BlueDot Impact\nHolder: Ishaan Shrivastava\nIssue date: 2026-08-05\nVerification: BlueDot certificate\n\nThis credential certifies completion of BlueDot Impact’s Future of AI course, covering today’s AI systems, possible paths toward AGI, and the societal implications of advanced AI."
+    "section": "Future of AI",
+    "text": "Future of AI\n\nIssuer: BlueDot Impact\nHolder: Ishaan Shrivastava\nIssue date: 2026-08-05\nVerification: BlueDot certificate\n\nThis credential certifies completion of BlueDot Impact’s Future of AI course, covering today’s AI systems, possible paths toward AGI, and the societal implications of advanced AI."
   },
   {
     "objectID": "credentials/index.html#nvidia-certified-associate-ai-infrastructure-and-operations",
@@ -404,20 +411,6 @@
     "title": "Credentials",
     "section": "NVIDIA-Certified Associate: AI Infrastructure and Operations",
     "text": "NVIDIA-Certified Associate: AI Infrastructure and Operations\n\nIssuer: NVIDIA / Credly\nHolder: Ishaan Shrivastava\nIssue date: 2026-05-24\nVerification: Credly public badge\n\n\nThis credential verifies knowledge of the NVIDIA software stack, AI and deep-learning fundamentals, GPU and CPU architectures, AI infrastructure, cluster and job scheduling, and accelerated infrastructure virtualization.\n\nCredential artifacts\n\nJSON credential record\nMarkdown credential record for LLMs\nCredential PDF"
-  },
-  {
-    "objectID": "credentials/index.html#ai-infrastructure-and-operations-fundamentals",
-    "href": "credentials/index.html#ai-infrastructure-and-operations-fundamentals",
-    "title": "Credentials",
-    "section": "AI Infrastructure and Operations Fundamentals",
-    "text": "AI Infrastructure and Operations Fundamentals\n\nIssuer: NVIDIA / Coursera\nHolder: Ishaan Shrivastava\nIssue date: 2026-05-04\nVerification: Coursera certificate\n\nThis course credential covers AI applications and technologies, GPUs, deep-learning frameworks, the AI software stack, and deployment across on-premises, cloud, hybrid, and multi-cloud environments."
-  },
-  {
-    "objectID": "credentials/index.html#improving-deep-neural-networks-hyperparameter-tuning-regularization-and-optimization",
-    "href": "credentials/index.html#improving-deep-neural-networks-hyperparameter-tuning-regularization-and-optimization",
-    "title": "Credentials",
-    "section": "Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization",
-    "text": "Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization\n\nIssuer: DeepLearning.AI / Coursera\nHolder: Ishaan Shrivastava\nIssue date: 2022-06-07\nVerification: Coursera certificate\n\nThis course credential covers practical techniques for improving deep neural networks, including hyperparameter tuning, regularization, optimization, and systematic error analysis."
   },
   {
     "objectID": "about.html",
