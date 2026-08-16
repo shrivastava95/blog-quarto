@@ -66,7 +66,6 @@ Improved compositional reasoning in VLMs via **CoN-CLIP**, a proposed modificati
 
 ## Pet-Projects
 
-Currently participating in [ALETHEIA'S QUEST - An AI Lie Detection Challenge by Cadenza Labs and Schmidt Sciences](https://aletheias-quest.github.io), read my [Proposal here](aletheias_quest_proposal_CENTRAL.pdf) ([jupyter notebook](NDIFGetStarted.ipynb))
 
 **Experiments with hybrid post-pre-norm and Per-Layer-Embeddings** - I am on a mission to figure out the reason behind all the innovations jam-packed into the Gemma-3n (and, more recently, Gemma-4 series) models - Read my [Gemma Blog!](posts/gemma/index.qmd)
 
